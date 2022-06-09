@@ -95,8 +95,8 @@
 		background: green;
 		height: 100%;
 		box-sizing: border-box;
-		border-left : solid 1px #000;
-		border-right : solid 1px #000;
+		border-left : solid 0px #000;
+		border-right : solid 0px #000;
 		/* box-shadow: 0px 0px 5px #000; */
 	}
 

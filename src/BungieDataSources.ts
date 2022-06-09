@@ -1,5 +1,13 @@
 
 
+// get activity
+// https://data.destinysets.com/api/Destiny2.GetActivityHistory?membershipType=3&destinyMembershipId=4611686018505932007&characterId=2305843009704634319&count=249
+
+// get characters
+// https://data.destinysets.com/api/Destiny2.GetProfile?membershipType=3&destinyMembershipId=4611686018505932007&components=200
+
+
+
 export class BungieRequestHelper {
   
   apiToken: string;

@@ -16,7 +16,10 @@ export class ActivityAnalyst {
 		let characterIdHunter  = '2305843009704634319';
 		
 		let brh = new BungieRequestHelper();
-	  let activities = await brh.getActivities(membershipType, destinyMembershipId, characterIdTitan);
+	  let activitiesTitan   = await brh.getActivities(membershipType, destinyMembershipId, characterIdTitan);
+    let activitiesWarlock = await brh.getActivities(membershipType, destinyMembershipId, characterIdWarlock);
+    let activitiesHunter  = await brh.getActivities(membershipType, destinyMembershipId, characterIdHunter);
+    let activities = activitiesTitan.concat(activitiesWarlock, activitiesHunter);
     let activeDays =  this.createDayItems(activities);
     console.log(activeDays);
     return activeDays;
