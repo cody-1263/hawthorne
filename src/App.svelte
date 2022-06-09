@@ -1,6 +1,7 @@
 <script lang="ts">
 	
-	import type { ItemsContainer, ActivityDisplayItem } from './ItemsContainer';
+	import { ActivityDisplayItem, BungieApiActivityItem } from './ItemsContainer';
+	import { BungieRequestHelper } from './BungieDataSources';
 	
 	export let name: string;
 	
@@ -11,9 +12,20 @@
 	displayItems.push(new ActivityDisplayItem(30,10));
 	displayItems.push(new ActivityDisplayItem(50,30));
 	
+	
+	function onBungieLoadClick() {
+		let brh = new BungieRequestHelper();
+	  brh.getActivities();
+	}
+	
+	
 </script>
 
 <main>
+	
+	<button  on:click={onBungieLoadClick}>
+		<div> Load bungie</div>
+	</button>
 	
 	<div>{name}</div>
 	
