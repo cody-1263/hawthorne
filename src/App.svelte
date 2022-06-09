@@ -2,6 +2,7 @@
 	
 	import { ActivityDisplayItem, BungieApiActivityItem } from './ItemsContainer';
 	import { BungieRequestHelper } from './BungieDataSources';
+	import { ActivityAnalyst, ActivityDay, ActivityItem } from './ActivityAnalyst';
 	
 	export let name: string;
 	
@@ -12,10 +13,12 @@
 	displayItems.push(new ActivityDisplayItem(30,10));
 	displayItems.push(new ActivityDisplayItem(50,30));
 	
+	let activityDayItems = new Array<ActivityDay>();
 	
-	function onBungieLoadClick() {
-		let brh = new BungieRequestHelper();
-	  brh.getActivities();
+	async function onBungieLoadClick() {
+		
+		let act = new ActivityAnalyst();
+		activityDayItems = await act.createActivityData();
 	}
 	
 	
@@ -29,7 +32,16 @@
 	
 	<div>{name}</div>
 	
-	<div class="bar-container">
+	{#each activityDayItems as dayItem}
+		<div style="color: #ddd;">{dayItem.caption}</div>
+		<div class="bar-container">
+			{#each dayItem.activities as item}
+				<div class="bar-item"  style="margin-left: {item.startPercent * 100}%; width: {item.durationPercent * 100}%" ></div>
+			{/each}
+		</div>
+	{/each}
+	
+	<!-- <div class="bar-container">
 		{#each displayItems as item}
 			{#if item.marginLeft > 0}
 				<div class="bar-item"  style="margin-left: {item.marginLeft}%; width: {item.width}%" ></div>
@@ -57,7 +69,7 @@
 				<div class="bar-item"  style="margin-left: {item.marginLeft}%; width: {item.width}%; border-left: 0px" ></div>
 			{/if}
 		{/each}
-	</div>
+	</div> -->
 	
 	
 	
@@ -66,7 +78,7 @@
 <style>
 	
 	.bar-container {
-		margin-top: 32px;
+		margin-top: 8px;
 		width: 320px;
 		height: 16px;
 		border: solid 1px #000;
