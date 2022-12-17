@@ -1,4 +1,7 @@
+
+
 import { BungieRequestHelper, ActivityRawItem } from './BungieDataSources';
+import { ActivityDensityTimeline } from './ActivityDensityTimeline';
 
 
 /**
@@ -21,8 +24,26 @@ export class ActivityAnalyst {
     let activitiesHunter  = await brh.getActivities(membershipType, destinyMembershipId, characterIdHunter);
     let activities = activitiesTitan.concat(activitiesWarlock, activitiesHunter);
     let activeDays =  this.createDayItems(activities);
-    console.log(activeDays);
+    // console.log(activeDays);
     return activeDays;
+  }
+  
+  async createDensityData() {
+    let membershipType = '3';
+		let destinyMembershipId = '4611686018505932007';
+		
+		let characterIdTitan   = '2305843009677775102';
+		let characterIdWarlock = '2305843009697274837';
+		let characterIdHunter  = '2305843009704634319';
+		
+		let brh = new BungieRequestHelper();
+	  let activitiesTitan   = await brh.getActivities(membershipType, destinyMembershipId, characterIdTitan);
+    let activitiesWarlock = await brh.getActivities(membershipType, destinyMembershipId, characterIdWarlock);
+    let activitiesHunter  = await brh.getActivities(membershipType, destinyMembershipId, characterIdHunter);
+    let activities = activitiesTitan.concat(activitiesWarlock, activitiesHunter);
+    
+    let density = this.calcActivityDensity(activities);
+    return density;
   }
   
   
@@ -68,6 +89,27 @@ export class ActivityAnalyst {
     }
     
     return daysArray;
+  }
+  
+  
+  
+  /**
+   * Return daily activity density
+   * @param activityRawItems activity items
+   * @returns 
+   */
+  calcActivityDensity(activityRawItems: ActivityRawItem[]) {
+    
+    let actTimeline = new ActivityDensityTimeline(true);
+    
+    for (let item of activityRawItems) {
+      let dateStart = new Date(item.startTimeEpoch);
+      let dateEnd = new Date(item.startTimeEpoch + item.durationSeconds * 1000);
+      
+      actTimeline.increaseActivityCounters(dateStart, dateEnd);
+    }
+    
+    return actTimeline;
   }
   
   
