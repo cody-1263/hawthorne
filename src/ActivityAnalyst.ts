@@ -28,6 +28,8 @@ export class ActivityAnalyst {
     return activeDays;
   }
   
+  
+  
   async createDensityData() {
     let membershipType = '3';
 		let destinyMembershipId = '4611686018505932007';
@@ -42,8 +44,8 @@ export class ActivityAnalyst {
     let activitiesHunter  = await brh.getActivities(membershipType, destinyMembershipId, characterIdHunter);
     let activities = activitiesTitan.concat(activitiesWarlock, activitiesHunter);
     
-    let density = this.calcActivityDensity(activities);
-    return density;
+    let densityObjects = this.calcActivityDensity(activities);
+    return densityObjects;
   }
   
   
@@ -98,18 +100,58 @@ export class ActivityAnalyst {
    * @param activityRawItems activity items
    * @returns 
    */
-  calcActivityDensity(activityRawItems: ActivityRawItem[]) {
+  calcActivityDensity(activityRawItems: ActivityRawItem[]) : ActivityDensityTimeline[] {
     
-    let actTimeline = new ActivityDensityTimeline(true);
+    let daysMap = new Map<number, ActivityDensityTimeline>();
+    daysMap.set(0, new ActivityDensityTimeline(true, 'Sunday'));
+    daysMap.set(1, new ActivityDensityTimeline(true, 'Monday'));
+    daysMap.set(2, new ActivityDensityTimeline(true, 'Tuesday'));
+    daysMap.set(3, new ActivityDensityTimeline(true, 'Wednesday'));
+    daysMap.set(4, new ActivityDensityTimeline(true, 'Thusday'));
+    daysMap.set(5, new ActivityDensityTimeline(true, 'Friday'));
+    daysMap.set(6, new ActivityDensityTimeline(true, 'Saturday'));
+    let sumActivityTimeline = new ActivityDensityTimeline(true, "ALL DAYS");
     
     for (let item of activityRawItems) {
       let dateStart = new Date(item.startTimeEpoch);
       let dateEnd = new Date(item.startTimeEpoch + item.durationSeconds * 1000);
       
-      actTimeline.increaseActivityCounters(dateStart, dateEnd);
+      let day1 = dateStart.getDay();
+      let day2 = dateEnd.getDay();
+      
+      if (day1 == day2) {
+        let actTimeline = daysMap.get(day1);
+        actTimeline.increaseActivityCounters(dateStart, dateEnd);
+        sumActivityTimeline.increaseActivityCounters(dateStart, dateEnd);
+      }
+      else {
+        let borderDate1 = new Date(1900, 0, 1, 23, 59, 0);
+        let actTimeline1 = daysMap.get(day1);
+        actTimeline1.increaseActivityCounters(dateStart, borderDate1);
+        let borderDate2 = new Date(1900, 0, 1, 0, 1, 0);
+        let actTimeline2 = daysMap.get(day2);
+        actTimeline2.increaseActivityCounters(borderDate2, dateEnd);
+        
+        sumActivityTimeline.increaseActivityCounters(dateStart, borderDate1);
+        sumActivityTimeline.increaseActivityCounters(borderDate2, dateEnd);
+      }
+      
+      
     }
     
-    return actTimeline;
+    let maxCount = 0;
+    for (let tl of daysMap){
+      let maxc = tl[1].getMaxCounter();
+      if (maxc > maxCount) maxCount = maxc;
+    }
+    for (let tl of daysMap){
+      tl[1].fillNormalizedTimeline(maxCount);
+    }
+    sumActivityTimeline.fillNormalizedTimeline(0);
+    
+    let timelines = [sumActivityTimeline, daysMap.get(1), daysMap.get(2), daysMap.get(3), daysMap.get(4), daysMap.get(5), daysMap.get(6), daysMap.get(0)];
+    
+    return timelines;
   }
   
   

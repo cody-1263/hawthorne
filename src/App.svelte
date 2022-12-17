@@ -13,7 +13,9 @@
 	displayItems.push(new ActivityDisplayItem(50,30));
 	
 	let activityDayItems = new Array<ActivityDay>();
-	let activityDensity = new ActivityDensityTimeline(true);
+	let activityDensities = new Array<ActivityDensityTimeline>();
+		
+	let wefgw = new ActivityDensityTimeline(true, '');
 	
 	let densityLegendItems = [ '12am', '2am', '4am','6am','8am','10am','12pm','2pm','4pm','6pm','8pm','10pm','12am',];
 	
@@ -21,8 +23,8 @@
 		
 		let act = new ActivityAnalyst();
 		// activityDayItems = await act.createActivityData();
-		activityDensity = await act.createDensityData();
-		console.log(activityDensity.timeline);
+		activityDensities = await act.createDensityData();
+		// console.log(activityDensity.timeline);
 	}
 	
 	
@@ -45,16 +47,22 @@
 		</div>
 	{/each}
 	
-	<div class="density-container">
-		{#each activityDensity.timeline as itemNum}
-			<div class="density-item"  style="height: {itemNum * 4}px;"></div>
-		{/each}
-	</div>
-	<div class="density-legend">
-		{#each densityLegendItems as legendItemText}
-			<div>{legendItemText}</div>
-		{/each}
-	</div>
+	{#each activityDensities as activityDensity}
+		<div style="margin-top: 4rem;">{activityDensity.name}</div>
+		<div class="density-container">
+			{#each activityDensity.timelineNormalized as itemNum}
+				<div class="density-item"  style="height: {itemNum * 300}px;"></div>
+			{/each}
+		</div>
+		<div class="density-legend">
+			{#each densityLegendItems as legendItemText}
+				<div>{legendItemText}</div>
+			{/each}
+		</div>
+	{/each}
+	
+	
+	
 	
 </main>
 
@@ -92,7 +100,7 @@
 		height: 320px;
 		border: solid 1px #000;
 		background-color: #223344;
-		margin-top: 32px;
+		margin-top: 8px;
 		margin-left: 0;
 		margin-right: 0;
 		border-radius: 0px;

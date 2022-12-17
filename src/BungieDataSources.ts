@@ -49,34 +49,12 @@ export class BungieRequestHelper {
       let durationSeconds = jsonItem.values.activityDurationSeconds.basic.value;
       let activityId = jsonItem.activityDetails.referenceId;
       
-      // if (this._mybool) {
-        
-      //   let adt = new ActivityDensityTimeline(true);
-        
-      //   let myDate = new Date('2022-12-17T00:11:00.000+03:00');
-      //   let myDat2e = new Date('2022-06-15T00:19:00.000+03:00');
-      //   adt.increaseActivityCounter(myDate);
-      //   adt.increaseActivityCounter(myDat2e);
-        
-      //   console.log(adt.timeline);
-        
-      //   this._mybool = false;
-      // }
-      
       let item = new ActivityRawItem(time, durationSeconds, activityId);
       items.push(item);
-      
-      //let dataString = `${time} // ${durationSeconds} // ${activityId}`;
-      //console.log(dataString);
     }
     
     return items;
   }
-  
-  _mybool : boolean = true;
-  
-  
-  
   
   /**
    * Gets characters of given account
@@ -87,7 +65,7 @@ export class BungieRequestHelper {
     let endpoint = `/Destiny2/${membershipType}/Profile/${membershipId}/LinkedProfiles/`;
     let requestResult = await this.bungieGet(endpoint);
     let dataJson = requestResult.Response;
-    // console.log(dataJson);
+    console.log(dataJson);
   }
   
 }
