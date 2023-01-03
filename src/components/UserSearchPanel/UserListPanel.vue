@@ -22,7 +22,7 @@ import UserListItem from './UserListItem.vue';
   <p> {{ caption }} </p>
   
   <div v-for="userItem in userList">
-    <UserListItem :shortUserName="userItem.profileName" :fullUserName="userItem.destinyName" :iconUrl="userItem.profileIconUrl"/>
+    <UserListItem :shortUserName="userItem.displayName" :fullUserName="userItem.bungieGlobalDisplayName" :iconUrl="userItem.iconPath"/>
   </div>
   
 </template>

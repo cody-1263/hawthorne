@@ -19,6 +19,27 @@ dataListRef.value = data;
 watch(searchTextRef, async (newSearchText, oldSearchText) => {
   let dataItems = dataProvider.GetUsersTest();
   dataListRef.value = dataItems.filter((o) => o.destinyName.includes(newSearchText));
+  
+  
+  
+  dataProvider.searchForUsers(newSearchText).then((v) =>  {
+    //console.log(v); 
+    let arr = v.Response.searchResults;
+    
+    for (let item of arr) {
+      let name = item.bungieGlobalDisplayName;
+      let code = item.bungieGlobalDisplayNameCode;
+      let bungieMemberId = 25075509;
+      let destinyMemberId = item.destinyMemberships[0].membershipId;
+      
+      let str = `${name}#${code}\r\n${destinyMemberId}`;
+      console.log(str);
+      
+    }
+    
+    // console.log(JSON.stringify(v.Response));
+    
+  });
 });
 
 function onSearchTextChanged(newSearchText) {
