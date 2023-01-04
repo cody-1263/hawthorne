@@ -1,6 +1,6 @@
 
 
-<script setup>
+<script setup lang="ts">
 import { ref, watch } from 'vue';
 
 const innerSearchTextRef = ref('');
@@ -10,7 +10,7 @@ const emit = defineEmits(['searchTextUpdated'])
 //   emit('searchTextUpdated', newSearchText);
 // });
 
-function onInputKeyPress(event) {
+function onInputKeyPress(event : KeyboardEvent) {
   if (event.key === "Enter") {
     event.preventDefault();
     emit('searchTextUpdated', innerSearchTextRef.value);
@@ -21,7 +21,7 @@ function onInputKeyPress(event) {
 </script>
 
 
-<script>
+<script lang="ts">
 
 
 

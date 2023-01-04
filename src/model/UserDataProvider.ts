@@ -31,7 +31,7 @@ export default class UserDataProvider {
   
   
   
-  async bungieGet(endpoint) {
+  async bungieGet(endpoint : string) {
     let bungoApiKey = '84e133a91eea4882b9a0bf6f404ef782';
     let bungoParam = { headers: {  'X-API-Key': bungoApiKey} };
     let apiRootPath = 'https://www.bungie.net/Platform';
@@ -48,7 +48,7 @@ export default class UserDataProvider {
    * @param {Object} data 
    * @returns {Object} json response
    */
-  async bungiePost(endpoint, data) {
+  async bungiePost(endpoint : string, data : any) {
     let bungoApiKey = '84e133a91eea4882b9a0bf6f404ef782';
     let parameters = { 
       headers: {  'X-API-Key': bungoApiKey}, 
@@ -63,7 +63,7 @@ export default class UserDataProvider {
   }
   
   
-  async searchForUsers(searchText) {
+  async searchForUsers(searchText : string) {
     
     // https://bungie-net.github.io/multi/operation_post_Destiny2-SearchDestinyPlayerByBungieName.html#operation_post_Destiny2-SearchDestinyPlayerByBungieName
     // https://bungie-net.github.io/multi/operation_post_User-SearchByGlobalNamePost.html#operation_post_User-SearchByGlobalNamePost

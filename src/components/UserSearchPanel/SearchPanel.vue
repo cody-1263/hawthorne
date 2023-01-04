@@ -1,6 +1,6 @@
 
 
-<script setup>
+<script setup lang="ts">
 
 import { ref, watch } from 'vue';
 
@@ -18,7 +18,7 @@ dataListRef.value = data;
 
 watch(searchTextRef, async (newSearchText, oldSearchText) => {
   let dataItems = dataProvider.GetUsersTest();
-  dataListRef.value = dataItems.filter((o) => o.destinyName.includes(newSearchText));
+  dataListRef.value = dataItems.filter((o) => o.bungieGlobalDisplayName.includes(newSearchText));
   
   
   
@@ -42,7 +42,7 @@ watch(searchTextRef, async (newSearchText, oldSearchText) => {
   });
 });
 
-function onSearchTextChanged(newSearchText) {
+function onSearchTextChanged(newSearchText : string) {
   searchTextRef.value = newSearchText;
 }
 

@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import SearchPanel from './components/UserSearchPanel/SearchPanel.vue'
 </script>
 

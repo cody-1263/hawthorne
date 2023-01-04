@@ -1,5 +1,5 @@
 
-<script>
+<script lang="ts">
 export default {
   props:  {
     caption: String,
@@ -10,7 +10,7 @@ export default {
 
 
 
-<script setup>
+<script setup lang="ts">
 import UserListItem from './UserListItem.vue';
 </script>
 

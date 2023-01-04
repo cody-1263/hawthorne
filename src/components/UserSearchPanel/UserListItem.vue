@@ -1,6 +1,6 @@
 
 
-<script>
+<script lang="ts">
 
 /** My Component! */
 export default {

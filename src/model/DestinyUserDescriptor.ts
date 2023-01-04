@@ -7,6 +7,12 @@
  */
 export default class DestinyUserDescriptor {
 
+  bungieGlobalDisplayName : String;
+  displayName : String;
+  iconPath : String;
+  destinyMembershipId : number;
+  
+  
   constructor() {
     this.bungieGlobalDisplayName = 'unknown#7777';
     this.displayName = 'unknown';
