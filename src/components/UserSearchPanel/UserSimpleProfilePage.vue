@@ -1,18 +1,18 @@
 
 
-<script lang="ts">
-export default {
-  props:  {
-    userDescriptor: DestinyUserDescriptor,
-  }
-}
-</script>
-
 
 
 
 <script setup lang="ts">
-import { DestinyUserDescriptor, DestinyCharacterDescriptor } from '@/model/DestinyUserDescriptor';
+import type { DestinyUserDescriptor, DestinyCharacterDescriptor } from '@/model/DestinyUserDescriptor';
+
+const props = defineProps<{
+  userDescriptor: DestinyUserDescriptor | null
+}>();
+
+const emit = defineEmits<{
+  (e: 'itemClicked', item: DestinyUserDescriptor): void
+}>();
 
 </script>
 
@@ -20,7 +20,12 @@ import { DestinyUserDescriptor, DestinyCharacterDescriptor } from '@/model/Desti
 
 
 <template>
-  <h1></h1>
+  <div v-if="userDescriptor != null">
+    <h1>{{ userDescriptor.bungieGlobalDisplayName }}</h1>
+  </div>
+  <div v-else>
+    <p>Select user</p>
+  </div>
 </template>
 
 

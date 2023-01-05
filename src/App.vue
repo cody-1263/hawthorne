@@ -1,5 +1,22 @@
 <script setup lang="ts">
-import SearchPanel from './components/UserSearchPanel/SearchPanel.vue'
+import { ref, watch } from 'vue';
+import SearchPanel from './components/UserSearchPanel/SearchPanel.vue';
+import UserSimpleProfilePage from './components/UserSearchPanel/UserSimpleProfilePage.vue';
+import type { DestinyUserDescriptor, DestinyCharacterDescriptor } from '@/model/DestinyUserDescriptor';
+
+
+
+const selectedUserDescriptor = ref<DestinyUserDescriptor | null>(null);
+
+
+/** emitting selected items up to parent */
+function onInnerItemClicked(ud : DestinyUserDescriptor) {
+  
+  selectedUserDescriptor.value = ud;
+  
+}
+
+
 </script>
 
 
@@ -8,10 +25,10 @@ import SearchPanel from './components/UserSearchPanel/SearchPanel.vue'
 <template>
 <div class="main">
   <div>
-    <SearchPanel />
+    <SearchPanel @item-clicked="onInnerItemClicked" />
   </div>
   <div>
-    mainPanel
+    <UserSimpleProfilePage :user-descriptor="selectedUserDescriptor" />
   </div>
 </div>
 </template>

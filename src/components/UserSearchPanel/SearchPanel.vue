@@ -6,11 +6,15 @@ import { ref, watch } from 'vue';
 
 import UserListPanel from './UserListPanel.vue';
 import SearchBar from './SearchBar.vue';
-import UserDataProvider from '../../model/UserDataProvider.js';
+import UserDataProvider from '@/model/UserDataProvider';
+import type { DestinyUserDescriptor } from '@/model/DestinyUserDescriptor';
+
+const emit = defineEmits<{
+  (e: 'itemClicked', item: DestinyUserDescriptor): void
+}>();
 
 const dataProvider = new UserDataProvider();
 const data = dataProvider.GetUsersTest();
-const myCaption = 'Huh?';
 
 const searchTextRef = ref('');
 const dataListRef = ref();
@@ -41,6 +45,11 @@ function onSearchTextChanged(newSearchText : string) {
   searchTextRef.value = newSearchText;
 }
 
+/** emitting selected items up to parent */
+function onInnerItemClicked(ud : DestinyUserDescriptor) {
+  emit("itemClicked", ud);
+}
+
 </script>
 
 
@@ -49,11 +58,13 @@ function onSearchTextChanged(newSearchText : string) {
 <template>
   
   <div style="padding: 0.2rem;">
-    <SearchBar @searchTextUpdated="(newSearchText) => onSearchTextChanged(newSearchText)"/>
+    <SearchBar class="searchBar" @searchTextUpdated="(newSearchText) => onSearchTextChanged(newSearchText)"/>
   </div>
   
+  <div style="height: 1rem;"></div>
+  
   <div class="my-div">
-    <UserListPanel :userList="dataListRef" :caption="myCaption"/>
+    <UserListPanel :userList="dataListRef" @item-clicked="onInnerItemClicked"/>
   </div>
   
 </template>
@@ -62,5 +73,9 @@ function onSearchTextChanged(newSearchText : string) {
 
 
 <style scoped>
-  .my-div {background: #222;}
+  .my-div {background: transparent;}
+  
+  .searchBar {  
+    width: 90%;
+  }
 </style>
