@@ -49,9 +49,9 @@ function onReloadButtonClick() {
   <button id="counter" type="button" @click="onReloadButtonClick">Reload activity</button>
   
   <div v-if="timelinesRef != null" v-for="tl in timelinesRef">
-    <div style="margin-top: 4rem;">{{tl.name}}</div>
+    <div style="margin-top: 1rem;">{{tl.name}}</div>
     <div class="density-container">
-			<div v-for="tlItem in tl.timelineNormalized" :style="{height: tlItem * 300 + 'px'}" class="density-item"></div>
+			<div v-for="tlItem in tl.timelineNormalized" :style="{height: tlItem * 70 + 'px'}" class="density-item"></div>
 		</div>
 		<div class="density-legend">
 			<div v-for="legItem in legendRef">{{ legItem }}</div>
@@ -104,7 +104,7 @@ button:active {
 		flex-wrap: nowrap;
 		justify-content: space-between;
 		align-items: flex-end;
-		height: 320px;
+		height: 72px;
 		border: solid 1px #000;
 		background-color: #223344;
 		margin-top: 8px;
