@@ -6,14 +6,10 @@ import type { DestinyUserDescriptor, DestinyCharacterDescriptor } from '@/model/
 
 
 
-const selectedUserDescriptor = ref<DestinyUserDescriptor | null>(null);
+const selectedUserDescriptor = ref<DestinyUserDescriptor|null>(null);
 
-
-/** emitting selected items up to parent */
 function onInnerItemClicked(ud : DestinyUserDescriptor) {
-  
   selectedUserDescriptor.value = ud;
-  
 }
 
 

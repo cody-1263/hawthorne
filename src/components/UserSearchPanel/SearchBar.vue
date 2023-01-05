@@ -45,10 +45,11 @@ function onInputKeyPress(event : KeyboardEvent) {
     border: solid 2px #111;
     border-radius: 0.3rem;
     min-height: 2rem;
+    transition: border-color 0.25s;
   }
   .text-field:focus {
     outline: none;
-    border-color: #3346d4;
+    border-color: #646cff;
   }
 
 </style>

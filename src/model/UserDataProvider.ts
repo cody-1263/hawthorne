@@ -158,16 +158,66 @@ export default class UserDataProvider {
       charDescriptor.emblemPath = 'https://www.bungie.net' + charJson.emblemPath;
       charDescriptor.emblemBackgroundPath = 'https://www.bungie.net' + charJson.emblemBackgroundPath;
       charDescriptor.classHash = charJson.classHash;
-      if (charDescriptor.classHash == 3655393761)
+      if (charDescriptor.classHash == '3655393761')
         charDescriptor.className = 'Titan';
-      else if (charDescriptor.classHash == 2271682572)
+      else if (charDescriptor.classHash == '2271682572')
         charDescriptor.className = 'Warlock';
-      else if (charDescriptor.classHash == 671679327)
+      else if (charDescriptor.classHash == '671679327')
         charDescriptor.className = 'Hunter';
       descriptor.characterDescriptors.push(charDescriptor);
     }
   }
   
   
+  
+  
+  /**
+  * Gets activities list of given account
+  */
+  async getActivities (membershipType: string, destinyMembershipId: string, characterId: string) {
+
+    let endpoint = `/Destiny2/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/Activities/?count=249`;
+    
+    let resultJson = await this.bungieGet(endpoint);
+    let activitiesJsonArray = resultJson.Response.activities;
+  
+    let items = new Array<ActivityRawItem>();
+    
+    for (const jsonItem of activitiesJsonArray) {
+      
+      let time = new Date(jsonItem.period).getTime();
+      let durationSeconds = jsonItem.values.activityDurationSeconds.basic.value;
+      let activityId = jsonItem.activityDetails.referenceId;
+      
+      let item = new ActivityRawItem(time, durationSeconds, activityId);
+      items.push(item);
+    }
+    
+    return items;
+  }
+  
+  
+  
+}
+
+
+
+
+
+
+/**
+ * Basic activity description
+ */
+export class ActivityRawItem {
+  
+  startTimeEpoch: number;
+  durationSeconds: number;
+  activityId: number;
+  
+  constructor(startTimeEpoch: number, durationSeconds: number, activityId: number) {
+    this.startTimeEpoch = startTimeEpoch;
+    this.durationSeconds = durationSeconds;
+    this.activityId = activityId;
+  }
   
 }
