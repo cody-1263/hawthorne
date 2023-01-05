@@ -1,5 +1,5 @@
 
-import DestinyUserDescriptor from './DestinyUserDescriptor.js';
+import { DestinyUserDescriptor, DestinyCharacterDescriptor } from './DestinyUserDescriptor.js';
 
 
 export default class UserDataProvider {
@@ -42,11 +42,12 @@ export default class UserDataProvider {
   }
   
   
+  
+  
   /**
    * Send POST to bungie.net
-   * @param {String} endpoint 
-   * @param {Object} data 
-   * @returns {Object} json response
+   * @param endpoint 
+   * @param data 
    */
   async bungiePost(endpoint : string, data : any) {
     let bungoApiKey = '84e133a91eea4882b9a0bf6f404ef782';
@@ -63,15 +64,108 @@ export default class UserDataProvider {
   }
   
   
+  
+  
+  /**
+   * Finds bungie.net users using searchText and returns information about them
+   * @param searchText search query
+   * @returns 
+   */
   async searchForUsers(searchText : string) {
-    
-    // https://bungie-net.github.io/multi/operation_post_Destiny2-SearchDestinyPlayerByBungieName.html#operation_post_Destiny2-SearchDestinyPlayerByBungieName
-    // https://bungie-net.github.io/multi/operation_post_User-SearchByGlobalNamePost.html#operation_post_User-SearchByGlobalNamePost
+    // https://bungie-net.github.io/multi/operation_post_User-SearchByGlobalNamePost
     
     let path = '/User/Search/GlobalName/0/';
     let data = { displayNamePrefix: searchText };
-    let response = await this.bungiePost(path, data);
-    return response;
+    let qres = await this.bungiePost(path, data);
+    
+    let arr = qres.Response.searchResults;
+    
+    let resultCollection = new Array<DestinyUserDescriptor>();
+    let promiseCollection = new Array<Promise<void>>();
+    for (let item of arr) { 
+      for(let subitem of item.destinyMemberships) {
+        let ud = new DestinyUserDescriptor();
+        let name = subitem.bungieGlobalDisplayName;
+        let code = subitem.bungieGlobalDisplayNameCode;
+        ud.bungieGlobalDisplayName = `${name}#${code}`;
+        ud.displayName = name;
+        ud.membershipType = subitem.membershipType;
+        ud.destinyMembershipId = subitem.membershipId;
+        let prom = this.getDestinyCharactersData(ud);
+        promiseCollection.push(prom);
+        resultCollection.push(ud);
+        break;
+      }
+    }
+    
+    await Promise.all(promiseCollection);
+    
+    return resultCollection;
+  }
+  
+  
+  /**
+   * Search for a player with their bungie name
+   * @param searchText text query
+   */
+  async searchDestinyPlayerByBungieName(searchText : string) {
+    // https://bungie-net.github.io/multi/operation_post_Destiny2-SearchDestinyPlayerByBungieName
+    
+    let textParts = searchText.split('#');
+    let membershipType = 3;
+    let path = `/Destiny2/SearchDestinyPlayerByBungieName/${membershipType}/`;
+    let data = { displayName : textParts[0], displayNameCode : textParts[1] };
+    let res = await this.bungiePost(path, data);
+    
+    let jsonObject = res.Response[0];
+    
+    if (jsonObject != null) {
+      let userDescriptor = new DestinyUserDescriptor();
+      userDescriptor.iconPath = jsonObject.iconPath;
+      let name = jsonObject.bungieGlobalDisplayName;
+      let code = jsonObject.bungieGlobalDisplayNameCode;
+      userDescriptor.displayName = name;
+      userDescriptor.bungieGlobalDisplayName = `${name}#${code}`;
+      userDescriptor.destinyMembershipId = jsonObject.membershipId;
+      userDescriptor.membershipType = jsonObject.membershipType;
+      
+      await this.getDestinyCharactersData(userDescriptor);
+      
+      //console.log(userDescriptor);
+      return userDescriptor;
+    }
+    else {
+      return null;
+    }
+  }
+  
+  
+  async getDestinyCharactersData(descriptor : DestinyUserDescriptor) {
+    
+    let pathParams = '?components=200';
+    let path = `/Destiny2/${descriptor.membershipType}/Profile/${descriptor.destinyMembershipId}/` + pathParams;
+    
+    let qres = await this.bungieGet(path);
+    
+    for (let property in qres.Response.characters.data) {
+      let charJson = qres.Response.characters.data[property];
+      
+      let charDescriptor = new DestinyCharacterDescriptor();
+      charDescriptor.characterId = charJson.characterId;
+      charDescriptor.dateLastPlayed = charJson.dateLastPlayed;
+      charDescriptor.minutesPlayedTotal = charJson.minutesPlayedTotal;
+      charDescriptor.light = charJson.light;
+      charDescriptor.emblemPath = 'https://www.bungie.net' + charJson.emblemPath;
+      charDescriptor.emblemBackgroundPath = 'https://www.bungie.net' + charJson.emblemBackgroundPath;
+      charDescriptor.classHash = charJson.classHash;
+      if (charDescriptor.classHash == 3655393761)
+        charDescriptor.className = 'Titan';
+      else if (charDescriptor.classHash == 2271682572)
+        charDescriptor.className = 'Warlock';
+      else if (charDescriptor.classHash == 671679327)
+        charDescriptor.className = 'Hunter';
+      descriptor.characterDescriptors.push(charDescriptor);
+    }
   }
   
   

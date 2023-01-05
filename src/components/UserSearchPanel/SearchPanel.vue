@@ -17,31 +17,26 @@ const dataListRef = ref();
 dataListRef.value = data;
 
 watch(searchTextRef, async (newSearchText, oldSearchText) => {
-  let dataItems = dataProvider.GetUsersTest();
-  dataListRef.value = dataItems.filter((o) => o.bungieGlobalDisplayName.includes(newSearchText));
+  // let dataItems = dataProvider.GetUsersTest();
+  // dataListRef.value = dataItems.filter((o) => o.bungieGlobalDisplayName.includes(newSearchText));
+  
+  if (newSearchText.includes('#')) {
+    dataProvider.searchDestinyPlayerByBungieName(newSearchText).then((userDescriptor) => {
+      // console.log(userDescriptor);
+      dataListRef.value = [ userDescriptor ];
+    });
+  }
+  else {
+    dataProvider.searchForUsers(newSearchText).then((userCollection) =>  {
+      // console.log(userCollection);
+      dataListRef.value = userCollection;
+    });
+  }
   
   
-  
-  dataProvider.searchForUsers(newSearchText).then((v) =>  {
-    //console.log(v); 
-    let arr = v.Response.searchResults;
-    
-    for (let item of arr) {
-      let name = item.bungieGlobalDisplayName;
-      let code = item.bungieGlobalDisplayNameCode;
-      let bungieMemberId = 25075509;
-      let destinyMemberId = item.destinyMemberships[0].membershipId;
-      
-      let str = `${name}#${code}\r\n${destinyMemberId}`;
-      console.log(str);
-      
-    }
-    
-    // console.log(JSON.stringify(v.Response));
-    
-  });
 });
 
+/** calling this when SearchBar's search text has been updated */
 function onSearchTextChanged(newSearchText : string) {
   searchTextRef.value = newSearchText;
 }
@@ -53,7 +48,7 @@ function onSearchTextChanged(newSearchText : string) {
 
 <template>
   
-  <div >
+  <div style="padding: 0.2rem;">
     <SearchBar @searchTextUpdated="(newSearchText) => onSearchTextChanged(newSearchText)"/>
   </div>
   

@@ -1,0 +1,16 @@
+[
+  {
+    "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+    "crossSaveOverride": 3,
+    "applicableMembershipTypes": [
+      2,
+      3
+    ],
+    "isPublic": true,
+    "membershipType": 3,
+    "membershipId": "4611686018505932007",
+    "displayName": "cody",
+    "bungieGlobalDisplayName": "cody",
+    "bungieGlobalDisplayNameCode": 1263
+  }
+]
