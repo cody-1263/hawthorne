@@ -6,6 +6,7 @@ import { ref, watch } from 'vue';
 
 import UserListPanel from './UserListPanel.vue';
 import SearchBar from './SearchBar.vue';
+import LoadingIndicator from './LoadingIndicator.vue';
 import UserDataProvider from '@/model/UserDataProvider';
 import type { DestinyUserDescriptor } from '@/model/DestinyUserDescriptor';
 
@@ -16,28 +17,23 @@ const emit = defineEmits<{
 const dataProvider = new UserDataProvider();
 const data = dataProvider.GetUsersTest();
 
+const loadingIndicator = ref(false);
 const searchTextRef = ref('');
 const dataListRef = ref();
 dataListRef.value = data;
 
+/** calling this when searchText updates and we have to download new user list */
 watch(searchTextRef, async (newSearchText, oldSearchText) => {
-  // let dataItems = dataProvider.GetUsersTest();
-  // dataListRef.value = dataItems.filter((o) => o.bungieGlobalDisplayName.includes(newSearchText));
-  
+  loadingIndicator.value = true;
   if (newSearchText.includes('#')) {
-    dataProvider.searchDestinyPlayerByBungieName(newSearchText).then((userDescriptor) => {
-      // console.log(userDescriptor);
-      dataListRef.value = [ userDescriptor ];
-    });
+    let userItem = await dataProvider.searchDestinyPlayerByBungieName(newSearchText);
+    dataListRef.value = [ userItem ];
   }
   else {
-    dataProvider.searchForUsers(newSearchText).then((userCollection) =>  {
-      // console.log(userCollection);
-      dataListRef.value = userCollection;
-    });
+    let userCollection = await dataProvider.searchForUsers(newSearchText);
+    dataListRef.value = userCollection;
   }
-  
-  
+  loadingIndicator.value = false;
 });
 
 /** calling this when SearchBar's search text has been updated */
@@ -64,7 +60,8 @@ function onInnerItemClicked(ud : DestinyUserDescriptor) {
   <div style="height: 1rem;"></div>
   
   <div class="my-div">
-    <UserListPanel :userList="dataListRef" @item-clicked="onInnerItemClicked"/>
+    <UserListPanel v-if="loadingIndicator == false" :userList="dataListRef" @item-clicked="onInnerItemClicked"/>
+    <LoadingIndicator v-else class="loading-indicator"/>
   </div>
   
 </template>
@@ -77,5 +74,11 @@ function onInnerItemClicked(ud : DestinyUserDescriptor) {
   
   .searchBar {  
     width: 90%;
+  }
+  
+  .loading-indicator {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4rem;
   }
 </style>

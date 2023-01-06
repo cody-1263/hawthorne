@@ -147,25 +147,29 @@ export default class UserDataProvider {
     
     let qres = await this.bungieGet(path);
     
-    for (let property in qres.Response.characters.data) {
-      let charJson = qres.Response.characters.data[property];
-      
-      let charDescriptor = new DestinyCharacterDescriptor();
-      charDescriptor.characterId = charJson.characterId;
-      charDescriptor.dateLastPlayed = charJson.dateLastPlayed;
-      charDescriptor.minutesPlayedTotal = charJson.minutesPlayedTotal;
-      charDescriptor.light = charJson.light;
-      charDescriptor.emblemPath = 'https://www.bungie.net' + charJson.emblemPath;
-      charDescriptor.emblemBackgroundPath = 'https://www.bungie.net' + charJson.emblemBackgroundPath;
-      charDescriptor.classHash = charJson.classHash;
-      if (charDescriptor.classHash == '3655393761')
-        charDescriptor.className = 'Titan';
-      else if (charDescriptor.classHash == '2271682572')
-        charDescriptor.className = 'Warlock';
-      else if (charDescriptor.classHash == '671679327')
-        charDescriptor.className = 'Hunter';
-      descriptor.characterDescriptors.push(charDescriptor);
+    if (qres.Response != null) {
+      for (let property in qres.Response.characters.data) {
+        let charJson = qres.Response.characters.data[property];
+        
+        let charDescriptor = new DestinyCharacterDescriptor();
+        charDescriptor.characterId = charJson.characterId;
+        charDescriptor.dateLastPlayed = charJson.dateLastPlayed;
+        charDescriptor.minutesPlayedTotal = charJson.minutesPlayedTotal;
+        charDescriptor.light = charJson.light;
+        charDescriptor.emblemPath = 'https://www.bungie.net' + charJson.emblemPath;
+        charDescriptor.emblemBackgroundPath = 'https://www.bungie.net' + charJson.emblemBackgroundPath;
+        charDescriptor.classHash = charJson.classHash;
+        if (charDescriptor.classHash == '3655393761')
+          charDescriptor.className = 'Titan';
+        else if (charDescriptor.classHash == '2271682572')
+          charDescriptor.className = 'Warlock';
+        else if (charDescriptor.classHash == '671679327')
+          charDescriptor.className = 'Hunter';
+        descriptor.characterDescriptors.push(charDescriptor);
+      }
     }
+    
+    
   }
   
   

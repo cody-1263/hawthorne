@@ -16,16 +16,9 @@ function onInputKeyPress(event : KeyboardEvent) {
     emit('searchTextUpdated', innerSearchTextRef.value);
   }
 }
-
-
 </script>
 
 
-<script lang="ts">
-
-
-
-</script>
 
 
 <template>
