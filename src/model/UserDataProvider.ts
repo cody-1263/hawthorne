@@ -1,5 +1,5 @@
 
-import { DestinyUserDescriptor, DestinyCharacterDescriptor } from './DestinyUserDescriptor.js';
+import { DestinyUserDescriptor, DestinyCharacterDescriptor, DestinyClanDescriptor } from './DestinyUserDescriptor.js';
 
 
 export default class UserDataProvider {
@@ -91,8 +91,10 @@ export default class UserDataProvider {
         ud.displayName = name;
         ud.membershipType = subitem.membershipType;
         ud.destinyMembershipId = subitem.membershipId;
-        let prom = this.getDestinyCharactersData(ud);
+        let prom = this.addDestinyCharactersData(ud);
+        let prom2 = this.addDestinyClanData(ud);
         promiseCollection.push(prom);
+        promiseCollection.push(prom2);
         resultCollection.push(ud);
         break;
       }
@@ -129,7 +131,8 @@ export default class UserDataProvider {
       userDescriptor.destinyMembershipId = jsonObject.membershipId;
       userDescriptor.membershipType = jsonObject.membershipType;
       
-      await this.getDestinyCharactersData(userDescriptor);
+      await this.addDestinyCharactersData(userDescriptor);
+      await this.addDestinyClanData(userDescriptor);
       
       //console.log(userDescriptor);
       return userDescriptor;
@@ -140,7 +143,11 @@ export default class UserDataProvider {
   }
   
   
-  async getDestinyCharactersData(descriptor : DestinyUserDescriptor) {
+  /**
+   * 
+   * @param descriptor 
+   */
+  async addDestinyCharactersData(descriptor : DestinyUserDescriptor) {
     
     let pathParams = '?components=200';
     let path = `/Destiny2/${descriptor.membershipType}/Profile/${descriptor.destinyMembershipId}/` + pathParams;
@@ -168,8 +175,33 @@ export default class UserDataProvider {
         descriptor.characterDescriptors.push(charDescriptor);
       }
     }
+  }
+  
+  
+  
+  async addDestinyClanData(userDescriptor : DestinyUserDescriptor) {
+    // https://bungie-net.github.io/multi/operation_get_GroupV2-GetGroupsForMember
     
+    // let pt1 = '/GroupV2/3909446/';
+    // let resultJson = await this.bungieGet(pt1);
+    // console.log(resultJson);
     
+    let mtype = userDescriptor.membershipType;
+    let mid = userDescriptor.destinyMembershipId;
+    let filter = 0;
+    let groupType = 1;
+    let endpoint = `/GroupV2/User/${mtype}/${mid}/${filter}/${groupType}/`;
+    
+    let resultJson = await this.bungieGet(endpoint);
+    
+    if (resultJson.Response != null && resultJson.Response.results != null && resultJson.Response.results.length > 0) {
+      let clanDescriptor = new DestinyClanDescriptor();
+      let clanJson = resultJson.Response.results[0].group;
+      clanDescriptor.groupId = clanJson.groupId;
+      clanDescriptor.name = clanJson.name;
+      clanDescriptor.clanCallsign = clanJson.clanInfo.clanCallsign;
+      userDescriptor.clanDescriptor = clanDescriptor;
+    }
   }
   
   
@@ -199,10 +231,12 @@ export default class UserDataProvider {
     
     return items;
   }
-  
-  
+
   
 }
+
+
+
 
 
 

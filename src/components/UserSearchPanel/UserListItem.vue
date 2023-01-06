@@ -30,8 +30,8 @@ function onButtonClick(event : MouseEvent) {
   
 <button v-on:click="onButtonClick">
   <div class="wrap">
-    <p class="caption1">{{ shortUserName }}</p>
-    <p class="caption2">{{ fullUserName }}</p>
+    <p class="caption1">{{ fullUserName }}</p>
+    <p class="caption2">{{ userDescriptor.clanDescriptor?.name }}</p>
     <img v-if="iconUrl1 != null" :src="iconUrl1" class="icon" style="grid-area: icon3"/>
     <img v-if="iconUrl2 != null" :src="iconUrl2" class="icon" style="grid-area: icon2"/>
     <img v-if="iconUrl3 != null" :src="iconUrl3" class="icon" style="grid-area: icon1"/>

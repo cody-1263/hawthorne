@@ -15,6 +15,7 @@ export class DestinyUserDescriptor {
   membershipType : string;
   
   characterDescriptors : DestinyCharacterDescriptor[];
+  clanDescriptor : DestinyClanDescriptor | null;
   
   
   constructor() {
@@ -26,6 +27,7 @@ export class DestinyUserDescriptor {
     this.membershipType = '';
     
     this.characterDescriptors = new Array<DestinyCharacterDescriptor>();
+    this.clanDescriptor = null;
   }
   
 }
@@ -57,6 +59,23 @@ export class DestinyCharacterDescriptor {
     this.className = 'unknown';
   }
   
+}
+
+
+
+/**
+ * Description of Destiny 2 clan
+ */
+export class DestinyClanDescriptor {
+  groupId : string;
+  name : string;
+  clanCallsign : string;
+  
+  constructor() {
+    this.name = 'unknown';
+    this.groupId = '-1';
+    this.clanCallsign = '_';
+  }
 }
 
 

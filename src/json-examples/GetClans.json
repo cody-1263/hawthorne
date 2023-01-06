@@ -1,0 +1,157 @@
+{
+  "Response": {
+    "areAllMembershipsInactive": {
+      "3909446": false
+    },
+    "results": [
+      {
+        "member": {
+          "memberType": 3,
+          "isOnline": false,
+          "lastOnlineStatusChange": "1672952534",
+          "groupId": "3909446",
+          "destinyUserInfo": {
+            "LastSeenDisplayName": "cody",
+            "LastSeenDisplayNameType": 3,
+            "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+            "crossSaveOverride": 3,
+            "applicableMembershipTypes": [
+              2,
+              3
+            ],
+            "isPublic": false,
+            "membershipType": 3,
+            "membershipId": "4611686018505932007",
+            "displayName": "cody",
+            "bungieGlobalDisplayName": "cody",
+            "bungieGlobalDisplayNameCode": 1263
+          },
+          "joinDate": "2022-09-04T18:25:21Z"
+        },
+        "group": {
+          "groupId": "3909446",
+          "name": "Seismic Pathfinders",
+          "groupType": 1,
+          "membershipIdCreated": "8217141",
+          "creationDate": "2019-10-06T21:42:12.405Z",
+          "modificationDate": "2022-09-22T21:49:53.024Z",
+          "about": "Please send applications through our website!\nseismicgaming.eu/join\n\nWe're a clan of mature gamers who value social interaction above all else. Personality with character and honor is more important to us than elitism. Our philosophy is to enjoy the experience of gaming, whether you're winning or losing. Seismic is an open and diverse clan with members from all over the world.\n\nSeismic is an organized clan with staff ranks throughout. We're looking for people who are willing to help us push Seismic to the next stage whether that's being a staff member or just a member. You're 100% valued in the clan whatever position you hold as at the end of the day we truly believe that you are what makes Seismic, Seismic.\n\nIf you've already been accepted then simply request to join and we will accept you.\nPlease also note that Discord voice activity is required every 2 weeks in the clan.",
+          "tags": [],
+          "memberCount": 91,
+          "isPublic": true,
+          "isPublicTopicAdminOnly": false,
+          "motto": "Drink coffee, be nice, shoot aliens!",
+          "allowChat": true,
+          "isDefaultPostPublic": false,
+          "chatSecurity": 0,
+          "locale": "en",
+          "avatarImageIndex": 0,
+          "homepage": 0,
+          "membershipOption": 0,
+          "defaultPublicity": 2,
+          "theme": "Group_Community1",
+          "bannerPath": "/img/Themes/Group_Community1/struct_images/group_top_banner.jpg",
+          "avatarPath": "/img/profile/avatars/group/defaultGroup.png",
+          "conversationId": "54052505",
+          "enableInvitationMessagingForAdmins": false,
+          "banExpireDate": "2001-01-01T00:00:00Z",
+          "features": {
+            "maximumMembers": 100,
+            "maximumMembershipsOfGroupType": 1,
+            "capabilities": 31,
+            "membershipTypes": [
+              1,
+              2,
+              3,
+              5,
+              6
+            ],
+            "invitePermissionOverride": true,
+            "updateCulturePermissionOverride": true,
+            "hostGuidedGamePermissionOverride": 2,
+            "updateBannerPermissionOverride": true,
+            "joinLevel": 2
+          },
+          "clanInfo": {
+            "d2ClanProgressions": {
+              "584850370": {
+                "progressionHash": 584850370,
+                "dailyProgress": 500000,
+                "dailyLimit": 0,
+                "weeklyProgress": 100000,
+                "weeklyLimit": 100000,
+                "currentProgress": 500000,
+                "level": 5,
+                "levelCap": 6,
+                "stepIndex": 5,
+                "progressToNextLevel": 25000,
+                "nextLevelAt": 125000
+              },
+              "1273404180": {
+                "progressionHash": 1273404180,
+                "dailyProgress": 0,
+                "dailyLimit": 0,
+                "weeklyProgress": 0,
+                "weeklyLimit": 0,
+                "currentProgress": 0,
+                "level": 1,
+                "levelCap": 6,
+                "stepIndex": 1,
+                "progressToNextLevel": 0,
+                "nextLevelAt": 1
+              },
+              "3381682691": {
+                "progressionHash": 3381682691,
+                "dailyProgress": 0,
+                "dailyLimit": 0,
+                "weeklyProgress": 0,
+                "weeklyLimit": 0,
+                "currentProgress": 0,
+                "level": 1,
+                "levelCap": 6,
+                "stepIndex": 1,
+                "progressToNextLevel": 0,
+                "nextLevelAt": 1
+              },
+              "3759191272": {
+                "progressionHash": 3759191272,
+                "dailyProgress": 0,
+                "dailyLimit": 0,
+                "weeklyProgress": 0,
+                "weeklyLimit": 0,
+                "currentProgress": 0,
+                "level": 1,
+                "levelCap": 6,
+                "stepIndex": 1,
+                "progressToNextLevel": 0,
+                "nextLevelAt": 1
+              }
+            },
+            "clanCallsign": "SGP",
+            "clanBannerData": {
+              "decalId": 4142223390,
+              "decalColorId": 3379387797,
+              "decalBackgroundColorId": 3568748757,
+              "gonfalonId": 1473910866,
+              "gonfalonColorId": 2157636326,
+              "gonfalonDetailId": 1698031298,
+              "gonfalonDetailColorId": 4128900502
+            }
+          }
+        }
+      }
+    ],
+    "totalResults": 1,
+    "hasMore": false,
+    "query": {
+      "itemsPerPage": 1000,
+      "currentPage": 1
+    },
+    "useTotalResults": true
+  },
+  "ErrorCode": 1,
+  "ThrottleSeconds": 0,
+  "ErrorStatus": "Success",
+  "Message": "Ok",
+  "MessageData": {}
+}
