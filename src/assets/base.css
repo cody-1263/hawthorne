@@ -46,7 +46,7 @@
     --color-border-hover: var(--vt-c-divider-dark-1);
 
     --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
+    --color-text: #eee;
   }
 }
 
@@ -96,6 +96,7 @@ body {
 button {
   font-family: 'Fira Sans';
   font-size: 1rem;
+  color: var(--color-text);
 }
 
 

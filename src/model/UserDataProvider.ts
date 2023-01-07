@@ -86,9 +86,10 @@ export default class UserDataProvider {
       for(let subitem of item.destinyMemberships) {
         let ud = new DestinyUserDescriptor();
         let name = subitem.bungieGlobalDisplayName;
-        let code = subitem.bungieGlobalDisplayNameCode;
+        let code = this.codeNumberToText(subitem.bungieGlobalDisplayNameCode);
         ud.bungieGlobalDisplayName = `${name}#${code}`;
         ud.displayName = name;
+        ud.nameCode = code;
         ud.membershipType = subitem.membershipType;
         ud.destinyMembershipId = subitem.membershipId;
         let prom = this.addDestinyCharactersData(ud);
@@ -125,8 +126,9 @@ export default class UserDataProvider {
       let userDescriptor = new DestinyUserDescriptor();
       userDescriptor.iconPath = jsonObject.iconPath;
       let name = jsonObject.bungieGlobalDisplayName;
-      let code = jsonObject.bungieGlobalDisplayNameCode;
+      let code = this.codeNumberToText(jsonObject.bungieGlobalDisplayNameCode);
       userDescriptor.displayName = name;
+      userDescriptor.nameCode = code;
       userDescriptor.bungieGlobalDisplayName = `${name}#${code}`;
       userDescriptor.destinyMembershipId = jsonObject.membershipId;
       userDescriptor.membershipType = jsonObject.membershipType;
@@ -154,6 +156,8 @@ export default class UserDataProvider {
     
     let qres = await this.bungieGet(path);
     
+    let mostRecentDate = new Date(0);
+    
     if (qres.Response != null) {
       for (let property in qres.Response.characters.data) {
         let charJson = qres.Response.characters.data[property];
@@ -173,6 +177,11 @@ export default class UserDataProvider {
         else if (charDescriptor.classHash == '671679327')
           charDescriptor.className = 'Hunter';
         descriptor.characterDescriptors.push(charDescriptor);
+        
+        if (charDescriptor.dateLastPlayed > mostRecentDate) {
+          descriptor.iconPath = charDescriptor.emblemPath;
+          mostRecentDate = charDescriptor.dateLastPlayed;
+        }
       }
     }
   }
@@ -232,6 +241,24 @@ export default class UserDataProvider {
     return items;
   }
 
+  
+  
+  codeNumberToText(codeNumber : number) {
+    let codeText = '0000';
+    if (codeNumber < 10) {
+      codeText = `000${codeNumber}`;
+    }
+    else if (codeNumber < 100) {
+      codeText = `00${codeNumber}`;
+    }
+    else if (codeNumber < 1000) {
+      codeText = `0${codeNumber}`;
+    }
+    else {
+      codeText = `${codeNumber}`;
+    }
+    return codeText;
+  }
   
 }
 

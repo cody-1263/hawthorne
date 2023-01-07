@@ -22,7 +22,7 @@ function onInnerItemClicked(ud : DestinyUserDescriptor) {
   
   <!-- <p> {{ caption }} </p> -->
   
-  <div v-for="userItem in userList">
+  <div v-for="userItem in userList" style="padding: 0rem 0.5rem;">
     <UserListItem :userDescriptor="userItem"
                   :shortUserName="userItem.displayName" 
                   :fullUserName="userItem.bungieGlobalDisplayName" 

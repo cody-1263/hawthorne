@@ -46,12 +46,18 @@ if (props.userDescriptor?.characterDescriptors?.length > 0) {
   
 <button v-on:click="onButtonClick">
   <div class="wrap">
-    <p class="caption1">{{ fullUserName }}</p>
-    <p class="caption2">{{ userDescriptor.clanDescriptor?.name }}</p>
-    <p class="caption3">{{ activeTextRef }}</p>
-    <img v-if="iconUrl1 != null" :src="iconUrl1" class="icon" style="grid-area: icon3"/>
-    <img v-if="iconUrl2 != null" :src="iconUrl2" class="icon" style="grid-area: icon2"/>
-    <img v-if="iconUrl3 != null" :src="iconUrl3" class="icon" style="grid-area: icon1"/>
+    <img :src="userDescriptor.iconPath" class="icon"/>
+    <div class="captions-div">
+      <div class="captions-line1">
+        <p class="caption-name">{{ userDescriptor.displayName }}</p>
+        <p class="caption-hash">#</p>
+        <p class="caption-code">{{ userDescriptor.nameCode }}</p>
+        <p class="caption-clan">{{ userDescriptor.clanDescriptor?.name }}</p>
+      </div>
+      <div class="captions-line2">
+        <p class="caption-lastactive">last active {{ activeTextRef }}</p>
+      </div>
+    </div>
   </div>
 </button>
 
@@ -70,23 +76,22 @@ button {
   width: 100%;
 }
 button:hover {
-  background: #534;
+  background: #fff1;
 }
 button:active {
-  background: #765;
+  background: #fff2;
 }
 
 .wrap {
   display: grid;
   grid-template-areas: 
-  "icon1 icon2 icon3 caption1"
-  "icon1 icon2 icon3 caption2"
-  "icon1 icon2 icon3 caption3";
-  grid-template-columns: 3rem 3rem 3rem 1fr;
-  grid-template-rows: 1.5rem 1.5rem 1.5rem;
+  "icon captions";
+  grid-template-columns: 3rem 1fr;
+  height: 4rem;
 }
 
 .icon {
+  grid-area: icon;
   width: 2rem;
   height: 2rem;
   margin: auto;
@@ -94,19 +99,55 @@ button:active {
   border: 1px solid black;
 }
 
-.caption1 {
-  grid-area: caption1;
-  color: #fff;
+.captions-div {
+  grid-area: captions;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
 }
 
-.caption2 {
-  grid-area: caption2;
-  color: #aaa;
+.captions-line1 {
+  grid-row: 1;
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+  overflow: hidden;
 }
 
-.caption3 {
-  grid-area: caption3;
-  color: #aaa;
+.captions-line2 {
+  grid-row: 2;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: auto;
+}
+
+.caption-name {
+  opacity: 1;
+}
+
+
+.caption-hash {
+  margin-left: 0.2rem;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  color: #479ce4cc;
+  
+}
+.caption-code {
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  color: #479ce4cc;
+}
+
+.caption-clan {
+  margin-left: 0.5rem;
+  opacity: 0.2;
+  white-space: nowrap
+}
+
+.caption-lastactive {
+  font-size: 0.8rem;
+  line-height: 1.3rem;
+  opacity: 0.5;
 }
 
 </style>

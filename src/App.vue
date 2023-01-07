@@ -37,6 +37,8 @@ function onInnerItemClicked(ud : DestinyUserDescriptor) {
 .main {
   display: grid;
   grid-template-columns: 20rem 1fr;
+  grid-template-rows: 100vh;
+  grid-gap: 2rem;
   margin-right: 2rem;
 }
 

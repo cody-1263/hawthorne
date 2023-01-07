@@ -53,6 +53,7 @@ function onInnerItemClicked(ud : DestinyUserDescriptor) {
 
 <template>
 
+<div class="wrap">
   <div style="width: 100%">
     <div class="app-logo"> 
       <img style="width: 100%; height: 100%" src="@/assets/ht-logo-transp.png"/>
@@ -67,10 +68,13 @@ function onInnerItemClicked(ud : DestinyUserDescriptor) {
   
   <div style="height: 1rem;"></div>
   
-  <div class="my-div">
+  <div class="my-div" style="overflow: scroll;">
     <UserListPanel v-if="loadingIndicator == false" :userList="dataListRef" @item-clicked="onInnerItemClicked"/>
     <LoadingIndicator v-else class="loading-indicator"/>
   </div>
+</div>
+
+  
   
 </template>
 
@@ -78,6 +82,12 @@ function onInnerItemClicked(ud : DestinyUserDescriptor) {
 
 
 <style scoped>
+
+  .wrap {
+    display: grid;
+    grid-template-rows: auto auto auto 1fr;
+    height: 100%;
+  }
 
 
   .app-logo {
@@ -98,7 +108,13 @@ function onInnerItemClicked(ud : DestinyUserDescriptor) {
   
 
 
-  .my-div {background: transparent;}
+  .my-div {
+    background: transparent;
+    scrollbar-width: none;
+  }
+  .my-div::-webkit-scrollbar { 
+    display: none;
+  }
   
   .searchBar {  
     width: 90%;
