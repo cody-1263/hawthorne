@@ -1,7 +1,11 @@
 
 
 <script setup lang="ts">
+import { ref, watch } from 'vue';
 import type { DestinyUserDescriptor } from '@/model/DestinyUserDescriptor';
+import { getTimeAgoText } from '@/model/Utils';
+
+let activeTextRef = ref('');
 
 const props = defineProps<{
   userDescriptor: DestinyUserDescriptor,
@@ -22,6 +26,18 @@ function onButtonClick(event : MouseEvent) {
 }
 
 
+
+
+if (props.userDescriptor?.characterDescriptors?.length > 0) {
+  let dt = new Date(0);
+  for (let cd of props.userDescriptor.characterDescriptors) {
+    if (cd.dateLastPlayed != null && cd.dateLastPlayed.getTime() > dt.getTime())
+      dt = cd.dateLastPlayed;
+  }
+  activeTextRef.value = getTimeAgoText(dt);
+}
+
+
 </script>
 
 
@@ -32,6 +48,7 @@ function onButtonClick(event : MouseEvent) {
   <div class="wrap">
     <p class="caption1">{{ fullUserName }}</p>
     <p class="caption2">{{ userDescriptor.clanDescriptor?.name }}</p>
+    <p class="caption3">{{ activeTextRef }}</p>
     <img v-if="iconUrl1 != null" :src="iconUrl1" class="icon" style="grid-area: icon3"/>
     <img v-if="iconUrl2 != null" :src="iconUrl2" class="icon" style="grid-area: icon2"/>
     <img v-if="iconUrl3 != null" :src="iconUrl3" class="icon" style="grid-area: icon1"/>
@@ -63,9 +80,10 @@ button:active {
   display: grid;
   grid-template-areas: 
   "icon1 icon2 icon3 caption1"
-  "icon1 icon2 icon3 caption2";
+  "icon1 icon2 icon3 caption2"
+  "icon1 icon2 icon3 caption3";
   grid-template-columns: 3rem 3rem 3rem 1fr;
-  grid-template-rows: 1.5rem 1.5rem;
+  grid-template-rows: 1.5rem 1.5rem 1.5rem;
 }
 
 .icon {
@@ -83,6 +101,11 @@ button:active {
 
 .caption2 {
   grid-area: caption2;
+  color: #aaa;
+}
+
+.caption3 {
+  grid-area: caption3;
   color: #aaa;
 }
 

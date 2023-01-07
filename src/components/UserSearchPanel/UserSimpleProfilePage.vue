@@ -30,8 +30,8 @@ let legendRef = ref<string[]>([ '12am', '2am', '4am','6am','8am','10am','12pm','
 function onReloadButtonClick() {
   if (props.userDescriptor != null) {
     
-    let ds = new UserDataProvider();
-    ds.getGroupForMember(props.userDescriptor);
+    // let ds = new UserDataProvider();
+    // ds.getGroupForMember(props.userDescriptor);
     
     
     let udp = new ActivityCalculator();

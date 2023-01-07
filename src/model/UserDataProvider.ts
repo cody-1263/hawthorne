@@ -160,7 +160,7 @@ export default class UserDataProvider {
         
         let charDescriptor = new DestinyCharacterDescriptor();
         charDescriptor.characterId = charJson.characterId;
-        charDescriptor.dateLastPlayed = charJson.dateLastPlayed;
+        charDescriptor.dateLastPlayed = new Date(charJson.dateLastPlayed);
         charDescriptor.minutesPlayedTotal = charJson.minutesPlayedTotal;
         charDescriptor.light = charJson.light;
         charDescriptor.emblemPath = 'https://www.bungie.net' + charJson.emblemPath;
