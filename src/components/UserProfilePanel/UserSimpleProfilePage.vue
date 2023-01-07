@@ -2,6 +2,7 @@
 
 <script setup lang="ts">
 import { ref, watch, computed  } from 'vue';
+import GeneralInfoPanel from '@/components/UserProfilePanel/GeneralInfoPanel.vue';
 import type { DestinyUserDescriptor } from '@/model/DestinyUserDescriptor';
 import type { ActivityDensityTimeline } from '@/model/ActivityDensityTimeline';
 import UserDataProvider from '@/model/UserDataProvider';
@@ -50,7 +51,7 @@ function onReloadButtonClick() {
 <template>
   
 <div class="wrap">
-  <div v-if="userDescriptor != null">
+  <!-- <div v-if="userDescriptor != null">
     
     <div class="usertitle">
       <div style="font-weight: 700;">{{ userDescriptor.displayName }}</div>
@@ -72,11 +73,13 @@ function onReloadButtonClick() {
   </div>
   <div v-else>
     <p style="margin: auto; text-align: center;">Select user</p>
-  </div>
+  </div> -->
+  
+  <GeneralInfoPanel />
   
   
   <!-- lower part -->
-  <button id="counter" type="button" @click="onReloadButtonClick" style="margin-top:40rem">Reload activity</button>
+  <button id="counter" type="button" @click="onReloadButtonClick" style="margin-top:8rem">Reload activity</button>
   
   <div v-if="timelinesRef != null" v-for="tl in timelinesRef">
     <div style="margin-top: 1rem;">{{tl.name}}</div>

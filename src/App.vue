@@ -1,15 +1,20 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { ref, watch, provide } from 'vue';
+import type { Ref } from 'vue';
+import { selectedUsedDescriptorKey } from '@/keys';
 import SearchPanel from './components/SearchPanel/SearchPanel.vue';
 import UserSimpleProfilePage from './components/UserProfilePanel/UserSimpleProfilePage.vue';
 import type { DestinyUserDescriptor, DestinyCharacterDescriptor } from '@/model/DestinyUserDescriptor';
 
 
 
-const selectedUserDescriptor = ref<DestinyUserDescriptor|null>(null);
+const selectedUserDescriptorRef = ref<DestinyUserDescriptor|null>(null);
+
+
+provide(selectedUsedDescriptorKey, selectedUserDescriptorRef);
 
 function onInnerItemClicked(ud : DestinyUserDescriptor) {
-  selectedUserDescriptor.value = ud;
+  selectedUserDescriptorRef.value = ud;
 }
 
 
@@ -24,7 +29,7 @@ function onInnerItemClicked(ud : DestinyUserDescriptor) {
     <SearchPanel @item-clicked="onInnerItemClicked" />
   </div>
   <div>
-    <UserSimpleProfilePage :user-descriptor="selectedUserDescriptor" />
+    <UserSimpleProfilePage :user-descriptor="selectedUserDescriptorRef" />
   </div>
 </div>
 </template>
