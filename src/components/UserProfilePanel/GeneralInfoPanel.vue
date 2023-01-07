@@ -1,13 +1,8 @@
 
 
 <script setup lang="ts">
-import { ref, watch, inject  } from 'vue';
-import type { Ref } from 'vue';
+import { inject  } from 'vue';
 import { selectedUsedDescriptorKey } from '@/keys';
-import type { DestinyUserDescriptor } from '@/model/DestinyUserDescriptor';
-import type { ActivityDensityTimeline } from '@/model/ActivityDensityTimeline';
-import UserDataProvider from '@/model/UserDataProvider';
-import { ActivityCalculator } from  '@/model/ActivityCalculator';
 import { getTimeAgoText } from '@/model/Utils';
 
 const userDescriptorRef = inject(selectedUsedDescriptorKey)!;
@@ -17,7 +12,7 @@ const userDescriptorRef = inject(selectedUsedDescriptorKey)!;
 
 <template>
   
-<div class="wrap">
+<div class="gip-wrap">
   
   <div v-if="userDescriptorRef != null">
     
@@ -47,14 +42,14 @@ const userDescriptorRef = inject(selectedUsedDescriptorKey)!;
 
 <style scoped>
 
-.wrap {
+.gip-wrap {
   display: grid;
   grid-template-rows: 1fr;
   height: 100%;
   overflow: scroll;
   scrollbar-width: none;
 }
-.wrap::-webkit-scrollbar { 
+.gip-wrap::-webkit-scrollbar { 
   display: none;
 }
 
