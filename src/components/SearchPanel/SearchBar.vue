@@ -23,7 +23,10 @@ function onInputKeyPress(event : KeyboardEvent) {
 
 <template>
   
-  <input type="text" class="text-field" v-model="innerSearchTextRef" @keypress="onInputKeyPress"/>
+  <div>
+    <input type="text" class="text-field" v-model="innerSearchTextRef" @keypress="onInputKeyPress" style="width: 100%"/>
+  </div>
+  
   
   <!-- <div>{{ innerSearchTextRef }}</div> -->
   
@@ -39,6 +42,10 @@ function onInputKeyPress(event : KeyboardEvent) {
     border-radius: 0.3rem;
     min-height: 2rem;
     transition: border-color 0.25s;
+    font-family: 'Fira Sans';
+    font-size: 1rem;
+    font-weight: 400;
+    padding-left: 0.5rem;
   }
   .text-field:focus {
     outline: none;

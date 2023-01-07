@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
-import SearchPanel from './components/UserSearchPanel/SearchPanel.vue';
-import UserSimpleProfilePage from './components/UserSearchPanel/UserSimpleProfilePage.vue';
+import SearchPanel from './components/SearchPanel/SearchPanel.vue';
+import UserSimpleProfilePage from './components/UserProfilePanel/UserSimpleProfilePage.vue';
 import type { DestinyUserDescriptor, DestinyCharacterDescriptor } from '@/model/DestinyUserDescriptor';
 
 
