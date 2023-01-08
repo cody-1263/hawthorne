@@ -87,9 +87,6 @@ function onItemClick(e : MouseEvent, targetItem : SelectorItem) {
 .notselected:hover {
   background: #fff1;
 }
-.notselected:active {
-  background: #fff2;
-}
 
 
 </style>

@@ -50,9 +50,15 @@ function onSelectedFilterChanged(selectedFilter:string) {
 <div class="adp-wrap">
   
   <SectionSelector :string-items="filterCollection" @selected-string-item-changed="onSelectedFilterChanged" style="margin-top: 2rem;"/>
-  <h2>{{ selectedFilterRef }}</h2>
   
-  <!-- lower part -->
+  <!-- DEBUG: data report -->
+  <div style="display: block; padding: 0.5rem 1rem; opacity: 0.75; color: greenyellow; background: #112233;">
+    <h3>Data acquisition report</h3>
+    <div>Selected filter ---- {{ selectedFilterRef }}</div>
+    <div>Activity count ---- {{ 345 }}</div>
+    <div>Oldest activity ---- {{ (new Date()).toString() }}</div>
+  </div>
+  
   <button id="counter" type="button" style="margin-top: 2rem;" @click="onReloadButtonClick" >Reload activity</button>
   
   <div v-if="timelinesRef != null" v-for="tl in timelinesRef">
