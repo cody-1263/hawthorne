@@ -4,6 +4,7 @@
 import { ref, watch, inject  } from 'vue';
 import type { Ref } from 'vue';
 import { selectedUsedDescriptorKey } from '@/keys';
+import SectionSelector from '@/components/Common/SectionSelector.vue';
 import type { DestinyUserDescriptor } from '@/model/DestinyUserDescriptor';
 import type { ActivityDensityTimeline } from '@/model/ActivityDensityTimeline';
 import UserDataProvider from '@/model/UserDataProvider';
@@ -22,7 +23,8 @@ watch(userDescriptorRef, (newValue, oldValue) => {
 
 let timelinesRef = ref<ActivityDensityTimeline[] | null>(null);
 let legendRef = ref<string[]>([ '12am', '2am', '4am','6am','8am','10am','12pm','2pm','4pm','6pm','8pm','10pm','12am']);
-
+let filterCollection = [ 'YEAR', '3 MONTHS', 'MONTH' ];
+let selectedFilterRef = ref<string>('YEAR');
 
 // actions
 
@@ -35,6 +37,10 @@ function onReloadButtonClick() {
   }
 }
 
+function onSelectedFilterChanged(selectedFilter:string) {
+  selectedFilterRef.value = selectedFilter;
+}
+
 </script>
 
 
@@ -42,6 +48,9 @@ function onReloadButtonClick() {
 
 <template>
 <div class="adp-wrap">
+  
+  <SectionSelector :string-items="filterCollection" @selected-string-item-changed="onSelectedFilterChanged" style="margin-top: 2rem;"/>
+  <h2>{{ selectedFilterRef }}</h2>
   
   <!-- lower part -->
   <button id="counter" type="button" style="margin-top: 2rem;" @click="onReloadButtonClick" >Reload activity</button>

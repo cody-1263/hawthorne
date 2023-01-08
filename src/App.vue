@@ -28,7 +28,7 @@ function onInnerItemClicked(ud : DestinyUserDescriptor) {
   <div>
     <SearchPanel @item-clicked="onInnerItemClicked" />
   </div>
-  <div>
+  <div class="main-rightpane">
     <UserSimpleProfilePage :user-descriptor="selectedUserDescriptorRef" />
   </div>
 </div>
@@ -45,6 +45,10 @@ function onInnerItemClicked(ud : DestinyUserDescriptor) {
   grid-template-rows: 100vh;
   grid-gap: 2rem;
   margin-right: 2rem;
+}
+
+.main-rightpane {
+  max-width: 40rem;
 }
 
 </style>
