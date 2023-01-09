@@ -38,7 +38,7 @@ function onReloadButtonClick() {
     
     
     let udp = new ActivityCalculator();
-    udp.createDensityData(props.userDescriptor).then((data) =>  {
+    udp.createDensityData(props.userDescriptor, new Date(0)).then((data) =>  {
       timelinesRef.value = data; 
     });
   }
