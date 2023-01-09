@@ -27,6 +27,10 @@ export class ActivityDensityTimeline {
   /** Name of this timeline */
   name : string;
   
+  totalActivityCount : number;
+  minActivityDate : Date;
+  maxActivityDate : Date;
+  
   /**
    * Constructor of ActivityDensityTimeline objects
    * @param startDate Timeline start Date value
@@ -35,6 +39,10 @@ export class ActivityDensityTimeline {
     this.name = name;
     this._oneDayMode = oneDayMode;
     this._stepSize = 600 * 1000;
+    
+    this.totalActivityCount = 0;
+    this.minActivityDate = new Date(0);
+    this.maxActivityDate = new Date(0);
     
     if (this._oneDayMode) {
       this._timelineStartDate = new Date(1900, 0, 1, 0, 0, 0);

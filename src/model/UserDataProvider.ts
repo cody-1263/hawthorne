@@ -216,29 +216,46 @@ export default class UserDataProvider {
   
   
   
-  /**
-  * Gets activities list of given account
-  */
-  async getActivities (membershipType: string, destinyMembershipId: string, characterId: string) {
+  /** 
+   * Gets a list of activities for given profile identifiers and limited by minDate
+   * @param membershipType 
+   * @param destinyMembershipId 
+   * @param characterId 
+   * @param minDate date limit
+   * @returns */
+  async getActivities (membershipType: string, destinyMembershipId: string, characterIds: string[], minDate : Date) {
 
-    let endpoint = `/Destiny2/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/Activities/?count=249`;
+    let activitiesCollection = new Array<ActivityRawItem>();
     
-    let resultJson = await this.bungieGet(endpoint);
-    let activitiesJsonArray = resultJson.Response.activities;
-  
-    let items = new Array<ActivityRawItem>();
-    
-    for (const jsonItem of activitiesJsonArray) {
-      
-      let time = new Date(jsonItem.period).getTime();
-      let durationSeconds = jsonItem.values.activityDurationSeconds.basic.value;
-      let activityId = jsonItem.activityDetails.referenceId;
-      
-      let item = new ActivityRawItem(time, durationSeconds, activityId);
-      items.push(item);
+    for (let charId of characterIds) {
+      let continueDownload = true;
+      let endpoint = `/Destiny2/${membershipType}/Account/${destinyMembershipId}/Character/${charId}/Stats/Activities/`;
+      let pageSize = 249;
+      let pageIndex = 0;
+      while (continueDownload) {
+        
+        let q = `${endpoint}?count=${pageSize}&page=${pageIndex}`;
+        let resultJson = await this.bungieGet(q);
+        // console.log(JSON.stringify(resultJson));
+        let activitiesJsonArray = resultJson.Response.activities;
+        continueDownload = activitiesJsonArray.length == pageSize;
+          
+        for (const jsonItem of activitiesJsonArray) {
+          let period = new Date(jsonItem.period);
+          let time = period.getTime();
+          let durationSeconds = jsonItem.values.activityDurationSeconds.basic.value;
+          let activityId = jsonItem.activityDetails.referenceId;
+          let item = new ActivityRawItem(time, durationSeconds, activityId);
+          
+          if (period >= minDate) { activitiesCollection.push(item); }
+          else { continueDownload = false; }
+        }
+        
+        pageIndex++;
+      }
     }
     
-    return items;
+    return activitiesCollection;
   }
 
   

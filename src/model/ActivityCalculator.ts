@@ -11,19 +11,17 @@ import UserDataProvider, { ActivityRawItem } from '@/model/UserDataProvider';
 export class ActivityCalculator {
   
   
-  async createDensityData(userDescriptor : DestinyUserDescriptor) {
+  async createDensityData(userDescriptor : DestinyUserDescriptor, startDate : Date) {
     let membershipType = userDescriptor.membershipType;
 		let destinyMembershipId = userDescriptor.destinyMembershipId;
 		
     let dataProvider = new UserDataProvider();
-    let activitiesCollection = new Array<ActivityRawItem>();
-		for (let charDescriptor of userDescriptor.characterDescriptors) {
-      let charId = charDescriptor.characterId;
-      let activitiesBatch = await dataProvider.getActivities(membershipType, destinyMembershipId, charId);
-      activitiesCollection = activitiesCollection.concat(activitiesBatch);
-    }
-		
     
+    let charIds = new Array<string>();
+    for (let c of userDescriptor.characterDescriptors) charIds.push(c.characterId);
+    
+    let activitiesCollection = await dataProvider.getActivities(membershipType, destinyMembershipId, charIds, startDate);
+		
 		let densityObjects = this.calcActivityDensity(activitiesCollection);
     return densityObjects;
   }
@@ -47,6 +45,8 @@ export class ActivityCalculator {
     daysMap.set(5, new ActivityDensityTimeline(true, 'Friday'));
     daysMap.set(6, new ActivityDensityTimeline(true, 'Saturday'));
     let sumActivityTimeline = new ActivityDensityTimeline(true, "ALL DAYS");
+    sumActivityTimeline.minActivityDate = new Date();
+    sumActivityTimeline.maxActivityDate = new Date(0);
     
     for (let item of activityRawItems) {
       let dateStart = new Date(item.startTimeEpoch);
@@ -70,6 +70,15 @@ export class ActivityCalculator {
         
         sumActivityTimeline.increaseActivityCounters(dateStart, borderDate1);
         sumActivityTimeline.increaseActivityCounters(borderDate2, dateEnd);
+      }
+      
+      sumActivityTimeline.totalActivityCount++;
+      let activityDate = new Date(item.startTimeEpoch);
+      if (activityDate < sumActivityTimeline.minActivityDate) { 
+        sumActivityTimeline.minActivityDate = activityDate 
+      }
+      if (activityDate > sumActivityTimeline.maxActivityDate) { 
+        sumActivityTimeline.maxActivityDate = activityDate 
       }
     }
     
