@@ -2,10 +2,10 @@
 
 <script setup lang="ts">
 import { inject  } from 'vue';
-import { selectedUsedDescriptorKey } from '@/keys';
+import { htKeys } from '@/services/HtKeys';
 import { getTimeAgoText } from '@/model/Utils';
 
-const userDescriptorRef = inject(selectedUsedDescriptorKey)!;
+const userDescriptorRef = inject(htKeys.selectedUsedDescriptorKey)!;
 
 </script>
 

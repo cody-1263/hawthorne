@@ -3,7 +3,7 @@
 <script setup lang="ts">
 import { ref, watch, inject  } from 'vue';
 import type { Ref } from 'vue';
-import { selectedUsedDescriptorKey } from '@/keys';
+import { htKeys } from '@/services/HtKeys';
 import SectionSelector from '@/components/Common/SectionSelector.vue';
 import LoadingIndicator from '@/components/Common/LoadingIndicator.vue';
 import type { DestinyUserDescriptor } from '@/model/DestinyUserDescriptor';
@@ -12,7 +12,7 @@ import UserDataProvider from '@/model/UserDataProvider';
 import { ActivityCalculator } from  '@/model/ActivityCalculator';
 import { getTimeAgoText } from '@/model/Utils';
 
-const userDescriptorRef = inject(selectedUsedDescriptorKey)!;
+const userDescriptorRef = inject(htKeys.selectedUsedDescriptorKey)!;
 
 // watch
 

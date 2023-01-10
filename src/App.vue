@@ -1,17 +1,19 @@
 <script setup lang="ts">
 import { ref, watch, provide } from 'vue';
 import type { Ref } from 'vue';
-import { selectedUsedDescriptorKey } from '@/keys';
+import { htKeys } from '@/services/HtKeys';
 import SearchPanel from './components/SearchPanel/SearchPanel.vue';
 import UserSimpleProfilePage from './components/UserProfilePanel/UserSimpleProfilePage.vue';
 import type { DestinyUserDescriptor, DestinyCharacterDescriptor } from '@/model/DestinyUserDescriptor';
+import { HtServiceContainer } from '@/services/HtServiceContainer';
+
 
 
 
 const selectedUserDescriptorRef = ref<DestinyUserDescriptor|null>(null);
 
 
-provide(selectedUsedDescriptorKey, selectedUserDescriptorRef);
+provide(htKeys.selectedUsedDescriptorKey, selectedUserDescriptorRef);
 
 function onInnerItemClicked(ud : DestinyUserDescriptor) {
   selectedUserDescriptorRef.value = ud;
