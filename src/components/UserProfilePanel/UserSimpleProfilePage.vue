@@ -3,6 +3,7 @@
 <script setup lang="ts">
 import GeneralInfoPanel from '@/components/UserProfilePanel/GeneralInfoPanel.vue';
 import ActivityDensityPanel from '@/components/UserProfilePanel/ActivityDensityPanel.vue';
+import DomainPanel from './DomainPanel.vue';
 
 
 
@@ -15,6 +16,7 @@ import ActivityDensityPanel from '@/components/UserProfilePanel/ActivityDensityP
   
 <div class="uspp-scroller">
   <div class="uspp-layout">
+    <DomainPanel />
     <GeneralInfoPanel />
     <ActivityDensityPanel />
   </div>
@@ -38,7 +40,7 @@ import ActivityDensityPanel from '@/components/UserProfilePanel/ActivityDensityP
 
 .uspp-layout {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto 1fr;
 }
 
 

@@ -100,6 +100,7 @@ export class BungieNetProvider {
         userProfile.displayName = name;
         userProfile.nameCode = code;
         userProfile.bungieGlobalDisplayName = `${name}#${code}`;
+        domain.addDestinyUser(userProfile);
       }
 
       await this.addDestinyCharactersData(userProfile, domain, mid, mtype);

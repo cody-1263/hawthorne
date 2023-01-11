@@ -23,7 +23,7 @@ const bnetProvider = serviceContainer.bungieNetProvider;
 watch(userDescriptorRef, (newValue, oldValue) => {
   timelinesRef.value = null;
   
-  debug_infoRef.value = 'Downloaded clans: ' + domain._clanProfilesMap.values.length;
+  debug_infoRef.value = 'Downloaded clans: ' + domain._clanProfilesMap.size;
 });
 
 // refs
