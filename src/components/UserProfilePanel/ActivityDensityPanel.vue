@@ -14,10 +14,16 @@ import { getTimeAgoText } from '@/model/Utils';
 
 const userDescriptorRef = inject(htKeys.selectedUsedDescriptorKey)!;
 
+const serviceContainer = inject(htKeys.htServiceContainerKey)!;
+const domain = serviceContainer.domain;
+const bnetProvider = serviceContainer.bungieNetProvider;
+
 // watch
 
 watch(userDescriptorRef, (newValue, oldValue) => {
   timelinesRef.value = null;
+  
+  debug_infoRef.value = 'Downloaded clans: ' + domain._clanProfilesMap.values.length;
 });
 
 // refs
@@ -42,6 +48,8 @@ let debug_activityCountRef = ref(0);
 let debug_activityMinDateRef = ref(new Date(0));
 let debug_activityMaxDateRef = ref(new Date(0));
 
+let debug_infoRef = ref('');
+
 // actions
 
 function onReloadButtonClick() {
@@ -49,15 +57,15 @@ function onReloadButtonClick() {
     timelinesRef.value = new Array<ActivityDensityTimeline>(); 
     isLoadingStateRef.value = true;
     let udp = new ActivityCalculator();
-    udp.createDensityData(userDescriptorRef.value, selectedStartDateRef.value).then((data) =>  {
-      timelinesRef.value = data; 
+    // udp.createDensityData(userDescriptorRef.value, selectedStartDateRef.value).then((data) =>  {
+    //   timelinesRef.value = data; 
       
-      debug_activityCountRef.value = data[0].totalActivityCount;
-      debug_activityMaxDateRef.value = data[0].maxActivityDate;
-      debug_activityMinDateRef.value = data[0].minActivityDate;
+    //   debug_activityCountRef.value = data[0].totalActivityCount;
+    //   debug_activityMaxDateRef.value = data[0].maxActivityDate;
+    //   debug_activityMinDateRef.value = data[0].minActivityDate;
       
-      isLoadingStateRef.value = false;
-    });
+    //   isLoadingStateRef.value = false;
+    // });
   }
 }
 
@@ -86,11 +94,15 @@ function onSelectedFilterChanged(selectedFilter:string) {
   <!-- DEBUG: data report -->
   <div style="display: block; padding: 0.5rem 1rem; opacity: 0.75; color: greenyellow; background: #11223300; margin-top: 2rem;">
     <h3>[DEBUG DATA] // Data acquisition report</h3>
+    <div>//</div>
+    <div>{{ debug_infoRef }}</div>
+    <div>//</div>
     <div>Selected filter ---- {{ selectedFilterRef }}</div>
     <div>Selected start date ---- {{ selectedStartDateRef }}</div>
     <div>Activity count ---- {{ debug_activityCountRef }}</div>
     <div>Oldest activity ---- {{ debug_activityMinDateRef }}</div>
     <div>Newest activity ---- {{ debug_activityMaxDateRef }}</div>
+    
   </div>
   
   <button id="counter" type="button" style="margin-top: 2rem;" @click="onReloadButtonClick" >Reload activity</button>

@@ -1,9 +1,10 @@
+import type { DestinyUserProfile } from "./ProfileDataItems";
 
 
 
 
 /** basic activity history entry */
-export class ActivityRawItem {
+export class ActivityItem {
   
   /** start datetime */
   startDate : Date;
@@ -26,6 +27,9 @@ export class ActivityRawItem {
   /** all relevant modes */
   modes : number[];
   
+  /** all known bungieNetMembershipId values in this activity */
+  players : number[];
+  
   
   
   
@@ -38,5 +42,6 @@ export class ActivityRawItem {
     this.instanceId = '-1';
     this.mode = -1;
     this.modes = new Array<number>();
+    this.players = new Array<number>();
   }
 }

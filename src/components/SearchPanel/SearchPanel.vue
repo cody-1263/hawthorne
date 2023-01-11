@@ -2,37 +2,41 @@
 
 <script setup lang="ts">
 
-import { ref, watch } from 'vue';
-
+import { inject, ref, watch } from 'vue';
+import { htKeys } from '@/services/HtKeys';
+import type { DestinyUserProfile } from '@/domain/ProfileDataItems';
 import UserListPanel from './UserListPanel.vue';
 import SearchBar from './SearchBar.vue';
 import LoadingIndicator from '../Common/LoadingIndicator.vue';
-import UserDataProvider from '@/model/UserDataProvider';
-import type { DestinyUserDescriptor } from '@/model/DestinyUserDescriptor';
+
+
+const serviceContainer = inject(htKeys.htServiceContainerKey)!;
+const domain = serviceContainer.domain;
+const bnetProvider = serviceContainer.bungieNetProvider;
 
 const emit = defineEmits<{
-  (e: 'itemClicked', item: DestinyUserDescriptor): void
+  (e: 'itemClicked', item: DestinyUserProfile): void
 }>();
-
-const dataProvider = new UserDataProvider();
-const data = new Array<DestinyUserDescriptor>(); // dataProvider.GetUsersTest();
 
 const loadingIndicator = ref(false);
 const searchTextRef = ref('');
-const dataListRef = ref();
-dataListRef.value = data;
+const dataListRef = ref(new Array<DestinyUserProfile>());
 
 /** calling this when searchText updates and we have to download new user list */
 watch(searchTextRef, async (newSearchText, oldSearchText) => {
   loadingIndicator.value = true;
+  
   if (newSearchText.includes('#')) {
-    let userItem = await dataProvider.searchDestinyPlayerByBungieName(newSearchText);
-    dataListRef.value = [ userItem ];
+    let v = await bnetProvider.searchDestinyPlayerByBungieName(newSearchText, domain);
+    if (v != null) dataListRef.value = [v];
   }
   else {
-    let userCollection = await dataProvider.searchForUsers(newSearchText);
-    dataListRef.value = userCollection;
+    let searchResultCollection = await bnetProvider.searchForUsers(newSearchText, domain);
+    dataListRef.value = searchResultCollection;
   }
+  
+  
+  
   loadingIndicator.value = false;
 });
 
@@ -42,7 +46,7 @@ function onSearchTextChanged(newSearchText : string) {
 }
 
 /** emitting selected items up to parent */
-function onInnerItemClicked(ud : DestinyUserDescriptor) {
+function onInnerItemClicked(ud : DestinyUserProfile) {
   emit("itemClicked", ud);
 }
 

@@ -1,4 +1,5 @@
-import type { DestinyUserProfile, DestinyClanProfile, DestinyCharacterProfile } from "./ProfileDataItems";
+import type { DestinyUserProfile, DestinyClanProfile, DestinyCharacterProfile } from './ProfileDataItems';
+import type { ActivityItem } from './ActivityDataItems';
 
 
 
@@ -9,6 +10,8 @@ export class Domain {
   _userProfilesMap = new Map<string, DestinyUserProfile>();
   
   _clanProfilesMap = new Map<string, DestinyClanProfile>();
+  
+  _activitiesMap = new Map<string, ActivityItem>();
   
   
   
@@ -48,15 +51,33 @@ export class Domain {
   }
   
   
+  /** Get activity item, if it was saved in domain */
+  getActivity(instanceId:string) : ActivityItem|null {
+    
+    if (this._activitiesMap.has(instanceId)) {
+      return this._activitiesMap.get(instanceId)!;
+    }
+    else {
+      return null;
+    }
+    
+  }
+  
+  
   /** Add destiny user */
   addDestinyUser(user:DestinyUserProfile) {
-    this._userProfilesMap.set(user.destinyMembershipId, user);
+    this._userProfilesMap.set(user.bungieNetMembershipId, user);
   }
   
   
   /** Add destiny clan */
   addDestinyClan(clan:DestinyClanProfile) {
     this._clanProfilesMap.set(clan.groupId, clan);
+  }
+  
+  /** Add activity item */
+  addActivity(activity:ActivityItem) {
+    this._activitiesMap.set(activity.instanceId, activity);
   }
   
 }

@@ -1,7 +1,7 @@
 import type { InjectionKey } from 'vue';
-import type { DestinyUserDescriptor } from '@/model/DestinyUserDescriptor';
 import type { Ref } from 'vue';
 import type { HtServiceContainer } from './HtServiceContainer';
+import type { DestinyUserProfile } from '@/domain/ProfileDataItems';
 
 
 
@@ -12,7 +12,7 @@ class HtKeys {
   htServiceContainerKey = Symbol() as InjectionKey<HtServiceContainer>;
   
    /** Selected user descriptor key */
-  selectedUsedDescriptorKey = Symbol() as InjectionKey<Ref<DestinyUserDescriptor|null>>;
+  selectedUsedDescriptorKey = Symbol() as InjectionKey<Ref<DestinyUserProfile|null>>;
   
 }
 

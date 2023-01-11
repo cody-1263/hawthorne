@@ -2,13 +2,13 @@
 
 <script setup lang="ts">
 import { ref, watch } from 'vue';
-import type { DestinyUserDescriptor } from '@/model/DestinyUserDescriptor';
+import type { DestinyUserProfile } from '@/domain/ProfileDataItems';
 import { getTimeAgoText } from '@/model/Utils';
 
 let activeTextRef = ref('');
 
 const props = defineProps<{
-  userDescriptor: DestinyUserDescriptor,
+  userDescriptor: DestinyUserProfile,
   shortUserName: string,
   fullUserName: string,
   iconUrl1: string | undefined,
@@ -17,7 +17,7 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-  (e: 'itemClicked', item: DestinyUserDescriptor): void
+  (e: 'itemClicked', item: DestinyUserProfile): void
 }>();
 
 
