@@ -7,21 +7,26 @@ import { SelectorItem } from './SectionSelectorClasses';
 
 const props = defineProps<{
   stringItems: string[],
+  initialIndex: number,
 }>();
 
 const emit = defineEmits<{
-  (e: 'selectedStringItemChanged', stringItem: string, selectedIndex: number): void
+  (e: 'selectedStringItemChanged', stringItem: string, selectedIndex: number): void,
 }>();
 
 const selectorItemsRef = ref<SelectorItem[]>(new Array<SelectorItem>());
 const selectedItemRef = ref<SelectorItem | null>(null);
 
-var arr = new Array<SelectorItem>();
+let arr = new Array<SelectorItem>();
+let i = 0;
 for (let str of props.stringItems) {
   let item = new SelectorItem();
   item.stringValue = str;
   item.caption = str;
+  item.index = i;
+  if (i == props.initialIndex) item.isSelected = true;
   arr.push(item);
+  i++;
 }
 selectorItemsRef.value = arr;
 

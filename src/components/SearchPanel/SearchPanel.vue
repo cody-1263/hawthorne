@@ -4,7 +4,7 @@
 
 import { inject, ref, watch } from 'vue';
 import { htKeys } from '@/services/HtKeys';
-import { HtApplicationResearchObjectMode } from '@/services/HtServiceContainer';
+import { HtStudyMode } from '@/services/HtAppService';
 import type { DestinyUserProfile, DestinyClanProfile } from '@/domain/ProfileDataItems';
 import SearchBar from './SearchBar.vue';
 import SectionSelector from '../Common/SectionSelector.vue';
@@ -22,7 +22,8 @@ const appService = serviceContainer.htAppService;
 const appModeOptions = ['USERS', 'CLANS'];
 
 // refs
-const appResearchObjectMode = appService.selectedResearchObjectMode;
+const appStudyMode = appService.studyMode;
+const selectedUserRef = appService.selectedUserProfile;
 const selectedClanCollection = appService.selectedClanProfileCollection;
 
 const loadingIndicator = ref(false);
@@ -32,16 +33,16 @@ const userSearchResultsRef = ref(new Array<DestinyUserProfile>());
 const clanSearchResultsRef = ref(new Array<DestinyClanProfile>());
 
 // emits
-const emit = defineEmits<{
-  (e: 'itemClicked', item: DestinyUserProfile): void
-}>();
+// const emit = defineEmits<{
+//   (e: 'itemClicked', item: DestinyUserProfile): void
+// }>();
 
 /** calling this when searchText updates and we have to download new user list */
 watch(searchTextRef, async (newSearchText, oldSearchText) => {
   loadingIndicator.value = true;
   
   // opt.1. single user search
-  if (appResearchObjectMode.value == HtApplicationResearchObjectMode.SingleUser) {
+  if (appStudyMode.value == HtStudyMode.SingleUser) {
     if (newSearchText.includes('#')) {
       let v = await bnetProvider.searchDestinyPlayerByBungieName(newSearchText, domain);
       if (v != null) userSearchResultsRef.value = [v];
@@ -64,10 +65,10 @@ watch(searchTextRef, async (newSearchText, oldSearchText) => {
 /** calling this when user clicks USER/CLAN selector */
 function onSelectedModeChanged(stringItem: string, selectedIndex: number) {
   if (selectedIndex == 0) {
-    appResearchObjectMode.value = HtApplicationResearchObjectMode.SingleUser;
+    appStudyMode.value = HtStudyMode.SingleUser;
   }
   else if (selectedIndex == 1) {
-    appResearchObjectMode.value = HtApplicationResearchObjectMode.ClanCollection;
+    appStudyMode.value = HtStudyMode.ClanCollection;
   }
 }
 
@@ -77,8 +78,8 @@ function onSearchTextChanged(newSearchText : string) {
 }
 
 /** emitting selected items up to parent */
-function onInnerItemClicked(ud : DestinyUserProfile) {
-  emit("itemClicked", ud);
+function onUserItemClicked(userProfile : DestinyUserProfile) {
+  selectedUserRef.value = userProfile;
 }
 
 /** calling this when user clicks a clan item which adds it to selected clans collection */
@@ -126,13 +127,13 @@ function onClanItemClicked(clanItem: DestinyClanProfile) {
   <div class="my-div" style="overflow: scroll;">
     
     <!-- user search results -->
-    <div v-if="appResearchObjectMode == HtApplicationResearchObjectMode.SingleUser">
+    <div v-if="appStudyMode == HtStudyMode.SingleUser">
       <div v-for="userItem in userSearchResultsRef" style="padding: 0rem 0.5rem;">
-        <UserListItem :userDescriptor="userItem" @itemClicked="onInnerItemClicked"/>
+        <UserListItem :userDescriptor="userItem" @itemClicked="onUserItemClicked"/>
       </div>
     </div>
     <!-- clan search results -->
-    <div v-else-if="appResearchObjectMode == HtApplicationResearchObjectMode.ClanCollection">
+    <div v-else-if="appStudyMode == HtStudyMode.ClanCollection">
       <div v-for="clanItem in clanSearchResultsRef" style="padding: 0rem 0.5rem;">
         <ClanListItem :clanProfile="clanItem" @itemClicked="onClanItemClicked"/>
       </div>

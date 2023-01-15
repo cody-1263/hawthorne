@@ -35,8 +35,3 @@ export class HtServiceContainer {
 
 
 
-/** HT app research object: do we work with users or clans currently */
-export enum HtApplicationResearchObjectMode {
-  SingleUser,
-  ClanCollection,
-}
