@@ -1,0 +1,48 @@
+{
+  "Response": {
+    "results": [
+      {
+        "groupId": "3285991",
+        "name": "Seismic Juggernauts",
+        "groupType": 1,
+        "creationDate": "2018-09-02T00:39:21.753Z",
+        "about": "Please send applications through our website!\nseismicgaming.eu/join\n\nWe're a clan of mature gamers who value social interaction above all else. Personality with character and honor is more important to us than idiots. Our philosophy is to enjoy the experience of gaming, whether you're winning or losing. Seismic is an open and diverse clan with members from all over the world.\n\nSeismic is an organized clan with staff ranks throughout. We're looking for people who are willing to help us push Seismic to the next stage whether that's being a staff member or just a member. You're 100% valued in the clan whatever position you hold as at the end of the day we truly believe that you are what makes Seismic, Seismic.\n\nIf you've already been accepted then simply request to join and we will accept you.\nPlease also note that Discord voice activity is required every 2 weeks in the clan.",
+        "motto": "Drink coffee, be nice, shoot aliens!",
+        "memberCount": 73,
+        "locale": "en",
+        "membershipOption": 0,
+        "capabilities": 31,
+        "clanInfo": {
+          "clanCallsign": "SGJ",
+          "clanBannerData": {
+            "decalId": 4142223386,
+            "decalColorId": 3379387803,
+            "decalBackgroundColorId": 3585526349,
+            "gonfalonId": 1473910866,
+            "gonfalonColorId": 2157636321,
+            "gonfalonDetailId": 1647698444,
+            "gonfalonDetailColorId": 4128900497
+          }
+        },
+        "avatarPath": "/img/profile/avatars/group/defaultGroup.png",
+        "theme": "Group_Community1"
+      }
+    ],
+    "totalResults": 1,
+    "hasMore": false,
+    "query": {
+      "name": "Seismic Juggernauts",
+      "groupType": 1,
+      "creationDate": 0,
+      "sortBy": 0,
+      "itemsPerPage": 25,
+      "currentPage": 1
+    },
+    "useTotalResults": false
+  },
+  "ErrorCode": 1,
+  "ThrottleSeconds": 0,
+  "ErrorStatus": "Success",
+  "Message": "Ok",
+  "MessageData": {}
+} 

@@ -2,39 +2,22 @@
 
 <script setup lang="ts">
 import { ref, watch } from 'vue';
-import type { DestinyUserProfile } from '@/domain/ProfileDataItems';
+import type { DestinyClanProfile } from '@/domain/ProfileDataItems';
 import { getTimeAgoText } from '@/model/Utils';
 
 let activeTextRef = ref('');
 
 const props = defineProps<{
-  userDescriptor: DestinyUserProfile,
-  // shortUserName: string,
-  // fullUserName: string,
-  // iconUrl1: string | undefined,
-  // iconUrl2: string | undefined,
-  // iconUrl3: string | undefined,
+  clanProfile: DestinyClanProfile,
 }>();
 
 const emit = defineEmits<{
-  (e: 'itemClicked', item: DestinyUserProfile): void
+  (e: 'itemClicked', item: DestinyClanProfile): void
 }>();
 
 
-function onButtonClick(event : MouseEvent) {
-  emit('itemClicked', props.userDescriptor);
-}
-
-
-
-
-if (props.userDescriptor?.characterDescriptors?.length > 0) {
-  let dt = new Date(0);
-  for (let cd of props.userDescriptor.characterDescriptors) {
-    if (cd.dateLastPlayed != null && cd.dateLastPlayed.getTime() > dt.getTime())
-      dt = cd.dateLastPlayed;
-  }
-  activeTextRef.value = getTimeAgoText(dt);
+function onButtonClick(event: MouseEvent) {
+  emit('itemClicked', props.clanProfile);
 }
 
 
@@ -46,16 +29,16 @@ if (props.userDescriptor?.characterDescriptors?.length > 0) {
   
 <button v-on:click="onButtonClick">
   <div class="wrap">
-    <img :src="userDescriptor.iconPath" class="icon"/>
+    <!-- <img :src="userDescriptor.iconPath" class="icon"/> -->
     <div class="captions-div">
       <div class="captions-line1">
-        <p class="caption-name">{{ userDescriptor.displayName }}</p>
-        <p class="caption-hash">#</p>
-        <p class="caption-code">{{ userDescriptor.nameCode }}</p>
-        <p class="caption-clan">{{ userDescriptor.clanDescriptor?.name }}</p>
+        <p class="caption-name">{{ clanProfile.name }}</p>
+        <p class="caption-hash"></p>
+        <p class="caption-code"></p>
+        <p class="caption-clan"></p>
       </div>
       <div class="captions-line2">
-        <p class="caption-lastactive">last active {{ activeTextRef }}</p>
+        <p class="caption-lastactive">{{ clanProfile.groupId }} // {{ clanProfile.clanCallsign }}</p>
       </div>
     </div>
   </div>
@@ -84,8 +67,7 @@ button:active {
 
 .wrap {
   display: grid;
-  grid-template-areas: 
-  "icon captions";
+  grid-template-areas: "icon captions";
   grid-template-columns: 3rem 1fr;
   height: 4rem;
 }

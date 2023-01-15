@@ -10,7 +10,7 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-  (e: 'selectedStringItemChanged', stringItem: string): void
+  (e: 'selectedStringItemChanged', stringItem: string, selectedIndex: number): void
 }>();
 
 const selectorItemsRef = ref<SelectorItem[]>(new Array<SelectorItem>());
@@ -29,17 +29,23 @@ function onItemClick(e : MouseEvent, targetItem : SelectorItem) {
   
   if (targetItem == selectedItemRef.value)
     return;
+    
+  let selectedIndex = -1;
   
-  for (let item of selectorItemsRef.value) {
+  for (let i = 0; i < selectorItemsRef.value.length; i++) {
+    
+    let item = selectorItemsRef.value[i];
+    
     if (item != targetItem && item.isSelected == true) {
       item.isSelected = false;
     }
     if (item == targetItem && item.isSelected == false) {
       item.isSelected = true;
+      selectedIndex = i;
     }
   }
   
-  emit('selectedStringItemChanged', targetItem.stringValue);
+  emit('selectedStringItemChanged', targetItem.stringValue, selectedIndex);
 }
 
 </script>

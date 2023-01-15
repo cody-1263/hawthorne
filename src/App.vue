@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { ref, provide } from 'vue';
 import { htKeys } from '@/services/HtKeys';
+import { HtApplicationResearchObjectMode } from '@/services/HtServiceContainer'
 import SearchPanel from './components/SearchPanel/SearchPanel.vue';
+import ClanPage from './components/ClanProfilePanel/ClanPage.vue';
 import UserSimpleProfilePage from './components/UserProfilePanel/UserSimpleProfilePage.vue';
 import type { DestinyUserDescriptor } from '@/model/DestinyUserDescriptor';
 import { HtServiceContainer } from '@/services/HtServiceContainer';
@@ -13,6 +15,9 @@ provide(htKeys.selectedUsedDescriptorKey, selectedUserDescriptorRef);
 
 const serviceContainer = new HtServiceContainer();
 provide(htKeys.htServiceContainerKey, serviceContainer);
+
+
+const researchObjectModeRef = serviceContainer.htAppService.selectedResearchObjectMode;
 
 
 function onInnerItemClicked(ud : DestinyUserProfile) {
@@ -31,7 +36,8 @@ function onInnerItemClicked(ud : DestinyUserProfile) {
     <SearchPanel @item-clicked="onInnerItemClicked" />
   </div>
   <div class="main-rightpane">
-    <UserSimpleProfilePage :user-descriptor="selectedUserDescriptorRef" />
+    <UserSimpleProfilePage v-if="researchObjectModeRef == HtApplicationResearchObjectMode.SingleUser" :user-descriptor="selectedUserDescriptorRef" />
+    <ClanPage v-if="researchObjectModeRef == HtApplicationResearchObjectMode.ClanCollection"/>
   </div>
 </div>
 </template>

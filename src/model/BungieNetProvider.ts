@@ -115,6 +115,42 @@ export class BungieNetProvider {
   
   
   /**
+   * Search for clans with their names
+   * @param searchText text query
+   */
+  async searchForClans(searchText : string, domain : Domain) {
+    
+    let qText = `/GroupV2/Search/`;
+    let qParams = { name : searchText, groupType : 1 };
+    let qResult = await this.bungiePost(qText, qParams);
+    
+    //console.log(JSON.stringify(qResult));
+    
+    let resultCollection = new Array<DestinyClanProfile>();
+    
+    for (let jsonItem of qResult.Response.results) {
+      let groupId = jsonItem.groupId;
+      let groupName = jsonItem.name;
+      let groupCallsign = jsonItem.clanInfo.clanCallsign;
+      
+      let group = domain.getDestinyClan(groupId);
+      
+      if (group == null) {
+        group = new DestinyClanProfile();
+        group.groupId = groupId;
+        group.name = groupName;
+        group.clanCallsign = groupCallsign;
+        domain.addDestinyClan(group);
+      }
+      
+      resultCollection.push(group);
+    }
+    
+    return resultCollection;
+  }
+  
+  
+  /**
    * 
    * @param userProfile 
    */

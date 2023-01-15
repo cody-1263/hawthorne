@@ -4,41 +4,72 @@
 
 import { inject, ref, watch } from 'vue';
 import { htKeys } from '@/services/HtKeys';
-import type { DestinyUserProfile } from '@/domain/ProfileDataItems';
-import UserListPanel from './UserListPanel.vue';
+import { HtApplicationResearchObjectMode } from '@/services/HtServiceContainer';
+import type { DestinyUserProfile, DestinyClanProfile } from '@/domain/ProfileDataItems';
 import SearchBar from './SearchBar.vue';
+import SectionSelector from '../Common/SectionSelector.vue';
 import LoadingIndicator from '../Common/LoadingIndicator.vue';
+import UserListItem from './UserListItem.vue';
+import ClanListItem from './ClanListItem.vue';
 
-
+// services
 const serviceContainer = inject(htKeys.htServiceContainerKey)!;
 const domain = serviceContainer.domain;
 const bnetProvider = serviceContainer.bungieNetProvider;
+const appService = serviceContainer.htAppService;
 
-const emit = defineEmits<{
-  (e: 'itemClicked', item: DestinyUserProfile): void
-}>();
+// constants
+const appModeOptions = ['USERS', 'CLANS'];
+
+// refs
+const appResearchObjectMode = appService.selectedResearchObjectMode;
+const selectedClanCollection = appService.selectedClanProfileCollection;
 
 const loadingIndicator = ref(false);
 const searchTextRef = ref('');
-const dataListRef = ref(new Array<DestinyUserProfile>());
+
+const userSearchResultsRef = ref(new Array<DestinyUserProfile>());
+const clanSearchResultsRef = ref(new Array<DestinyClanProfile>());
+
+// emits
+const emit = defineEmits<{
+  (e: 'itemClicked', item: DestinyUserProfile): void
+}>();
 
 /** calling this when searchText updates and we have to download new user list */
 watch(searchTextRef, async (newSearchText, oldSearchText) => {
   loadingIndicator.value = true;
   
-  if (newSearchText.includes('#')) {
-    let v = await bnetProvider.searchDestinyPlayerByBungieName(newSearchText, domain);
-    if (v != null) dataListRef.value = [v];
+  // opt.1. single user search
+  if (appResearchObjectMode.value == HtApplicationResearchObjectMode.SingleUser) {
+    if (newSearchText.includes('#')) {
+      let v = await bnetProvider.searchDestinyPlayerByBungieName(newSearchText, domain);
+      if (v != null) userSearchResultsRef.value = [v];
+    }
+    else {
+      let searchResultCollection = await bnetProvider.searchForUsers(newSearchText, domain);
+      userSearchResultsRef.value = searchResultCollection;
+    }
   }
+  // opt.2. clan search
   else {
-    let searchResultCollection = await bnetProvider.searchForUsers(newSearchText, domain);
-    dataListRef.value = searchResultCollection;
+    let cc = await bnetProvider.searchForClans(newSearchText, domain);
+    console.log(cc);
+    clanSearchResultsRef.value = cc;
   }
-  
-  
-  
+
   loadingIndicator.value = false;
 });
+
+/** calling this when user clicks USER/CLAN selector */
+function onSelectedModeChanged(stringItem: string, selectedIndex: number) {
+  if (selectedIndex == 0) {
+    appResearchObjectMode.value = HtApplicationResearchObjectMode.SingleUser;
+  }
+  else if (selectedIndex == 1) {
+    appResearchObjectMode.value = HtApplicationResearchObjectMode.ClanCollection;
+  }
+}
 
 /** calling this when SearchBar's search text has been updated */
 function onSearchTextChanged(newSearchText : string) {
@@ -50,6 +81,18 @@ function onInnerItemClicked(ud : DestinyUserProfile) {
   emit("itemClicked", ud);
 }
 
+/** calling this when user clicks a clan item which adds it to selected clans collection */
+function onClanItemClicked(clanItem: DestinyClanProfile) {
+  let newClanSelection = new Array<DestinyClanProfile>();
+  for (let c of selectedClanCollection.value) {
+    if (c != clanItem) {
+      newClanSelection.push(c);
+    }
+  } 
+  newClanSelection.push(clanItem);
+  selectedClanCollection.value = newClanSelection;
+}
+
 </script>
 
 
@@ -58,6 +101,8 @@ function onInnerItemClicked(ud : DestinyUserProfile) {
 <template>
 
 <div class="wrap">
+  
+  <!-- logo -->
   <div style="width: 100%">
     <div class="app-logo"> 
       <img style="width: 100%; height: 100%" src="@/assets/ht-logo-transp.png"/>
@@ -65,16 +110,35 @@ function onInnerItemClicked(ud : DestinyUserProfile) {
     <div class="app-title">cody's HT tool</div>
   </div>
   
+  <!-- app mode selector: user/clan mode -->
+  <div style="margin-top: 3rem; margin-left: auto; margin-right: auto;">
+    <SectionSelector :string-items="appModeOptions" @selectedStringItemChanged="onSelectedModeChanged"/>
+  </div>
   
-  <div style="margin-top: 2rem; margin-left: 1rem; margin-right: 1rem;">
+  <!-- search text field -->
+  <div style="margin-top: 1rem; margin-left: 1rem; margin-right: 1rem;">
     <SearchBar class="searchBar" @searchTextUpdated="(newSearchText) => onSearchTextChanged(newSearchText)"/>
   </div>
   
   <div style="height: 1rem;"></div>
   
+  <!-- search results lists -->
   <div class="my-div" style="overflow: scroll;">
-    <UserListPanel v-if="loadingIndicator == false" :userList="dataListRef" @item-clicked="onInnerItemClicked"/>
-    <LoadingIndicator v-else class="loading-indicator"/>
+    
+    <!-- user search results -->
+    <div v-if="appResearchObjectMode == HtApplicationResearchObjectMode.SingleUser">
+      <div v-for="userItem in userSearchResultsRef" style="padding: 0rem 0.5rem;">
+        <UserListItem :userDescriptor="userItem" @itemClicked="onInnerItemClicked"/>
+      </div>
+    </div>
+    <!-- clan search results -->
+    <div v-else-if="appResearchObjectMode == HtApplicationResearchObjectMode.ClanCollection">
+      <div v-for="clanItem in clanSearchResultsRef" style="padding: 0rem 0.5rem;">
+        <ClanListItem :clanProfile="clanItem" @itemClicked="onClanItemClicked"/>
+      </div>
+    </div>
+    <!-- loading indicator -->
+    <LoadingIndicator v-if="loadingIndicator" class="loading-indicator"/>
   </div>
 </div>
 
@@ -89,7 +153,7 @@ function onInnerItemClicked(ud : DestinyUserProfile) {
 
   .wrap {
     display: grid;
-    grid-template-rows: auto auto auto 1fr;
+    grid-template-rows: auto auto auto auto 1fr;
     height: 100%;
   }
 
