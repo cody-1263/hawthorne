@@ -24,7 +24,7 @@ watch(userDescriptorRef, () => {
   text.push(`[DOMAIN] users (${domain._userProfilesMap.size})`);
   for (let c of domain._userProfilesMap) {
     let user = c[1];
-    text.push(`${user.bungieNetMembershipId} : ${user.bungieGlobalDisplayName}`);
+    text.push(`${user.bnetId} : ${user.bungieGlobalDisplayName}`);
   }
   dataText.value = text;
 });

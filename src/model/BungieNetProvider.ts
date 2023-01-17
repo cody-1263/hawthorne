@@ -1,6 +1,7 @@
 
 import { DestinyCharacterProfile, DestinyClanProfile, DestinyUserProfile } from "@/domain/ProfileDataItems";
 import type { Domain } from "@/domain/_Domain";
+import { ActivityItem } from "@/domain/ActivityDataItems";
 
 
 export class BungieNetProvider {
@@ -39,7 +40,7 @@ export class BungieNetProvider {
         let newProfileObject = new DestinyUserProfile();
         let name = item.bungieGlobalDisplayName;
         let code = this.codeNumberToText(item.bungieGlobalDisplayNameCode);
-        newProfileObject.bungieNetMembershipId = item.bungieNetMembershipId;
+        newProfileObject.bnetId = item.bungieNetMembershipId;
         newProfileObject.bungieGlobalDisplayName = `${name}#${code}`;
         newProfileObject.displayName = name;
         newProfileObject.nameCode = code;
@@ -96,7 +97,7 @@ export class BungieNetProvider {
         userProfile.iconPath = jsonObject.iconPath;
         let name = jsonObject.bungieGlobalDisplayName;
         let code = this.codeNumberToText(jsonObject.bungieGlobalDisplayNameCode);
-        userProfile.bungieNetMembershipId = bnetId;
+        userProfile.bnetId = bnetId;
         userProfile.displayName = name;
         userProfile.nameCode = code;
         userProfile.bungieGlobalDisplayName = `${name}#${code}`;
@@ -183,7 +184,7 @@ export class BungieNetProvider {
           charDescriptor.className = 'Warlock';
         else if (charDescriptor.classHash == '671679327')
           charDescriptor.className = 'Hunter';
-        userProfile.characterDescriptors.push(charDescriptor);
+        userProfile.characters.push(charDescriptor);
         
         if (charDescriptor.dateLastPlayed > mostRecentDate) {
           userProfile.iconPath = charDescriptor.emblemPath;
@@ -223,6 +224,112 @@ export class BungieNetProvider {
         domain.addDestinyClan(newClanObject);
       }
     }
+  }
+  
+  
+  
+  
+  /** Get list of clan members to use in further data analysis */
+  async getClanMembers(clanProfile: DestinyClanProfile, domain: Domain) {
+    
+    // console.log(`Loading clan: ${clanProfile.name} ...`);
+    
+    let users = new Array<DestinyUserProfile>();
+    let path = `/GroupV2/${clanProfile.groupId}/Members/`;
+    let jres = await this.bungieGet(path);
+    
+    let characterLoadingTasks = new Array<Promise<void>>();
+    
+    for (let juser of jres.Response.results) {
+      
+      // console.log(juser);
+      
+      let bnetId = juser.bungieNetUserInfo.membershipId;
+      let userProfile = domain.getDestinyUser(bnetId);
+      
+      if (userProfile == null) {
+        userProfile = new DestinyUserProfile();
+        userProfile.bnetId = juser.bungieNetUserInfo.membershipId;
+        userProfile.displayName = juser.bungieNetUserInfo.bungieGlobalDisplayName;
+        userProfile.nameCode = this.codeNumberToText(juser.bungieNetUserInfo.bungieGlobalDisplayNameCode);
+        userProfile.bungieGlobalDisplayName = `${userProfile.displayName}#${userProfile.nameCode}`;
+        userProfile.clanDescriptor = clanProfile;
+        
+        let memid = juser.destinyUserInfo.membershipId;
+        let memtype = juser.destinyUserInfo.membershipType;
+        let pr = this.addDestinyCharactersData(userProfile, domain, memid, memtype);
+        characterLoadingTasks.push(pr);
+        domain.addDestinyUser(userProfile);
+      }
+
+      users.push(userProfile);
+    }
+
+    await Promise.all(characterLoadingTasks);
+    
+    let allCharacters = new Array<DestinyCharacterProfile>();
+    for (let u of users) {
+      for (let c of u.characters) allCharacters.push(c);
+    }
+    
+    // console.log(`Loaded clan: ${clanProfile.name} | ${users.length} members | ${allCharacters.length} characters`);
+    
+    return users;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  /**  Gets a list of activities for given profile identifiers and limited by minDate */
+  async getActivities (characterProfiles: DestinyCharacterProfile[], minDate : Date) {
+
+    let activitiesCollection = new Array<ActivityItem>();
+    
+    for (let char of characterProfiles) {
+      
+      let memtype = char.membershipType;
+      let memid = char.destinyMembershipId;
+      let charid = char.characterId;
+      let continueDownload = true;
+      let endpoint = `/Destiny2/${memtype}/Account/${memid}/Character/${charid}/Stats/Activities/`;
+      let pageSize = 249;
+      let pageIndex = 0;
+      while (continueDownload) {
+        
+        let q = `${endpoint}?count=${pageSize}&page=${pageIndex}`;
+        
+        try {
+          let resultJson = await this.bungieGet(q);
+          
+          // console.log(JSON.stringify(resultJson));
+          let activitiesJsonArray = resultJson.Response.activities;
+          continueDownload = activitiesJsonArray.length == pageSize;
+            
+          for (const jsonItem of activitiesJsonArray) {
+            let item = new ActivityItem();
+            item.referenceId = jsonItem.activityDetails.referenceId;
+            item.startDate = new Date(jsonItem.period);
+            item.durationSeconds = jsonItem.values.activityDurationSeconds.basic.value;
+            
+            if (item.startDate >= minDate) { activitiesCollection.push(item); }
+            else { continueDownload = false; }
+          }
+          
+          pageIndex++;
+        }
+        catch (error) {
+          //console.log(error);
+          //continueDownload = false;
+          return activitiesCollection;
+        }
+      }
+    }
+    
+    return activitiesCollection;
   }
   
   

@@ -1,0 +1,2470 @@
+{
+  "Response": {
+    "results": [
+      {
+        "memberType": 2,
+        "isOnline": true,
+        "lastOnlineStatusChange": "1673905895",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Vokster",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018467432485",
+          "displayName": "Vokster",
+          "bungieGlobalDisplayName": "Vokster",
+          "bungieGlobalDisplayNameCode": 3292
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Vokster#3292",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "16587027",
+          "displayName": "Vokster",
+          "bungieGlobalDisplayName": "Vokster",
+          "bungieGlobalDisplayNameCode": 3292
+        },
+        "joinDate": "2022-10-31T21:11:44Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673366945",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Night_Strike",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018468231455",
+          "displayName": "Night_Strike",
+          "bungieGlobalDisplayName": "Night_Strike",
+          "bungieGlobalDisplayNameCode": 3659
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Night_Strike#3659",
+          "iconPath": "/img/profile/avatars/cc65.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "17247608",
+          "displayName": "Night_Strike",
+          "bungieGlobalDisplayName": "Night_Strike",
+          "bungieGlobalDisplayNameCode": 3659
+        },
+        "joinDate": "2022-02-13T12:33:21Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1671389350",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Baguette Queen",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018524342766",
+          "displayName": "Baguette Queen",
+          "bungieGlobalDisplayName": "Baguette Queen",
+          "bungieGlobalDisplayNameCode": 8121
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Baguette Queen#8121",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "30516714",
+          "displayName": "Baguette Queen",
+          "bungieGlobalDisplayName": "Baguette Queen",
+          "bungieGlobalDisplayNameCode": 8121
+        },
+        "joinDate": "2022-08-13T15:55:53Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673640520",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Holt850",
+          "LastSeenDisplayNameType": 2,
+          "iconPath": "/img/theme/bungienet/icons/psnLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            2
+          ],
+          "isPublic": false,
+          "membershipType": 2,
+          "membershipId": "4611686018464406780",
+          "displayName": "Holt850",
+          "bungieGlobalDisplayName": "Holt850",
+          "bungieGlobalDisplayNameCode": 7697
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Holt850#7697",
+          "iconPath": "/img/profile/avatars/cc54.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "14537848",
+          "displayName": "Holt850",
+          "bungieGlobalDisplayName": "Holt850",
+          "bungieGlobalDisplayNameCode": 7697
+        },
+        "joinDate": "2023-01-05T23:25:02Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673847292",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Quantum",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/xboxLiveLogo.png",
+          "crossSaveOverride": 1,
+          "applicableMembershipTypes": [
+            3,
+            1
+          ],
+          "isPublic": false,
+          "membershipType": 1,
+          "membershipId": "4611686018462453247",
+          "displayName": "Quantumchan",
+          "bungieGlobalDisplayName": "Quantum",
+          "bungieGlobalDisplayNameCode": 9776
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Quantum#9776",
+          "iconPath": "/img/profile/avatars/cc63.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "14279421",
+          "displayName": "Quantum",
+          "bungieGlobalDisplayName": "Quantum",
+          "bungieGlobalDisplayNameCode": 9776
+        },
+        "joinDate": "2022-12-14T19:23:38Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673823919",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Zearo",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 3,
+          "applicableMembershipTypes": [
+            1,
+            5,
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018467294568",
+          "displayName": "Zearo",
+          "bungieGlobalDisplayName": "Zearo",
+          "bungieGlobalDisplayNameCode": 3538
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Zearo#3538",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "8831102",
+          "displayName": "Zearo",
+          "bungieGlobalDisplayName": "Zearo",
+          "bungieGlobalDisplayNameCode": 3538
+        },
+        "joinDate": "2022-08-23T13:01:46Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673677982",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Cryptolanz",
+          "LastSeenDisplayNameType": 6,
+          "iconPath": "/img/theme/destiny/icons/icon_egs.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            6
+          ],
+          "isPublic": false,
+          "membershipType": 6,
+          "membershipId": "4611686018525702082",
+          "displayName": "Cryptolanz",
+          "bungieGlobalDisplayName": "Cryptolanz",
+          "bungieGlobalDisplayNameCode": 7330
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Cryptolanz#7330",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "30849888",
+          "displayName": "Cryptolanz",
+          "bungieGlobalDisplayName": "Cryptolanz",
+          "bungieGlobalDisplayNameCode": 7330
+        },
+        "joinDate": "2022-09-12T14:39:54Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673812538",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Renewal",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/xboxLiveLogo.png",
+          "crossSaveOverride": 1,
+          "applicableMembershipTypes": [
+            3,
+            1
+          ],
+          "isPublic": false,
+          "membershipType": 1,
+          "membershipId": "4611686018437723265",
+          "displayName": "Wesley7897",
+          "bungieGlobalDisplayName": "WesIOM",
+          "bungieGlobalDisplayNameCode": 5920
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "WesIOM#5920",
+          "iconPath": "/img/profile/avatars/bungie_day_15_42.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "8387791",
+          "displayName": "WesIOM",
+          "bungieGlobalDisplayName": "WesIOM",
+          "bungieGlobalDisplayNameCode": 5920
+        },
+        "joinDate": "2023-01-02T19:47:15Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1672320887",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "JEAN TABON",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 3,
+          "applicableMembershipTypes": [
+            2,
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018482851438",
+          "displayName": "JEAN TABON",
+          "bungieGlobalDisplayName": "Monkey D. Maxwell",
+          "bungieGlobalDisplayNameCode": 7333
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Monkey D. Maxwell#7333",
+          "iconPath": "/img/profile/avatars/cc00009.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "21146540",
+          "displayName": "Monkey D. Maxwell",
+          "bungieGlobalDisplayName": "Monkey D. Maxwell",
+          "bungieGlobalDisplayNameCode": 7333
+        },
+        "joinDate": "2022-08-15T16:35:12Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673903969",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Twisted Berk",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 3,
+          "applicableMembershipTypes": [
+            1,
+            2,
+            5,
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018485772569",
+          "displayName": "Twisted Berk",
+          "bungieGlobalDisplayName": "Twisted Berk",
+          "bungieGlobalDisplayNameCode": 5618
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Twisted Berk#5618",
+          "iconPath": "/img/profile/avatars/attention2.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "184142",
+          "displayName": "Twisted Berk",
+          "bungieGlobalDisplayName": "Twisted Berk",
+          "bungieGlobalDisplayNameCode": 5618
+        },
+        "joinDate": "2019-02-14T18:24:16Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1672964525",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "webbec1",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/psnLogo.png",
+          "crossSaveOverride": 2,
+          "applicableMembershipTypes": [
+            3,
+            2
+          ],
+          "isPublic": false,
+          "membershipType": 2,
+          "membershipId": "4611686018436615785",
+          "displayName": "webbec",
+          "bungieGlobalDisplayName": "webbec1",
+          "bungieGlobalDisplayNameCode": 1974
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "webbec1#1974",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "7897597",
+          "displayName": "webbec1",
+          "bungieGlobalDisplayName": "webbec1",
+          "bungieGlobalDisplayNameCode": 1974
+        },
+        "joinDate": "2022-09-19T19:02:42Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1658176001",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "NAP",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018484005519",
+          "displayName": "NAP",
+          "bungieGlobalDisplayName": "NAP",
+          "bungieGlobalDisplayNameCode": 7744
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "NAP#7744",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "19704163",
+          "displayName": "NAP",
+          "bungieGlobalDisplayName": "NAP",
+          "bungieGlobalDisplayNameCode": 7744
+        },
+        "joinDate": "2022-01-29T01:54:11Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1671590026",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "SG_DiVinE",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018473863340",
+          "displayName": "SG_DiVinE",
+          "bungieGlobalDisplayName": "SG_DiVinE",
+          "bungieGlobalDisplayNameCode": 5618
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "SG_DiVinE#5618",
+          "iconPath": "/img/profile/avatars/th_BN2Avs15.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "18129046",
+          "displayName": "SG_DiVinE",
+          "bungieGlobalDisplayName": "SG_DiVinE",
+          "bungieGlobalDisplayNameCode": 5618
+        },
+        "joinDate": "2022-08-06T15:22:09Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673901903",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "jack.nichane",
+          "LastSeenDisplayNameType": 6,
+          "iconPath": "/img/theme/destiny/icons/icon_egs.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            6
+          ],
+          "isPublic": false,
+          "membershipType": 6,
+          "membershipId": "4611686018524818253",
+          "displayName": "jack.nichane",
+          "bungieGlobalDisplayName": "jack.nichane",
+          "bungieGlobalDisplayNameCode": 4577
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "jack.nichane#4577",
+          "iconPath": "/img/profile/avatars/cc74.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "30644869",
+          "displayName": "jack.nichane",
+          "bungieGlobalDisplayName": "jack.nichane",
+          "bungieGlobalDisplayNameCode": 4577
+        },
+        "joinDate": "2023-01-11T18:55:43Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673838006",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Mr.badshovel",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 3,
+          "applicableMembershipTypes": [
+            1,
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018486458522",
+          "displayName": "Mr.badshovel",
+          "bungieGlobalDisplayName": "Mr.badshovel",
+          "bungieGlobalDisplayNameCode": 5431
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Mr.badshovel#5431",
+          "iconPath": "/img/profile/avatars/cc000013.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "3176489",
+          "displayName": "Mr.badshovel",
+          "bungieGlobalDisplayName": "Mr.badshovel",
+          "bungieGlobalDisplayNameCode": 5431
+        },
+        "joinDate": "2022-07-08T05:55:02Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673894195",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "SirGok420",
+          "LastSeenDisplayNameType": 2,
+          "iconPath": "/img/theme/bungienet/icons/psnLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            2
+          ],
+          "isPublic": false,
+          "membershipType": 2,
+          "membershipId": "4611686018469271197",
+          "displayName": "SirGok420",
+          "bungieGlobalDisplayName": "Benard",
+          "bungieGlobalDisplayNameCode": 555
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Benard#0555",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "16297159",
+          "displayName": "Benard",
+          "bungieGlobalDisplayName": "Benard",
+          "bungieGlobalDisplayNameCode": 555
+        },
+        "joinDate": "2022-12-08T17:21:26Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673903957",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Bert-91-91",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/psnLogo.png",
+          "crossSaveOverride": 2,
+          "applicableMembershipTypes": [
+            3,
+            2
+          ],
+          "isPublic": false,
+          "membershipType": 2,
+          "membershipId": "4611686018452947928",
+          "displayName": "Bert-91-91",
+          "bungieGlobalDisplayName": "Bert-91-91",
+          "bungieGlobalDisplayNameCode": 8199
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Bert-91-91#8199",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "11891292",
+          "displayName": "Bert-91-91",
+          "bungieGlobalDisplayName": "Bert-91-91",
+          "bungieGlobalDisplayNameCode": 8199
+        },
+        "joinDate": "2022-06-15T18:06:15Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673852921",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "August",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018491228134",
+          "displayName": "August",
+          "bungieGlobalDisplayName": "SweatyMan83",
+          "bungieGlobalDisplayNameCode": 4455
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "SweatyMan83#4455",
+          "iconPath": "/img/profile/avatars/cc00005.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "24421958",
+          "displayName": "SweatyMan83",
+          "bungieGlobalDisplayName": "SweatyMan83",
+          "bungieGlobalDisplayNameCode": 4455
+        },
+        "joinDate": "2023-01-06T06:30:20Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673812720",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Tokyo-3",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018502442429",
+          "displayName": "Tokyo-3",
+          "bungieGlobalDisplayName": "Tokyo-3",
+          "bungieGlobalDisplayNameCode": 4910
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Tokyo-3#4910",
+          "iconPath": "/img/profile/avatars/cc000013.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "25404276",
+          "displayName": "Tokyo-3",
+          "bungieGlobalDisplayName": "Tokyo-3",
+          "bungieGlobalDisplayNameCode": 4910
+        },
+        "joinDate": "2022-10-14T22:49:59Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1672265468",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "hmjj5000",
+          "LastSeenDisplayNameType": 1,
+          "iconPath": "/img/theme/bungienet/icons/xboxLiveLogo.png",
+          "crossSaveOverride": 1,
+          "applicableMembershipTypes": [
+            3,
+            1
+          ],
+          "isPublic": false,
+          "membershipType": 1,
+          "membershipId": "4611686018442153263",
+          "displayName": "hmjj5000",
+          "bungieGlobalDisplayName": "hmjj5000",
+          "bungieGlobalDisplayNameCode": 1565
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "hmjj5000#1565",
+          "iconPath": "/img/profile/avatars/cc000015.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "11125730",
+          "displayName": "hmjj5000",
+          "bungieGlobalDisplayName": "hmjj5000",
+          "bungieGlobalDisplayNameCode": 1565
+        },
+        "joinDate": "2022-10-06T20:28:08Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673590394",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Reck",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/psnLogo.png",
+          "crossSaveOverride": 2,
+          "applicableMembershipTypes": [
+            3,
+            6,
+            2
+          ],
+          "isPublic": false,
+          "membershipType": 2,
+          "membershipId": "4611686018429410117",
+          "displayName": "Rezzuri",
+          "bungieGlobalDisplayName": "Reck",
+          "bungieGlobalDisplayNameCode": 4608
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Reck#4608",
+          "iconPath": "/img/profile/avatars/cc25.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "5353781",
+          "displayName": "Reck",
+          "bungieGlobalDisplayName": "Reck",
+          "bungieGlobalDisplayNameCode": 4608
+        },
+        "joinDate": "2022-12-07T22:01:38Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673895773",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "CrispyBitz",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 3,
+          "applicableMembershipTypes": [
+            1,
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018511326900",
+          "displayName": "CrispyBitz",
+          "bungieGlobalDisplayName": "CrispyBitz",
+          "bungieGlobalDisplayNameCode": 7714
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "CrispyBitz#7714",
+          "iconPath": "/img/profile/avatars/cc53.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "23395913",
+          "displayName": "CrispyBitz",
+          "bungieGlobalDisplayName": "CrispyBitz",
+          "bungieGlobalDisplayNameCode": 7714
+        },
+        "joinDate": "2022-09-03T11:15:04Z"
+      },
+      {
+        "memberType": 5,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673903590",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Ziggybon",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018475586698",
+          "displayName": "Ziggybon",
+          "bungieGlobalDisplayName": "Ziggybon",
+          "bungieGlobalDisplayNameCode": 4907
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Ziggybon#4907",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "18189238",
+          "displayName": "Ziggybon",
+          "bungieGlobalDisplayName": "Ziggybon",
+          "bungieGlobalDisplayNameCode": 4907
+        },
+        "joinDate": "2022-06-26T19:02:44Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673905562",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "MadGuy",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018483043309",
+          "displayName": "MadGuy",
+          "bungieGlobalDisplayName": "MadGuy",
+          "bungieGlobalDisplayNameCode": 9806
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "MadGuy#9806",
+          "iconPath": "/img/profile/avatars/cc32.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "19398128",
+          "displayName": "MadGuy",
+          "bungieGlobalDisplayName": "MadGuy",
+          "bungieGlobalDisplayNameCode": 9806
+        },
+        "joinDate": "2021-12-22T19:40:17Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1670880667",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Orphene",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018470989054",
+          "displayName": "Orphene",
+          "bungieGlobalDisplayName": "Orphene",
+          "bungieGlobalDisplayNameCode": 3652
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Orphene#3652",
+          "iconPath": "/img/profile/avatars/odst_skull_silver.png",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "16786991",
+          "displayName": "Orphene",
+          "bungieGlobalDisplayName": "Orphene",
+          "bungieGlobalDisplayNameCode": 3652
+        },
+        "joinDate": "2021-05-12T17:21:46Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673644836",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Color_Me_Blue",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018497514046",
+          "displayName": "Color_Me_Blue",
+          "bungieGlobalDisplayName": "Color_Me_Blue",
+          "bungieGlobalDisplayNameCode": 9699
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Color_Me_Blue#9699",
+          "iconPath": "/img/profile/avatars/cc73.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "28688898",
+          "displayName": "Color_Me_Blue",
+          "bungieGlobalDisplayName": "Color_Me_Blue",
+          "bungieGlobalDisplayNameCode": 9699
+        },
+        "joinDate": "2022-06-15T18:05:41Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673632958",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Lippi",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018486419328",
+          "displayName": "Lippi",
+          "bungieGlobalDisplayName": "Lippi",
+          "bungieGlobalDisplayNameCode": 9493
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Lippi#9493",
+          "iconPath": "/img/profile/avatars/onistriker_ava.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "20656263",
+          "displayName": "Lippi",
+          "bungieGlobalDisplayName": "Lippi",
+          "bungieGlobalDisplayNameCode": 9493
+        },
+        "joinDate": "2022-12-02T22:45:37Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673903404",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "muggs",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018500166824",
+          "displayName": "muggs",
+          "bungieGlobalDisplayName": "muggs",
+          "bungieGlobalDisplayNameCode": 1393
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "muggs#1393",
+          "iconPath": "/img/profile/avatars/seventhcolumnred.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "25286712",
+          "displayName": "muggs",
+          "bungieGlobalDisplayName": "muggs",
+          "bungieGlobalDisplayNameCode": 1393
+        },
+        "joinDate": "2022-09-20T18:14:42Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673906797",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "PeacefulHawk",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 3,
+          "applicableMembershipTypes": [
+            2,
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018487892869",
+          "displayName": "PeacefulHawk",
+          "bungieGlobalDisplayName": "PeacefulHawk",
+          "bungieGlobalDisplayNameCode": 5587
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "PeacefulHawk#5587",
+          "iconPath": "/img/profile/avatars/cc000014.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "21124044",
+          "displayName": "PeacefulHawk",
+          "bungieGlobalDisplayName": "PeacefulHawk",
+          "bungieGlobalDisplayNameCode": 5587
+        },
+        "joinDate": "2023-01-11T15:20:41Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1672042289",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "El Dat Axuf",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/psnLogo.png",
+          "crossSaveOverride": 2,
+          "applicableMembershipTypes": [
+            3,
+            2
+          ],
+          "isPublic": false,
+          "membershipType": 2,
+          "membershipId": "4611686018428399302",
+          "displayName": "DatAxuf",
+          "bungieGlobalDisplayName": "El Dat Axuf",
+          "bungieGlobalDisplayNameCode": 9876
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "El Dat Axuf#9876",
+          "iconPath": "/img/profile/avatars/cc32.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "4976400",
+          "displayName": "El Dat Axuf",
+          "bungieGlobalDisplayName": "El Dat Axuf",
+          "bungieGlobalDisplayNameCode": 9876
+        },
+        "joinDate": "2022-10-25T17:54:08Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673792513",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "koncept",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 3,
+          "applicableMembershipTypes": [
+            1,
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018467290364",
+          "displayName": "koncept",
+          "bungieGlobalDisplayName": "koncept",
+          "bungieGlobalDisplayNameCode": 4125
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "koncept#4125",
+          "iconPath": "/img/profile/avatars/cc11.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "5942736",
+          "displayName": "koncept",
+          "bungieGlobalDisplayName": "koncept",
+          "bungieGlobalDisplayNameCode": 4125
+        },
+        "joinDate": "2022-07-08T21:37:55Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1672331806",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "▯ Parriyah",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018489861026",
+          "displayName": "▯ Parriyah",
+          "bungieGlobalDisplayName": "Parriyah",
+          "bungieGlobalDisplayNameCode": 6211
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Parriyah#6211",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "31129646",
+          "displayName": "Parriyah",
+          "bungieGlobalDisplayName": "Parriyah",
+          "bungieGlobalDisplayNameCode": 6211
+        },
+        "joinDate": "2022-11-17T23:28:51Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673845426",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "SuperTed",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/psnLogo.png",
+          "crossSaveOverride": 2,
+          "applicableMembershipTypes": [
+            3,
+            2
+          ],
+          "isPublic": false,
+          "membershipType": 2,
+          "membershipId": "4611686018454407793",
+          "displayName": "webcourses",
+          "bungieGlobalDisplayName": "SuperTed",
+          "bungieGlobalDisplayNameCode": 2089
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "SuperTed#2089",
+          "iconPath": "/img/profile/avatars/cc33.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "12187804",
+          "displayName": "SuperTed",
+          "bungieGlobalDisplayName": "SuperTed",
+          "bungieGlobalDisplayNameCode": 2089
+        },
+        "joinDate": "2022-12-05T08:15:43Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673907188",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "123",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018518114962",
+          "displayName": "123",
+          "bungieGlobalDisplayName": "Whitewolfxs",
+          "bungieGlobalDisplayNameCode": 8609
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Whitewolfxs#8609",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "28915427",
+          "displayName": "Whitewolfxs",
+          "bungieGlobalDisplayName": "Whitewolfxs",
+          "bungieGlobalDisplayNameCode": 8609
+        },
+        "joinDate": "2022-09-17T16:46:02Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673785665",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Aveho",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018513971390",
+          "displayName": "Aveho",
+          "bungieGlobalDisplayName": "Aveho",
+          "bungieGlobalDisplayNameCode": 8840
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Aveho#8840",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "27883298",
+          "displayName": "Aveho",
+          "bungieGlobalDisplayName": "Aveho",
+          "bungieGlobalDisplayNameCode": 8840
+        },
+        "joinDate": "2022-12-18T14:08:53Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673899101",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "The Pestilent One",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018527601462",
+          "displayName": "The Pestilent One",
+          "bungieGlobalDisplayName": "The Pestilent One",
+          "bungieGlobalDisplayNameCode": 5504
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "The Pestilent One#5504",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "31374747",
+          "displayName": "The Pestilent One",
+          "bungieGlobalDisplayName": "The Pestilent One",
+          "bungieGlobalDisplayNameCode": 5504
+        },
+        "joinDate": "2022-12-28T00:44:25Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": true,
+        "lastOnlineStatusChange": "1673895587",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "batbro47",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018504032756",
+          "displayName": "batbro47",
+          "bungieGlobalDisplayName": "Dwarf",
+          "bungieGlobalDisplayNameCode": 8085
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Dwarf#8085",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "25704651",
+          "displayName": "Dwarf",
+          "bungieGlobalDisplayName": "Dwarf",
+          "bungieGlobalDisplayNameCode": 8085
+        },
+        "joinDate": "2022-11-27T16:47:12Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1670123842",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Bogdziu",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018489114438",
+          "displayName": "Bogdziu",
+          "bungieGlobalDisplayName": "Bogdziu",
+          "bungieGlobalDisplayNameCode": 9653
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Bogdziu#9653",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "22053229",
+          "displayName": "Bogdziu",
+          "bungieGlobalDisplayName": "Bogdziu",
+          "bungieGlobalDisplayNameCode": 9653
+        },
+        "joinDate": "2022-08-02T07:34:39Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673902309",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Quoven",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018467518646",
+          "displayName": "Quoven",
+          "bungieGlobalDisplayName": "Quoven",
+          "bungieGlobalDisplayNameCode": 3172
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Quoven#3172",
+          "iconPath": "/img/profile/avatars/bungieday_03.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "15344533",
+          "displayName": "Quoven",
+          "bungieGlobalDisplayName": "Quoven",
+          "bungieGlobalDisplayNameCode": 3172
+        },
+        "joinDate": "2022-06-15T18:07:02Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1668868674",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Twigs",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018471778804",
+          "displayName": "Twigs",
+          "bungieGlobalDisplayName": "Twigs",
+          "bungieGlobalDisplayNameCode": 5387
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Twigs#5387",
+          "iconPath": "/img/profile/avatars/cc000013.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "17593440",
+          "displayName": "Twigs",
+          "bungieGlobalDisplayName": "Twigs",
+          "bungieGlobalDisplayNameCode": 5387
+        },
+        "joinDate": "2022-03-26T22:21:24Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673904438",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Dr. Strange",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 3,
+          "applicableMembershipTypes": [
+            2,
+            5,
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018504760806",
+          "displayName": "Dr. Strange",
+          "bungieGlobalDisplayName": "Dr. Strange",
+          "bungieGlobalDisplayNameCode": 3852
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Dr. Strange#3852",
+          "iconPath": "/img/profile/avatars/cc65.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "25991248",
+          "displayName": "Dr. Strange",
+          "bungieGlobalDisplayName": "Dr. Strange",
+          "bungieGlobalDisplayNameCode": 3852
+        },
+        "joinDate": "2022-09-19T16:31:53Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": true,
+        "lastOnlineStatusChange": "1673906032",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "EyLoGiToS",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018495528882",
+          "displayName": "EyLoGiToS",
+          "bungieGlobalDisplayName": "EyLoGiToS",
+          "bungieGlobalDisplayNameCode": 6356
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "EyLoGiToS#6356",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "24731088",
+          "displayName": "EyLoGiToS",
+          "bungieGlobalDisplayName": "EyLoGiToS",
+          "bungieGlobalDisplayNameCode": 6356
+        },
+        "joinDate": "2022-05-17T21:05:21Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1672254875",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Solbergarn",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018483034250",
+          "displayName": "Solbergarn",
+          "bungieGlobalDisplayName": "Solbergarn",
+          "bungieGlobalDisplayNameCode": 304
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Solbergarn#0304",
+          "iconPath": "/img/profile/avatars/cc24.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "20149663",
+          "displayName": "Solbergarn",
+          "bungieGlobalDisplayName": "Solbergarn",
+          "bungieGlobalDisplayNameCode": 304
+        },
+        "joinDate": "2022-12-16T18:35:41Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673894285",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "kingsloth71",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/xboxLiveLogo.png",
+          "crossSaveOverride": 1,
+          "applicableMembershipTypes": [
+            3,
+            6,
+            1
+          ],
+          "isPublic": false,
+          "membershipType": 1,
+          "membershipId": "4611686018486661412",
+          "displayName": "KingSloth71",
+          "bungieGlobalDisplayName": "KingSloth71",
+          "bungieGlobalDisplayNameCode": 2078
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "KingSloth71#2078",
+          "iconPath": "/img/profile/avatars/cc26.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "20805909",
+          "displayName": "KingSloth71",
+          "bungieGlobalDisplayName": "KingSloth71",
+          "bungieGlobalDisplayNameCode": 2078
+        },
+        "joinDate": "2023-01-06T06:39:37Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673715192",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Thorpey94_[RD]",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/xboxLiveLogo.png",
+          "crossSaveOverride": 1,
+          "applicableMembershipTypes": [
+            3,
+            1
+          ],
+          "isPublic": false,
+          "membershipType": 1,
+          "membershipId": "4611686018429895651",
+          "displayName": "Basshunter Boy",
+          "bungieGlobalDisplayName": "Thorpey94_[RD]",
+          "bungieGlobalDisplayNameCode": 633
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Thorpey94_[RD]#0633",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "4104891",
+          "displayName": "Thorpey94_[RD]",
+          "bungieGlobalDisplayName": "Thorpey94_[RD]",
+          "bungieGlobalDisplayNameCode": 633
+        },
+        "joinDate": "2021-05-17T22:12:26Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1672922162",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "SirNabby",
+          "LastSeenDisplayNameType": 2,
+          "iconPath": "/img/theme/bungienet/icons/psnLogo.png",
+          "crossSaveOverride": 2,
+          "applicableMembershipTypes": [
+            1,
+            2
+          ],
+          "isPublic": false,
+          "membershipType": 2,
+          "membershipId": "4611686018527397816",
+          "displayName": "SirNabby",
+          "bungieGlobalDisplayName": "SirNabby",
+          "bungieGlobalDisplayNameCode": 9164
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "SirNabby#9164",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "10898250",
+          "displayName": "SirNabby",
+          "bungieGlobalDisplayName": "SirNabby",
+          "bungieGlobalDisplayNameCode": 9164
+        },
+        "joinDate": "2022-12-16T22:24:42Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673690630",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "KRyder15",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/psnLogo.png",
+          "crossSaveOverride": 2,
+          "applicableMembershipTypes": [
+            3,
+            2
+          ],
+          "isPublic": false,
+          "membershipType": 2,
+          "membershipId": "4611686018439370079",
+          "displayName": "KRyder-15",
+          "bungieGlobalDisplayName": "KRyder15",
+          "bungieGlobalDisplayNameCode": 2385
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "KRyder15#2385",
+          "iconPath": "/img/profile/avatars/cc11.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "8305419",
+          "displayName": "KRyder15",
+          "bungieGlobalDisplayName": "KRyder15",
+          "bungieGlobalDisplayNameCode": 2385
+        },
+        "joinDate": "2022-11-20T18:59:58Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1666802561",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Xor",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 3,
+          "applicableMembershipTypes": [
+            6,
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018514811496",
+          "displayName": "Xor",
+          "bungieGlobalDisplayName": "Xor",
+          "bungieGlobalDisplayNameCode": 2304
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Xor#2304",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "28093340",
+          "displayName": "Xor",
+          "bungieGlobalDisplayName": "Xor",
+          "bungieGlobalDisplayNameCode": 2304
+        },
+        "joinDate": "2022-09-22T18:25:06Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673813927",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "SIrMancsta",
+          "LastSeenDisplayNameType": 2,
+          "iconPath": "/img/theme/bungienet/icons/psnLogo.png",
+          "crossSaveOverride": 2,
+          "applicableMembershipTypes": [
+            1,
+            2
+          ],
+          "isPublic": false,
+          "membershipType": 2,
+          "membershipId": "4611686018471671411",
+          "displayName": "SIrMancsta",
+          "bungieGlobalDisplayName": "SIrMancsta",
+          "bungieGlobalDisplayNameCode": 2947
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "SIrMancsta#2947",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "17211330",
+          "displayName": "SIrMancsta",
+          "bungieGlobalDisplayName": "SIrMancsta",
+          "bungieGlobalDisplayNameCode": 2947
+        },
+        "joinDate": "2022-12-16T15:40:16Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673646660",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Totes McGoats",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 3,
+          "applicableMembershipTypes": [
+            1,
+            2,
+            5,
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018471038277",
+          "displayName": "Totes McGoats",
+          "bungieGlobalDisplayName": "Totes McGoats",
+          "bungieGlobalDisplayNameCode": 7641
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Totes McGoats#7641",
+          "iconPath": "/img/profile/avatars/cc21.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "17381958",
+          "displayName": "Totes McGoats",
+          "bungieGlobalDisplayName": "Totes McGoats",
+          "bungieGlobalDisplayNameCode": 7641
+        },
+        "joinDate": "2022-06-15T18:07:00Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1671819194",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Mateus ▯",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 3,
+          "applicableMembershipTypes": [
+            2,
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018484066063",
+          "displayName": "Mateus ▯",
+          "bungieGlobalDisplayName": "Mateus ",
+          "bungieGlobalDisplayNameCode": 2618
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Mateus #2618",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "20513136",
+          "displayName": "Mateus ",
+          "bungieGlobalDisplayName": "Mateus ",
+          "bungieGlobalDisplayNameCode": 2618
+        },
+        "joinDate": "2022-12-14T18:24:37Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673894637",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Oberon",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018478663368",
+          "displayName": "Oberon",
+          "bungieGlobalDisplayName": "Oberon",
+          "bungieGlobalDisplayNameCode": 7232
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Oberon#7232",
+          "iconPath": "/img/profile/avatars/cc24.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "18644450",
+          "displayName": "Oberon",
+          "bungieGlobalDisplayName": "Oberon",
+          "bungieGlobalDisplayNameCode": 7232
+        },
+        "joinDate": "2021-10-18T23:28:49Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673889822",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Blobbocus",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/psnLogo.png",
+          "crossSaveOverride": 2,
+          "applicableMembershipTypes": [
+            3,
+            2
+          ],
+          "isPublic": false,
+          "membershipType": 2,
+          "membershipId": "4611686018433544088",
+          "displayName": "Blobbocus",
+          "bungieGlobalDisplayName": "Blobbocus",
+          "bungieGlobalDisplayNameCode": 732
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Blobbocus#0732",
+          "iconPath": "/img/profile/avatars/s_moavi1.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "5891570",
+          "displayName": "Blobbocus",
+          "bungieGlobalDisplayName": "Blobbocus",
+          "bungieGlobalDisplayNameCode": 732
+        },
+        "joinDate": "2022-09-28T17:18:52Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673568822",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "CillitSmack",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018492860104",
+          "displayName": "CillitSmack",
+          "bungieGlobalDisplayName": "CillitSmack",
+          "bungieGlobalDisplayNameCode": 4348
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "CillitSmack#4348",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "26015469",
+          "displayName": "CillitSmack",
+          "bungieGlobalDisplayName": "CillitSmack",
+          "bungieGlobalDisplayNameCode": 4348
+        },
+        "joinDate": "2022-12-13T22:42:42Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673903879",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Le Tanky",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 3,
+          "applicableMembershipTypes": [
+            6,
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018524795729",
+          "displayName": "Le Tanky",
+          "bungieGlobalDisplayName": "Le Tanky",
+          "bungieGlobalDisplayNameCode": 9182
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Le Tanky#9182",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "30700549",
+          "displayName": "Le Tanky",
+          "bungieGlobalDisplayName": "Le Tanky",
+          "bungieGlobalDisplayNameCode": 9182
+        },
+        "joinDate": "2022-11-26T13:55:49Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673847025",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Mr_JtowN",
+          "LastSeenDisplayNameType": 2,
+          "iconPath": "/img/theme/bungienet/icons/psnLogo.png",
+          "crossSaveOverride": 2,
+          "applicableMembershipTypes": [
+            3,
+            5,
+            2
+          ],
+          "isPublic": false,
+          "membershipType": 2,
+          "membershipId": "4611686018428545571",
+          "displayName": "Mr_JtowN",
+          "bungieGlobalDisplayName": "MrJtowN",
+          "bungieGlobalDisplayNameCode": 2479
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "MrJtowN#2479",
+          "iconPath": "/img/profile/avatars/Destiny05.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "3881927",
+          "displayName": "MrJtowN",
+          "bungieGlobalDisplayName": "MrJtowN",
+          "bungieGlobalDisplayNameCode": 2479
+        },
+        "joinDate": "2022-02-14T17:31:15Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673373077",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Szef Szeferson",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018472369009",
+          "displayName": "Szef Szeferson",
+          "bungieGlobalDisplayName": "OnionMan",
+          "bungieGlobalDisplayNameCode": 7195
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "OnionMan#7195",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "20643517",
+          "displayName": "OnionMan",
+          "bungieGlobalDisplayName": "OnionMan",
+          "bungieGlobalDisplayNameCode": 7195
+        },
+        "joinDate": "2022-12-08T18:33:54Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1671572435",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Pingüino",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018521044860",
+          "displayName": "Pingüino",
+          "bungieGlobalDisplayName": "PinguTheBOI",
+          "bungieGlobalDisplayNameCode": 3878
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "PinguTheBOI#3878",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "29681804",
+          "displayName": "PinguTheBOI",
+          "bungieGlobalDisplayName": "PinguTheBOI",
+          "bungieGlobalDisplayNameCode": 3878
+        },
+        "joinDate": "2022-11-26T15:10:54Z"
+      },
+      {
+        "memberType": 3,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673903573",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Jowaaaa",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018491221504",
+          "displayName": "Jowaaaa",
+          "bungieGlobalDisplayName": "Jowaaaa",
+          "bungieGlobalDisplayNameCode": 8973
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Jowaaaa#8973",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "22829052",
+          "displayName": "Jowaaaa",
+          "bungieGlobalDisplayName": "Jowaaaa",
+          "bungieGlobalDisplayNameCode": 8973
+        },
+        "joinDate": "2022-06-26T19:02:24Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673387971",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Uncle Sam",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018489077417",
+          "displayName": "Uncle Sam",
+          "bungieGlobalDisplayName": "Uncle Sam",
+          "bungieGlobalDisplayNameCode": 9068
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Uncle Sam#9068",
+          "iconPath": "/img/profile/avatars/cc20.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "22036724",
+          "displayName": "Uncle Sam",
+          "bungieGlobalDisplayName": "Uncle Sam",
+          "bungieGlobalDisplayNameCode": 9068
+        },
+        "joinDate": "2022-06-10T15:03:18Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673719579",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "BrokenFing4z",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 3,
+          "applicableMembershipTypes": [
+            1,
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018475916323",
+          "displayName": "BrokenFing4z",
+          "bungieGlobalDisplayName": "BrokenFing4z",
+          "bungieGlobalDisplayNameCode": 5095
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "BrokenFing4z#5095",
+          "iconPath": "/img/profile/avatars/90x90ava.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "18114784",
+          "displayName": "BrokenFing4z",
+          "bungieGlobalDisplayName": "BrokenFing4z",
+          "bungieGlobalDisplayNameCode": 5095
+        },
+        "joinDate": "2022-06-10T06:39:48Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673889532",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Sev Ordo",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018524262567",
+          "displayName": "Sev Ordo",
+          "bungieGlobalDisplayName": "Sev Ordo",
+          "bungieGlobalDisplayNameCode": 566
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Sev Ordo#0566",
+          "iconPath": "/img/profile/avatars/h3chief_reflection.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "30486664",
+          "displayName": "Sev Ordo",
+          "bungieGlobalDisplayName": "Sev Ordo",
+          "bungieGlobalDisplayNameCode": 566
+        },
+        "joinDate": "2022-11-15T19:29:47Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673903643",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Zak",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/xboxLiveLogo.png",
+          "crossSaveOverride": 1,
+          "applicableMembershipTypes": [
+            3,
+            1
+          ],
+          "isPublic": false,
+          "membershipType": 1,
+          "membershipId": "4611686018434931315",
+          "displayName": "Am I Zak",
+          "bungieGlobalDisplayName": "Zak",
+          "bungieGlobalDisplayNameCode": 9165
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Zak#9165",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "1403636",
+          "displayName": "Zak",
+          "bungieGlobalDisplayName": "Zak",
+          "bungieGlobalDisplayNameCode": 9165
+        },
+        "joinDate": "2022-06-15T18:04:20Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1672797809",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "wrighty2711",
+          "LastSeenDisplayNameType": 1,
+          "iconPath": "/img/theme/bungienet/icons/xboxLiveLogo.png",
+          "crossSaveOverride": 1,
+          "applicableMembershipTypes": [
+            3,
+            1
+          ],
+          "isPublic": false,
+          "membershipType": 1,
+          "membershipId": "4611686018523916327",
+          "displayName": "wrighty2711",
+          "bungieGlobalDisplayName": "wrighty2711",
+          "bungieGlobalDisplayNameCode": 896
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "wrighty2711#0896",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "30992411",
+          "displayName": "wrighty2711",
+          "bungieGlobalDisplayName": "wrighty2711",
+          "bungieGlobalDisplayNameCode": 896
+        },
+        "joinDate": "2022-10-27T21:05:03Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1670731026",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Basmo12",
+          "LastSeenDisplayNameType": 2,
+          "iconPath": "/img/theme/bungienet/icons/psnLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            2
+          ],
+          "isPublic": false,
+          "membershipType": 2,
+          "membershipId": "4611686018470049586",
+          "displayName": "Basmo12",
+          "bungieGlobalDisplayName": "Basmo12",
+          "bungieGlobalDisplayNameCode": 1420
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Basmo12#1420",
+          "iconPath": "/img/profile/avatars/cc000011.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "19309920",
+          "displayName": "Basmo12",
+          "bungieGlobalDisplayName": "Basmo12",
+          "bungieGlobalDisplayNameCode": 1420
+        },
+        "joinDate": "2022-09-08T11:51:57Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673780437",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Princess Sofia-Chan",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018507542788",
+          "displayName": "Princess Sofia-Chan",
+          "bungieGlobalDisplayName": "Admiral Sofia",
+          "bungieGlobalDisplayNameCode": 7316
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Admiral Sofia#7316",
+          "iconPath": "/img/profile/avatars/s_Kat_pwn.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "13445974",
+          "displayName": "Admiral Sofia",
+          "bungieGlobalDisplayName": "Admiral Sofia",
+          "bungieGlobalDisplayNameCode": 7316
+        },
+        "joinDate": "2022-11-08T21:18:15Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": true,
+        "lastOnlineStatusChange": "1673895147",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "NoobOfThePlanet",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018526908157",
+          "displayName": "NoobOfThePlanet",
+          "bungieGlobalDisplayName": "Deyz",
+          "bungieGlobalDisplayNameCode": 2868
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Deyz#2868",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "31200549",
+          "displayName": "Deyz",
+          "bungieGlobalDisplayName": "Deyz",
+          "bungieGlobalDisplayNameCode": 2868
+        },
+        "joinDate": "2022-11-26T13:00:03Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673905597",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Judge-Dredd-OG",
+          "LastSeenDisplayNameType": 6,
+          "iconPath": "/img/theme/destiny/icons/icon_egs.png",
+          "crossSaveOverride": 6,
+          "applicableMembershipTypes": [
+            3,
+            6
+          ],
+          "isPublic": false,
+          "membershipType": 6,
+          "membershipId": "4611686018524981444",
+          "displayName": "Judge-Dredd-OG",
+          "bungieGlobalDisplayName": "Judge-Dredd-OG",
+          "bungieGlobalDisplayNameCode": 1438
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Judge-Dredd-OG#1438",
+          "iconPath": "/img/profile/avatars/s_avatar_halo_reach.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "30657660",
+          "displayName": "Judge-Dredd-OG",
+          "bungieGlobalDisplayName": "Judge-Dredd-OG",
+          "bungieGlobalDisplayNameCode": 1438
+        },
+        "joinDate": "2022-09-08T12:30:00Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673866470",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Wheresthebeer",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018497288187",
+          "displayName": "Wheresthebeer",
+          "bungieGlobalDisplayName": "Wheresthebeer",
+          "bungieGlobalDisplayNameCode": 2905
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Wheresthebeer#2905",
+          "iconPath": "/img/profile/avatars/cc00008.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "24359984",
+          "displayName": "Wheresthebeer",
+          "bungieGlobalDisplayName": "Wheresthebeer",
+          "bungieGlobalDisplayNameCode": 2905
+        },
+        "joinDate": "2022-06-10T07:27:20Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673654002",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "TheJacketMan",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/psnLogo.png",
+          "crossSaveOverride": 2,
+          "applicableMembershipTypes": [
+            3,
+            2
+          ],
+          "isPublic": false,
+          "membershipType": 2,
+          "membershipId": "4611686018434998870",
+          "displayName": "Sp1tFyre02",
+          "bungieGlobalDisplayName": "TheJacketMan",
+          "bungieGlobalDisplayNameCode": 9616
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "TheJacketMan#9616",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "6584392",
+          "displayName": "TheJacketMan",
+          "bungieGlobalDisplayName": "TheJacketMan",
+          "bungieGlobalDisplayNameCode": 9616
+        },
+        "joinDate": "2022-08-16T13:57:48Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673908226",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "AJ",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 3,
+          "applicableMembershipTypes": [
+            2,
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018468288302",
+          "displayName": "AJ",
+          "bungieGlobalDisplayName": "AJ",
+          "bungieGlobalDisplayNameCode": 9770
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "AJ#9770",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "18411655",
+          "displayName": "AJ",
+          "bungieGlobalDisplayName": "AJ",
+          "bungieGlobalDisplayNameCode": 9770
+        },
+        "joinDate": "2022-12-18T21:21:39Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673741879",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "compLy",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 0,
+          "applicableMembershipTypes": [
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018514738404",
+          "displayName": "compLy",
+          "bungieGlobalDisplayName": "compLy",
+          "bungieGlobalDisplayNameCode": 9840
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "compLy#9840",
+          "iconPath": "/img/profile/avatars/default_avatar.gif",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "28063460",
+          "displayName": "compLy",
+          "bungieGlobalDisplayName": "compLy",
+          "bungieGlobalDisplayNameCode": 9840
+        },
+        "joinDate": "2022-11-20T17:51:09Z"
+      },
+      {
+        "memberType": 2,
+        "isOnline": false,
+        "lastOnlineStatusChange": "1673518420",
+        "groupId": "3285991",
+        "destinyUserInfo": {
+          "LastSeenDisplayName": "Nagnets",
+          "LastSeenDisplayNameType": 3,
+          "iconPath": "/img/theme/bungienet/icons/steamLogo.png",
+          "crossSaveOverride": 3,
+          "applicableMembershipTypes": [
+            1,
+            3
+          ],
+          "isPublic": false,
+          "membershipType": 3,
+          "membershipId": "4611686018470892996",
+          "displayName": "Nagnets",
+          "bungieGlobalDisplayName": "Nagnets",
+          "bungieGlobalDisplayNameCode": 1234
+        },
+        "bungieNetUserInfo": {
+          "supplementalDisplayName": "Nagnets#1234",
+          "iconPath": "/img/profile/avatars/cc17.jpg",
+          "crossSaveOverride": 0,
+          "isPublic": false,
+          "membershipType": 254,
+          "membershipId": "16652889",
+          "displayName": "Nagnets",
+          "bungieGlobalDisplayName": "Nagnets",
+          "bungieGlobalDisplayNameCode": 1234
+        },
+        "joinDate": "2022-03-20T03:37:44Z"
+      }
+    ],
+    "totalResults": 73,
+    "hasMore": false,
+    "query": {
+      "itemsPerPage": 100,
+      "currentPage": 1
+    },
+    "useTotalResults": true
+  },
+  "ErrorCode": 1,
+  "ThrottleSeconds": 0,
+  "ErrorStatus": "Success",
+  "Message": "Ok",
+  "MessageData": {}
+}

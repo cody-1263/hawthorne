@@ -48,7 +48,7 @@ const props = defineProps<{
   flex-wrap: nowrap;
   justify-content:space-between;
   align-items: flex-end;
-  gap: 0.5rem;
+  gap: 0.0rem;
   border: solid 1px #000;
   background-color: #223344;
   border-radius: 0.5rem;
@@ -59,7 +59,7 @@ const props = defineProps<{
   background-color: #4158D0;
   background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
   flex-grow: 1;
-  border-radius: 0.2rem;
+  border-radius: 0.0rem;
 }
 
 .hthist-legend {

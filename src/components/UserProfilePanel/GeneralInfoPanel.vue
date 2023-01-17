@@ -23,7 +23,7 @@ const userDescriptorRef = inject(htKeys.selectedUsedDescriptorKey)!;
     </div>
     
     <div style="margin-top: 4rem;">
-      <div v-for="charItem in userDescriptorRef.characterDescriptors" class="char-card">
+      <div v-for="charItem in userDescriptorRef.characters" class="char-card">
         <img class="char-icon" :src="charItem.emblemPath"/>
         <div class="char-name" style="width: 3.5rem; margin-left: 1rem;">{{ charItem.className }}</div>
         <div class="char-level" style="margin-left: 1rem; color: #e0bb36;">PL {{ charItem.light }}</div>

@@ -28,9 +28,9 @@ function onButtonClick(event : MouseEvent) {
 
 
 
-if (props.userDescriptor?.characterDescriptors?.length > 0) {
+if (props.userDescriptor?.characters?.length > 0) {
   let dt = new Date(0);
-  for (let cd of props.userDescriptor.characterDescriptors) {
+  for (let cd of props.userDescriptor.characters) {
     if (cd.dateLastPlayed != null && cd.dateLastPlayed.getTime() > dt.getTime())
       dt = cd.dateLastPlayed;
   }

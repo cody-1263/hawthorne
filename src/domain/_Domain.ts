@@ -66,7 +66,7 @@ export class Domain {
   
   /** Add destiny user */
   addDestinyUser(user:DestinyUserProfile) {
-    this._userProfilesMap.set(user.bungieNetMembershipId, user);
+    this._userProfilesMap.set(user.bnetId, user);
   }
   
   

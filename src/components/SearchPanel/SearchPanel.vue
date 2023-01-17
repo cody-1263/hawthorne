@@ -55,7 +55,7 @@ watch(searchTextRef, async (newSearchText, oldSearchText) => {
   // opt.2. clan search
   else {
     let cc = await bnetProvider.searchForClans(newSearchText, domain);
-    console.log(cc);
+    // console.log(cc);
     clanSearchResultsRef.value = cc;
   }
 
