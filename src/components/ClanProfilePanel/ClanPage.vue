@@ -38,6 +38,8 @@ function onActivitySelected (stringName: string, index: number) {
 /** "Download" button action */
 async function onDownloadButtonClick () {
   
+  isLoadingData.value = true;
+  
   const groups = appService.selectedClanProfileCollection.value;
   const activityType = appService.studyActivity.value;
   const periodMode = appService.studyPeriod.value;
@@ -46,6 +48,7 @@ async function onDownloadButtonClick () {
   let actDensity = await calc.getClansActivityDensity(groups, activityType, periodMode, domain, bnetProvider);
   displayedTimeline.value = actDensity;
   
+  isLoadingData.value = false;
 }
 
 </script>
@@ -65,8 +68,10 @@ async function onDownloadButtonClick () {
     
     <div style="height:1rem;"></div>
     
-    <div v-if="isLoadingData">
-      <LoadingIndicator />
+    <div v-if="isLoadingData" class="clan-page-nodata-container">
+      <LoadingIndicator/>
+      <div style="height:1rem;"></div>
+      <p style="opacity:0.5">Downloading... oh man, this is going to take a while</p>
     </div>
     <div v-else-if="displayedTimeline == null" class="clan-page-nodata-container">
       <p>No data present. Click "Download" to download data</p>

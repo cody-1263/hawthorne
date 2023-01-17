@@ -106,7 +106,7 @@ function onClanItemClicked(clanItem: DestinyClanProfile) {
   <!-- logo -->
   <div style="width: 100%">
     <div class="app-logo"> 
-      <img style="width: 100%; height: 100%" src="@/assets/ht-logo-transp.png"/>
+      <img style="width: 100%; height: 100%" src="./assets/ht-logo-transp.png"/>
     </div>
     <div class="app-title">cody's HT tool</div>
   </div>
