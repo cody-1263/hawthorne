@@ -35,7 +35,7 @@ const props = defineProps<{
 
 .hthist-root {
   position: relative;
-  border: dashed 2px magenta;
+  border: dashed 0px magenta;
   border-radius: 0.2rem;
   display: grid;
   grid-template-rows: 1fr auto;

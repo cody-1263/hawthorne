@@ -113,7 +113,7 @@ function onClanItemClicked(clanItem: DestinyClanProfile) {
   
   <!-- app mode selector: user/clan mode -->
   <div style="margin-top: 3rem; margin-left: auto; margin-right: auto;">
-    <SectionSelector :string-items="appModeOptions" @selectedStringItemChanged="onSelectedModeChanged"/>
+    <SectionSelector :string-items="appModeOptions" :initial-index="0" @selectedStringItemChanged="onSelectedModeChanged"/>
   </div>
   
   <!-- search text field -->

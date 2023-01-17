@@ -1,11 +1,20 @@
 
 
 <script setup lang="ts">
-import { inject  } from 'vue';
+import {inject} from 'vue'
 import { htKeys } from '@/services/HtKeys';
+import { HtServiceContainer } from '@/services/HtServiceContainer';
 import { getTimeAgoText } from '@/model/Utils';
 
-const userDescriptorRef = inject(htKeys.selectedUsedDescriptorKey)!;
+// app services
+const serviceContainer = inject(htKeys.htServiceContainerKey)!;
+const domain = serviceContainer.domain;
+const appService = serviceContainer.htAppService;
+const bnetProvider = serviceContainer.bungieNetProvider;
+
+// refs
+const targetUserRef = appService.selectedUserProfile;
+
 
 </script>
 
@@ -14,27 +23,24 @@ const userDescriptorRef = inject(htKeys.selectedUsedDescriptorKey)!;
   
 <div class="gip-wrap">
   
-  <div v-if="userDescriptorRef != null">
-    
+  <div v-if="targetUserRef != null">
     <div class="usertitle">
-      <div style="font-weight: 700;">{{ userDescriptorRef.displayName }}</div>
+      <div style="font-weight: 700;">{{ targetUserRef.displayName }}</div>
       <div style="margin-left: 1rem;">#</div>
-      <div>{{ userDescriptorRef.nameCode }}</div>
+      <div>{{ targetUserRef.nameCode }}</div>
     </div>
-    
     <div style="margin-top: 4rem;">
-      <div v-for="charItem in userDescriptorRef.characters" class="char-card">
+      <div v-for="charItem in targetUserRef.characters" class="char-card">
         <img class="char-icon" :src="charItem.emblemPath"/>
-        <div class="char-name" style="width: 3.5rem; margin-left: 1rem;">{{ charItem.className }}</div>
-        <div class="char-level" style="margin-left: 1rem; color: #e0bb36;">PL {{ charItem.light }}</div>
-        <div class="char-level" style="margin-left: 1rem; opacity: 0.2;">last active: {{ charItem.dateLastPlayed.toDateString() }} ({{ getTimeAgoText(charItem.dateLastPlayed) }})</div>
+        <div style="width: 3.5rem; margin-left: 1rem;">{{ charItem.className }}</div>
+        <div style="margin-left: 1rem; color: #e0bb36;">PL {{ charItem.light }}</div>
+        <div style="margin-left: 1rem; opacity: 0.2;">last active: {{ charItem.dateLastPlayed.toDateString() }} ({{ getTimeAgoText(charItem.dateLastPlayed) }})</div>
       </div>
     </div>
-    
   </div>
-  <!-- <div v-else>
-    <p style="margin-top: 8rem; text-align: center; opacity: 0.2;">Select user</p>
-  </div> -->
+  <div v-else class="gip-nulldatadiv">
+    <div>Find and select a user to display some info about them</div>
+  </div>
 </div>
   
 </template>
@@ -45,9 +51,12 @@ const userDescriptorRef = inject(htKeys.selectedUsedDescriptorKey)!;
 .gip-wrap {
   display: grid;
   grid-template-rows: 1fr;
-  height: 100%;
   overflow: scroll;
   scrollbar-width: none;
+  
+  position: relative;
+  border: dashed 0px orange;
+  border-radius: 0.4rem;
 }
 .gip-wrap::-webkit-scrollbar { 
   display: none;
@@ -75,6 +84,16 @@ const userDescriptorRef = inject(htKeys.selectedUsedDescriptorKey)!;
   height: 2rem;
   border-radius: 0.5rem;
   border: 1px solid black;
+}
+
+
+.gip-nulldatadiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 24rem;
+  opacity: 0.5;
 }
 
 </style>

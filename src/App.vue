@@ -1,9 +1,18 @@
+
+<!-- 
+  
+  This is App.vue
+  
+-->
+
+
+
 <script setup lang="ts">
 import { ref, provide } from 'vue';
 import { htKeys } from '@/services/HtKeys';
 import SearchPanel from './components/SearchPanel/SearchPanel.vue';
 import ClanPage from './components/ClanProfilePanel/ClanPage.vue';
-import UserSimpleProfilePage from './components/UserProfilePanel/UserSimpleProfilePage.vue';
+import UserSimpleProfilePage from './components/UserProfilePanel/_UserPage.vue';
 import { HtServiceContainer } from '@/services/HtServiceContainer';
 import { HtStudyMode } from './services/HtAppService';
 

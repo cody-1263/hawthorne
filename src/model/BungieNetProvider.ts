@@ -285,7 +285,7 @@ export class BungieNetProvider {
   
   
   /**  Gets a list of activities for given profile identifiers and limited by minDate */
-  async getActivities (characterProfiles: DestinyCharacterProfile[], minDate : Date) {
+  async getActivities (characterProfiles: DestinyCharacterProfile[], minDate : Date, activityType: number) {
 
     let activitiesCollection = new Array<ActivityItem>();
     
@@ -300,7 +300,7 @@ export class BungieNetProvider {
       let pageIndex = 0;
       while (continueDownload) {
         
-        let q = `${endpoint}?count=${pageSize}&page=${pageIndex}`;
+        let q = `${endpoint}?count=${pageSize}&page=${pageIndex}&mode=${activityType}`;
         
         try {
           let resultJson = await this.bungieGet(q);
