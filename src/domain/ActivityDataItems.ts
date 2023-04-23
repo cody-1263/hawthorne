@@ -28,7 +28,9 @@ export class ActivityItem {
   modes : number[];
   
   /** all known bungieNetMembershipId values in this activity */
-  players : number[];
+  players : string[];
+  
+  playerProfiles : DestinyUserProfile[];
   
   
   
@@ -42,6 +44,15 @@ export class ActivityItem {
     this.instanceId = '-1';
     this.mode = -1;
     this.modes = new Array<number>();
-    this.players = new Array<number>();
+    this.players = new Array<string>();
+    this.playerProfiles = new Array<DestinyUserProfile>();
   }
 }
+
+
+
+
+
+
+
+

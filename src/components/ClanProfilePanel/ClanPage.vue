@@ -45,8 +45,10 @@ async function onDownloadButtonClick () {
   const periodMode = appService.studyPeriod.value;
   
   let calc = new ActivityCalculatorNew();
-  let actDensity = await calc.getClansActivityDensity(groups, activityType, periodMode, domain, bnetProvider);
-  displayedTimeline.value = actDensity;
+  //let actDensity = await calc.getClansActivityDensity(groups, activityType, periodMode, domain, bnetProvider);
+  //displayedTimeline.value = actDensity;
+  
+  calc.getClansGroupActivities(groups, activityType, periodMode, domain, bnetProvider);
   
   isLoadingData.value = false;
 }

@@ -242,7 +242,11 @@ export class BungieNetProvider {
     
     for (let juser of jres.Response.results) {
       
-      // console.log(juser);
+      //console.log(juser);
+      
+      if(juser.bungieNetUserInfo == undefined) {
+        continue;
+      }
       
       let bnetId = juser.bungieNetUserInfo.membershipId;
       let userProfile = domain.getDestinyUser(bnetId);
@@ -285,9 +289,10 @@ export class BungieNetProvider {
   
   
   /**  Gets a list of activities for given profile identifiers and limited by minDate */
-  async getActivities (characterProfiles: DestinyCharacterProfile[], minDate : Date, activityType: number) {
+  async getActivities (user: DestinyUserProfile, minDate : Date, activityType: number) {
 
     let activitiesCollection = new Array<ActivityItem>();
+    let characterProfiles = user.characters;
     
     for (let char of characterProfiles) {
       
@@ -312,8 +317,11 @@ export class BungieNetProvider {
           for (const jsonItem of activitiesJsonArray) {
             let item = new ActivityItem();
             item.referenceId = jsonItem.activityDetails.referenceId;
+            item.instanceId = jsonItem.activityDetails.instanceId;
             item.startDate = new Date(jsonItem.period);
             item.durationSeconds = jsonItem.values.activityDurationSeconds.basic.value;
+            item.playerProfiles.push(user);
+            item.players.push(user.bungieGlobalDisplayName);
             
             if (item.startDate >= minDate) { activitiesCollection.push(item); }
             else { continueDownload = false; }
