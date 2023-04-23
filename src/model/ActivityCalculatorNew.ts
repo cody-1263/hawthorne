@@ -1,6 +1,5 @@
 import type { ActivityItem } from "@/domain/ActivityDataItems";
 import type { DestinyClanProfile, DestinyUserProfile } from "@/domain/ProfileDataItems";
-import { PlayerGroupActivitySummary } from "@/domain/ActivityStatItems";
 import type { Domain } from "@/domain/_Domain";
 import { HtActivityType, HtPeriodMode } from "@/services/HtAppService";
 import { ActivityDensityTimeline } from "./ActivityDensityTimeline";
@@ -16,10 +15,12 @@ export class ActivityCalculatorNew {
     this._activityCodes = new Map<HtActivityType, number>();
     this._activityCodes.set(HtActivityType.All, 0);
     this._activityCodes.set(HtActivityType.Raids, 4);
-    // this._activityCodes.set(HtActivityType.GMs, 0);
-    // this._activityCodes.set(HtActivityType.All, 0);
-    // this._activityCodes.set(HtActivityType.All, 0);
-    // this._activityCodes.set(HtActivityType.All, 0);
+    // this._activityCodes.set(HtActivityType.LostSector, 87);
+    // this._activityCodes.set(HtActivityType.AllPvE, 7);
+    // this._activityCodes.set(HtActivityType.DaresOfEternity, 85);
+    // this._activityCodes.set(HtActivityType.TrialsOfOsiris, 84);
+    // this._activityCodes.set(HtActivityType.AllPvP, 5);
+    // this._activityCodes.set(HtActivityType.Dungeon, 82);
   }
   
   
@@ -178,101 +179,6 @@ export class ActivityCalculatorNew {
     let timelines = [sumActivityTimeline, daysMap.get(1)!, daysMap.get(2)!, daysMap.get(3)!, daysMap.get(4)!, daysMap.get(5)!, daysMap.get(6)!, daysMap.get(0)!];
     
     return timelines;
-  }
-  
-  
-  
-  /** Download clans' group activities */
-  async getClansGroupActivities(groups: DestinyClanProfile[], activityType: HtActivityType, periodMode: HtPeriodMode, domain: Domain, bnetProvider: BungieNetProvider) {
-    
-    // 1. collect groups' users in one big list 'allusers'
-    
-    console.log(`Loading users from ${groups.length} clans ...`);
-    
-    var usersPromises = new Array<Promise<DestinyUserProfile[]>>();
-    for (var g of groups) {
-      let p = bnetProvider.getClanMembers(g, domain);
-      usersPromises.push(p);
-    }
-    
-    let allUsers = new Array<DestinyUserProfile>();
-    let userResults = await Promise.all(usersPromises);
-    for (let arr of userResults) {
-      for (let u of arr) allUsers.push(u);
-    }
-    
-    let charCount = 0;
-    allUsers.forEach((u) => {charCount += u.characters.length});
-    console.log(`Found ${allUsers.length} users with ${charCount} characters`);
-    
-    // 2. collect activities
-    
-    console.log(`Loading activities from all users...`);
-    
-    const minDate = this._getMinDate(periodMode);
-    const activityCode = this._activityCodes.get(activityType)!;
-    
-    let activityDownloadTasks = new Array<Promise<ActivityItem[]>>
-    for(let user of allUsers) {
-      let p = bnetProvider.getActivities(user, minDate, activityCode);
-      activityDownloadTasks.push(p);
-    }
-    
-    let allActivityResults = await Promise.all(activityDownloadTasks);
-    console.log(`All activities downloaded.`);
-    
-    // 3. create map of unique activities by instanceId 
-    
-    let instancedActivitiesMap = new Map<string, ActivityItem>();
-    
-    for (let actArray of allActivityResults) {
-      for (let actItem of actArray) {
-        if (instancedActivitiesMap.has(actItem.instanceId) == false){
-          instancedActivitiesMap.set(actItem.instanceId, actItem);
-        }
-        let mappedItem = instancedActivitiesMap.get(actItem.instanceId)!;
-        
-        if(mappedItem.players.includes(actItem.players[0]) == false) {
-          mappedItem.players.push(actItem.players[0]);
-        mappedItem.playerProfiles.push(actItem.playerProfiles[0]);
-        }
-      }
-    }
-    
-    // 4. create list of group activities and map of group activities per player
-    
-    let playerActivitySummaries = new Map<string, PlayerGroupActivitySummary>();
-    let allGroupActivitiesList = new Array<ActivityItem>();
-    let allPlayerSummariesList = new Array<PlayerGroupActivitySummary>();
-    
-    for (let mapEntry of instancedActivitiesMap) {
-      
-      var actItem = mapEntry[1];
-      
-      if(actItem.players.length < 3) {
-        continue;
-      }
-        
-      allGroupActivitiesList.push(actItem);
-      
-      for (let playerName of actItem.players) {
-        if (playerActivitySummaries.has(playerName) == false) {
-          let newSummary = new PlayerGroupActivitySummary();
-          newSummary.bungieGlobalDisplayName = playerName;
-          playerActivitySummaries.set(playerName, newSummary);
-          allPlayerSummariesList.push(newSummary);
-        }
-        let summary = playerActivitySummaries.get(playerName)!;
-        summary.activityCount += 1;
-        summary.activityDurationSeconds += actItem.durationSeconds;
-      }
-    }
-    
-    var sortedPlayerSummaries = allPlayerSummariesList.sort((a,b) => b.activityCount - a.activityCount);
-    console.log("SORTED PLAYER SUMMARIES");
-    console.log(sortedPlayerSummaries);
-    console.log("ALL GROUP ACTIVITIES");
-    console.log(allGroupActivitiesList);
   }
   
   

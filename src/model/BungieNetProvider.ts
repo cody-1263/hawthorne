@@ -322,6 +322,7 @@ export class BungieNetProvider {
             item.durationSeconds = jsonItem.values.activityDurationSeconds.basic.value;
             item.playerProfiles.push(user);
             item.players.push(user.bungieGlobalDisplayName);
+            item.modes = jsonItem.activityDetails.modes;
             
             if (item.startDate >= minDate) { activitiesCollection.push(item); }
             else { continueDownload = false; }

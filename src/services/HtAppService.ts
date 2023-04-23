@@ -59,6 +59,9 @@ export enum HtActivityType {
   All,
   Raids,
   AllPvP,
-  Trials,
-  GMs,
+  AllPvE,
+  TrialsOfOsiris,
+  LostSector,
+  DaresOfEternity,
+  Dungeon,
 }

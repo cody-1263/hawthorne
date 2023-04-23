@@ -15,6 +15,7 @@ import ClanPage from './components/ClanProfilePanel/ClanPage.vue';
 import UserSimpleProfilePage from './components/UserProfilePanel/_UserPage.vue';
 import { HtServiceContainer } from '@/services/HtServiceContainer';
 import { HtStudyMode } from './services/HtAppService';
+import ClanGroupActivitiesPage from './components/ClanProfilePanel/ClanGroupActivitiesPage.vue';
 
 const serviceContainer = new HtServiceContainer();
 provide(htKeys.htServiceContainerKey, serviceContainer);
@@ -34,7 +35,8 @@ const appStudyMode = serviceContainer.htAppService.studyMode;
   </div>
   <div class="main-rightpane">
     <UserSimpleProfilePage v-if="appStudyMode == HtStudyMode.SingleUser"/>
-    <ClanPage v-if="appStudyMode == HtStudyMode.ClanCollection"/>
+    <!-- <ClanPage v-if="appStudyMode == HtStudyMode.ClanCollection"/> -->
+    <ClanGroupActivitiesPage v-if="appStudyMode == HtStudyMode.ClanCollection"/>
   </div>
 </div>
 </template>
