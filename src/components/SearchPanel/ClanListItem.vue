@@ -1,11 +1,12 @@
 
 
 <script setup lang="ts">
+
 import { ref, watch } from 'vue';
 import type { DestinyClanProfile } from '@/domain/ProfileDataItems';
 import { getTimeAgoText } from '@/model/Utils';
 
-let activeTextRef = ref('');
+
 
 const props = defineProps<{
   clanProfile: DestinyClanProfile,
@@ -26,23 +27,17 @@ function onButtonClick(event: MouseEvent) {
 
 
 <template>
-  
-<button v-on:click="onButtonClick">
-  <div class="wrap">
-    <!-- <img :src="userDescriptor.iconPath" class="icon"/> -->
-    <div class="captions-div">
-      <div class="captions-line1">
-        <p class="caption-name">{{ clanProfile.name }}</p>
-        <p class="caption-hash"></p>
-        <p class="caption-code"></p>
-        <p class="caption-clan"></p>
-      </div>
-      <div class="captions-line2">
-        <p class="caption-lastactive">{{ clanProfile.groupId }} // {{ clanProfile.clanCallsign }}</p>
-      </div>
-    </div>
+
+<div class="clanitem-wrap">
+  <img class="clanitem-icon" src="https://www.bungie.net/common/destiny2_content/icons/3ab038f27fc631038abf223408f3074a.png"/>
+  <div class="clanitem-captionsblock">
+    <div class="clanitem-caption-1">{{ clanProfile.name }}</div>
+    <div class="clanitem-caption-2">{{ clanProfile.clanCallsign }}  /  {{ clanProfile.groupId }}</div>
   </div>
-</button>
+  <button class="clanitem-btn" v-on:click="onButtonClick">
+    <img class="clanitem-btn-icon" src="../../../public/icons8-plus-math-64.png"/>
+  </button>
+</div>
 
   
 </template>
@@ -51,85 +46,72 @@ function onButtonClick(event: MouseEvent) {
 
 <style scoped>
 
-button {
-  background: transparent;
-  border-radius: 0.5rem;
-  border: none;
-  padding: 0;
-  width: 100%;
-}
-button:hover {
-  background: #fff1;
-}
-button:active {
-  background: #fff2;
-}
 
-.wrap {
+.clanitem-wrap {
   display: grid;
-  grid-template-areas: "icon captions";
-  grid-template-columns: 3rem 1fr;
+  grid-template-areas: "icon captions addbtn";
+  grid-template-columns: 3rem 1fr 3rem;
+  align-items: center;
+  padding-left: 0.5rem;
   height: 4rem;
+  background: #1D1D1D;
+  border: 1pt solid #000000;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+.clanitem-wrap:hover {
+  background: #272727;
 }
 
-.icon {
-  grid-area: icon;
+.clanitem-icon {
   width: 2rem;
   height: 2rem;
-  margin: auto;
-  border-radius: 0.5rem;
-  border: 1px solid black;
+  grid-area: icon;
 }
 
-.captions-div {
+.clanitem-captionsblock {
+  display: flex;
+  flex-direction: column;
   grid-area: captions;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
 }
 
-.captions-line1 {
-  grid-row: 1;
+.clanitem-caption-1 {
+  font-size: 1rem;
+}
+
+.clanitem-caption-2 {
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+.clanitem-btn {
+  width: 2rem;
+  height: 2rem;
   display: flex;
-  flex-direction: row;
-  margin-top: auto;
-  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  background: #478242;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  padding: 0;
+  opacity: 0.0;
+  grid-area: addbtn;
+  transition: all 0.2s;
 }
-
-.captions-line2 {
-  grid-row: 2;
-  display: flex;
-  flex-direction: row;
-  margin-bottom: auto;
+.clanitem-btn:hover {
+  background: #4E9048;
 }
-
-.caption-name {
+.clanitem-btn:active {
+  background: #41783C;
+}
+.clanitem-wrap:hover .clanitem-btn {
   opacity: 1;
 }
 
-
-.caption-hash {
-  margin-left: 0.2rem;
-  font-size: 0.8rem;
-  line-height: 1.2rem;
-  color: #479ce4cc;
-  
-}
-.caption-code {
-  font-size: 0.8rem;
-  line-height: 1.2rem;
-  color: #479ce4cc;
-}
-
-.caption-clan {
-  margin-left: 0.5rem;
-  opacity: 0.2;
-  white-space: nowrap
-}
-
-.caption-lastactive {
-  font-size: 0.8rem;
-  line-height: 1.3rem;
-  opacity: 0.5;
+.clanitem-btn-icon {
+  width: 1rem;
+  height: 1rem;
+  margin: auto;
 }
 
 </style>

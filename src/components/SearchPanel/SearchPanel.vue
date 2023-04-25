@@ -32,10 +32,6 @@ const searchTextRef = ref('');
 const userSearchResultsRef = ref(new Array<DestinyUserProfile>());
 const clanSearchResultsRef = ref(new Array<DestinyClanProfile>());
 
-// emits
-// const emit = defineEmits<{
-//   (e: 'itemClicked', item: DestinyUserProfile): void
-// }>();
 
 /** calling this when searchText updates and we have to download new user list */
 watch(searchTextRef, async (newSearchText, oldSearchText) => {
