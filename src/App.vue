@@ -13,6 +13,7 @@ import { htKeys } from '@/services/HtKeys';
 import SearchPanel from './components/SearchPanel/SearchPanel.vue';
 import ClanPage from './components/ClanProfilePanel/ClanPage.vue';
 import UserSimpleProfilePage from './components/UserProfilePanel/_UserPage.vue';
+import DebugActivityPage from './components/NewActivityPage/DebugActivityPage.vue';
 import { HtServiceContainer } from '@/services/HtServiceContainer';
 import { HtStudyMode } from './services/HtAppService';
 import ClanGroupActivitiesPage from './components/ClanProfilePanel/ClanGroupActivitiesPage.vue';
@@ -31,12 +32,14 @@ const appStudyMode = serviceContainer.htAppService.studyMode;
 <template>
 <div class="main">
   <div>
-    <SearchPanel/>
+    <!-- <SearchPanel/> -->
   </div>
   <div class="main-rightpane">
-    <UserSimpleProfilePage v-if="appStudyMode == HtStudyMode.SingleUser"/>
+    
+    <!-- <UserSimpleProfilePage v-if="appStudyMode == HtStudyMode.SingleUser"/> -->
     <!-- <ClanPage v-if="appStudyMode == HtStudyMode.ClanCollection"/> -->
-    <ClanGroupActivitiesPage v-if="appStudyMode == HtStudyMode.ClanCollection"/>
+    <!-- <ClanGroupActivitiesPage v-if="appStudyMode == HtStudyMode.ClanCollection"/> -->
+    <DebugActivityPage />
   </div>
 </div>
 </template>
