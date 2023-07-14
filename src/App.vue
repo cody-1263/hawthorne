@@ -58,7 +58,7 @@ const appStudyMode = serviceContainer.htAppService.studyMode;
 }
 
 .main-rightpane {
-  max-width: 40rem;
+  max-width: 52rem;
 }
 
 </style>

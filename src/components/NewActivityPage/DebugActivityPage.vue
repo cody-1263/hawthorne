@@ -6,6 +6,7 @@ import { ActivityCalculatorNew } from '@/model/ActivityCalculatorNew';
 import LoadingIndicator from '../Common/LoadingIndicator.vue';
 import { HtActivityType, HtPeriodMode } from '@/services/HtAppService';
 import { DestinyClanProfile } from '@/domain/ProfileDataItems';
+import { ActivityItem } from '@/domain/ActivityDataItems';
 
 // services
 const serviceContainer = inject(htKeys.htServiceContainerKey)!;
@@ -17,33 +18,60 @@ const appService = serviceContainer.htAppService;
 const someStringNumbers = ['0','4','8','12','16','20','24'];
 let displayText = ref(['hello world','hello world 222']);
 
+let displayedActivities = ref(new Array<ActivityItem>());
+
+let a = new ActivityItem();
+
 async function onFullReload() {
   let clan1 = new DestinyClanProfile();
   clan1.name = "Pathfinders";
   clan1.groupId = '3909446';
   clan1.clanCallsign = "SGP";
-  var members = await bnetProvider.getClanMembers(clan1, domain);
+  let members1 = await bnetProvider.getClanMembers(clan1, domain);
+  // 3285991
+  let clan2 = new DestinyClanProfile();
+  clan2.name = "Juggernauts";
+  clan2.groupId = '3285991';
+  clan2.clanCallsign = "SGJ";
+  let members2 = await bnetProvider.getClanMembers(clan2, domain);
+  
+  let members = members1.concat(members2);
+  
+  var usersPromises = new Array<Promise<ActivityItem[]>>();
   
   for (let mem of members) {
-    if (!mem.bungieGlobalDisplayName.includes('cody#1263')) {
-      continue;
-    }
-    
-    var activities = await bnetProvider.getActivities(mem, new Date('2023-06-01T03:24:00'), 4);
-    
-    // objs.sort((a,b) => (a.last_nom > b.last_nom) ? 1 : ((b.last_nom > a.last_nom) ? -1 : 0))
-    
-    activities.sort((a,b) => (a.startDate > b.startDate) ? -1 : 1);
-    
-    let text = new Array<string>();
-    for (let act of activities) {
-      text.push(act.referenceId + '     ' + act.startDate.toString()+ '     '  + act.durationSeconds/60 + 'm     ');
-    }
-    
-    displayText.value = text;
+    var activityDownloadPromise = bnetProvider.getActivities(mem, new Date('2023-06-01T03:24:00'), 4);
+    usersPromises.push(activityDownloadPromise);
   }
   
+  let allActivities = await Promise.all(usersPromises);
   
+  let activitiesMap = new Map<string, ActivityItem>();
+  
+  for (let actArray of allActivities) {
+    for (let act of actArray) {
+      
+      if (act.durationSeconds < 60 * 20) {continue;}
+        
+      
+      if (!activitiesMap.has(act.instanceId)) {
+        activitiesMap.set(act.instanceId, act);
+      }
+      else {
+        let domainAct = activitiesMap.get(act.instanceId)!;
+        if (!domainAct.players.includes(act.players[0])) {
+          domainAct.playerProfiles.push(act.playerProfiles[0]);
+          domainAct.players.push(act.players[0]);
+        }
+      }
+      
+    }
+  }
+  
+  let activitiesCollection = Array.from(activitiesMap.values()).filter(a => a.players.length >= 2);
+  activitiesCollection.sort((a,b) => (a.startDate > b.startDate) ? -1 : 1);
+  
+  displayedActivities.value = activitiesCollection;
 }
 
 </script>
@@ -56,8 +84,16 @@ async function onFullReload() {
   <button @click="(ev) => onFullReload()">_ reload all _</button>
   <div style="height: 2rem;"></div>
   
-  <div v-for="textItem of displayText">
+  <!-- <div v-for="textItem of displayText">
     {{textItem}}
+  </div> -->
+  
+  <div v-for="act of displayedActivities">
+    <div>{{act.instanceId}} // {{ act.referenceId }} / {{ act.startDate }}  /  {{  Math.round(act.durationSeconds / 60) }} m</div>
+    <div v-for="pname of act.players">
+      <div>. . . {{ pname }}</div>
+    </div>
+    <div> _ </div>
   </div>
 
   
