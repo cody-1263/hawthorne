@@ -316,7 +316,7 @@ export class BungieNetProvider {
             
           for (const jsonItem of activitiesJsonArray) {
             let item = new ActivityItem();
-            item.referenceId = jsonItem.activityDetails.referenceId;
+            item.referenceId = jsonItem.activityDetails.referenceId.toString();
             item.instanceId = jsonItem.activityDetails.instanceId;
             item.startDate = new Date(jsonItem.period);
             item.durationSeconds = jsonItem.values.activityDurationSeconds.basic.value;

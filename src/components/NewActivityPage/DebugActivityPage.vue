@@ -19,10 +19,23 @@ const someStringNumbers = ['0','4','8','12','16','20','24'];
 let displayText = ref(['hello world','hello world 222']);
 
 let displayedActivities = ref(new Array<ActivityItem>());
+let isBungieDataLoading = ref(false);
 
 let a = new ActivityItem();
 
+let activityNames = new Map<string, string>();
+activityNames.set('910380154' ,'Deep Stone Crypt');
+activityNames.set('1441982566','Vow of the Disciple');
+activityNames.set('2122313384','Last Wish');
+activityNames.set('2381413764','Root of Nightmares');
+activityNames.set('3458480158','Garden of Salvation');
+activityNames.set('1374392663','King\'s Fall');
+activityNames.set('3881495763','Vault of Glass');
+
 async function onFullReload() {
+  
+  isBungieDataLoading.value = true;
+  
   let clan1 = new DestinyClanProfile();
   clan1.name = "Pathfinders";
   clan1.groupId = '3909446';
@@ -56,6 +69,11 @@ async function onFullReload() {
       
       if (!activitiesMap.has(act.instanceId)) {
         activitiesMap.set(act.instanceId, act);
+        
+        console.log(act.referenceId);
+        if (activityNames.has(act.referenceId)) {
+          act.referenceName = activityNames.get(act.referenceId)!;
+        }
       }
       else {
         let domainAct = activitiesMap.get(act.instanceId)!;
@@ -66,6 +84,8 @@ async function onFullReload() {
       }
       
     }
+    
+    isBungieDataLoading.value = false;
   }
   
   let activitiesCollection = Array.from(activitiesMap.values()).filter(a => a.players.length >= 2);
@@ -76,6 +96,9 @@ async function onFullReload() {
 
 </script>
 
+
+
+
 <template>
   
   <div style="height: 2rem;"></div>
@@ -84,17 +107,21 @@ async function onFullReload() {
   <button @click="(ev) => onFullReload()">_ reload all _</button>
   <div style="height: 2rem;"></div>
   
-  <!-- <div v-for="textItem of displayText">
-    {{textItem}}
-  </div> -->
-  
-  <div v-for="act of displayedActivities">
-    <div>{{act.instanceId}} // {{ act.referenceId }} / {{ act.startDate }}  /  {{  Math.round(act.durationSeconds / 60) }} m</div>
-    <div v-for="pname of act.players">
-      <div>. . . {{ pname }}</div>
+  <!-- list of activities -->
+  <div v-if="isBungieDataLoading == false">
+    <div v-for="act of displayedActivities">
+      <div>{{act.instanceId}} // {{ act.referenceId }} / {{ act.referenceName }} / {{ act.startDate }}  /  {{  Math.round(act.durationSeconds / 60) }} m</div>
+      <div v-for="pname of act.players">
+        <div>. . . {{ pname }}</div>
+      </div>
+      <div> _ </div>
     </div>
-    <div> _ </div>
   </div>
+  <!-- loader -->
+  <div v-else>
+    <LoadingIndicator/>
+  </div>
+  
 
   
 </template>
