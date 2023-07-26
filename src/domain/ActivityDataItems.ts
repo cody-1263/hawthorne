@@ -43,7 +43,7 @@ export class ActivityItem {
     // this.startTimeEpoch = Math.floor(this.startDate.getTime() / 1000);
     this.durationSeconds = 0;
     this.referenceId = '-1';
-    this.referenceName = 'Unknown activity';
+    this.referenceName = 'UNKNOWN';
     this.directorActivityHash = '-1';
     this.instanceId = '-1';
     this.mode = -1;

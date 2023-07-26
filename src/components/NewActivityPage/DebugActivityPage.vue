@@ -2,11 +2,9 @@
 
 import { htKeys } from '@/services/HtKeys';
 import { ref, inject } from 'vue';
-import { ActivityCalculatorNew } from '@/model/ActivityCalculatorNew';
 import LoadingIndicator from '../Common/LoadingIndicator.vue';
-import { HtActivityType, HtPeriodMode } from '@/services/HtAppService';
-import { DestinyClanProfile } from '@/domain/ProfileDataItems';
-import { ActivityItem } from '@/domain/ActivityDataItems';
+import RaidActivityHelper from './RaidActivityHelper';
+import type ActivityViewModel from './ActivityViewModel';
 
 // services
 const serviceContainer = inject(htKeys.htServiceContainerKey)!;
@@ -15,83 +13,21 @@ const bnetProvider = serviceContainer.bungieNetProvider;
 const appService = serviceContainer.htAppService;
 
 // const
-const someStringNumbers = ['0','4','8','12','16','20','24'];
-let displayText = ref(['hello world','hello world 222']);
 
-let displayedActivities = ref(new Array<ActivityItem>());
+let displayedActivities = ref(new Array<ActivityViewModel>());
 let isBungieDataLoading = ref(false);
 
-let a = new ActivityItem();
 
-let activityNames = new Map<string, string>();
-activityNames.set('910380154' ,'Deep Stone Crypt');
-activityNames.set('1441982566','Vow of the Disciple');
-activityNames.set('2122313384','Last Wish');
-activityNames.set('2381413764','Root of Nightmares');
-activityNames.set('3458480158','Garden of Salvation');
-activityNames.set('1374392663','King\'s Fall');
-activityNames.set('3881495763','Vault of Glass');
 
 async function onFullReload() {
   
   isBungieDataLoading.value = true;
   
-  let clan1 = new DestinyClanProfile();
-  clan1.name = "Pathfinders";
-  clan1.groupId = '3909446';
-  clan1.clanCallsign = "SGP";
-  let members1 = await bnetProvider.getClanMembers(clan1, domain);
-  // 3285991
-  let clan2 = new DestinyClanProfile();
-  clan2.name = "Juggernauts";
-  clan2.groupId = '3285991';
-  clan2.clanCallsign = "SGJ";
-  let members2 = await bnetProvider.getClanMembers(clan2, domain);
+  let helper = new RaidActivityHelper();
+  let activityVms = await helper.getActivities(serviceContainer);
   
-  let members = members1.concat(members2);
-  
-  var usersPromises = new Array<Promise<ActivityItem[]>>();
-  
-  for (let mem of members) {
-    var activityDownloadPromise = bnetProvider.getActivities(mem, new Date('2023-06-01T03:24:00'), 4);
-    usersPromises.push(activityDownloadPromise);
-  }
-  
-  let allActivities = await Promise.all(usersPromises);
-  
-  let activitiesMap = new Map<string, ActivityItem>();
-  
-  for (let actArray of allActivities) {
-    for (let act of actArray) {
-      
-      if (act.durationSeconds < 60 * 20) {continue;}
-        
-      
-      if (!activitiesMap.has(act.instanceId)) {
-        activitiesMap.set(act.instanceId, act);
-        
-        console.log(act.referenceId);
-        if (activityNames.has(act.referenceId)) {
-          act.referenceName = activityNames.get(act.referenceId)!;
-        }
-      }
-      else {
-        let domainAct = activitiesMap.get(act.instanceId)!;
-        if (!domainAct.players.includes(act.players[0])) {
-          domainAct.playerProfiles.push(act.playerProfiles[0]);
-          domainAct.players.push(act.players[0]);
-        }
-      }
-      
-    }
-    
-    isBungieDataLoading.value = false;
-  }
-  
-  let activitiesCollection = Array.from(activitiesMap.values()).filter(a => a.players.length >= 2);
-  activitiesCollection.sort((a,b) => (a.startDate > b.startDate) ? -1 : 1);
-  
-  displayedActivities.value = activitiesCollection;
+  displayedActivities.value = activityVms;
+  isBungieDataLoading.value = false;
 }
 
 </script>
@@ -109,12 +45,24 @@ async function onFullReload() {
   
   <!-- list of activities -->
   <div v-if="isBungieDataLoading == false">
-    <div v-for="act of displayedActivities">
-      <div>{{act.instanceId}} // {{ act.referenceId }} / {{ act.referenceName }} / {{ act.startDate }}  /  {{  Math.round(act.durationSeconds / 60) }} m</div>
-      <div v-for="pname of act.players">
-        <div>. . . {{ pname }}</div>
+    <div v-for="act of displayedActivities" class="drap-activity-card">
+      
+      <div class="drap-activity-titleblock">
+        <div class="drap-activity-lamp" :style="{ backgroundColor : act.referenceColor }"></div>
+        <div class="drap-activity-subtext">{{ act.referenceType }}</div>
+        <div>{{ act.referenceName }}</div>
+        <div>{{ act.durationText }}</div>
+        <div class="drap-activity-subtext">{{ act.startDateText }}</div>
+        <div><a v-bind:href="act.reportHyperlink">report</a></div>
       </div>
-      <div> _ </div>
+      
+      <div class="drap-activity-playerlist">
+        <div v-for="p of act.players"> 
+          <div v-if="p.isTargetClanMember"> {{ p.bungieGlobalDisplayName }}  </div>
+          <div v-else class="drap-activity-subsubtext"> {{ p.bungieGlobalDisplayName }}  </div>
+        </div>
+      </div>
+      
     </div>
   </div>
   <!-- loader -->
@@ -163,5 +111,47 @@ async function onFullReload() {
   /* border: dashed 2px blueviolet;
   border-radius: 0.4rem; */
 }
+
+
+
+
+
+
+
+.drap-activity-card {
+  display: grid;
+  grid-template-rows: 2rem 1fr;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.drap-activity-titleblock {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.drap-activity-playerlist {
+  display: flex;
+  flex-direction: column;
+}
+
+.drap-activity-lamp {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: aqua;
+}
+
+.drap-activity-subtext {
+  opacity: 0.4;
+}
+
+.drap-activity-subsubtext {
+  opacity: 0.2;
+}
+
+
 
 </style>
