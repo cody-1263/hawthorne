@@ -7,16 +7,17 @@
 /**
  * Class to store and edit activity counters for long periods of time 
  */
-export class ActivityDensityTimeline {
+export default class ActivityDensityTimeline {
   
   /** Timeline mode: long of one abstract day only */
-  _oneDayMode : boolean;
+  private _oneDayMode : boolean;
   
   /** Timeline start Date value */
-  _timelineStartDate : Date;
+  private _timelineStartDate : Date;
   
   /** Timeline item step size, in milliseconds */
-  _stepSize : number;
+  private _stepSize : number;
+  
   
   /** Array of activity counters */
   timeline : number[];
@@ -64,7 +65,7 @@ export class ActivityDensityTimeline {
    * Returns index to use in timeline array
    * @param date target date
    */
-  getTimelineIndex(date : Date) {
+  private getTimelineIndex(date : Date) {
     let targetDate = date;
     if (this._oneDayMode) {
       let hrs = date.getHours();

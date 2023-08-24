@@ -6,7 +6,7 @@
 
 
 const props = defineProps<{
-  numberItems: number[],
+  numberItems: number[]|null,
   legendItems: string[],
 }>();
 

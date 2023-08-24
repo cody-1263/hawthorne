@@ -4,7 +4,10 @@ import { htKeys } from '@/services/HtKeys';
 import { ref, inject } from 'vue';
 import LoadingIndicator from '../Common/LoadingIndicator.vue';
 import RaidActivityHelper from './RaidActivityHelper';
+import DailyActivityHelper from './DailyActivityHelper';
 import type ActivityViewModel from './ActivityViewModel';
+import HtHistogram from '../Common/HtHistogram.vue';
+import ActivityDensityTimeline from '@/model/ActivityDensityTimeline';
 
 // services
 const serviceContainer = inject(htKeys.htServiceContainerKey)!;
@@ -14,8 +17,11 @@ const appService = serviceContainer.htAppService;
 
 // const
 
+const legendStrings = ['0','2','4','6','8','10','12','14','16','18','20','22','24'];
+
 let displayedActivities = ref(new Array<ActivityViewModel>());
 let isBungieDataLoading = ref(false);
+let timelineRef = ref<ActivityDensityTimeline>(new ActivityDensityTimeline(true, 'act'));
 
 
 
@@ -26,7 +32,11 @@ async function onFullReload() {
   let helper = new RaidActivityHelper();
   let activityVms = await helper.getActivities(serviceContainer);
   
+  let helper2 = new DailyActivityHelper();
+  let timeline = helper2.getDailyActivityDsictributionData(activityVms); 
+  
   displayedActivities.value = activityVms;
+  timelineRef.value = timeline;
   isBungieDataLoading.value = false;
 }
 
@@ -42,6 +52,12 @@ async function onFullReload() {
   <div style="height: 2rem;"></div>
   <button @click="(ev) => onFullReload()">_ reload all _</button>
   <div style="height: 2rem;"></div>
+  
+  <!-- activity histogram -->
+  <div v-if="isBungieDataLoading == false">
+    <HtHistogram :number-items="timelineRef.timelineNormalized" :legend-items="legendStrings" style="height: 8rem"/>
+    <div style="height: 2rem;"></div>
+  </div>
   
   <!-- list of activities -->
   <div v-if="isBungieDataLoading == false">

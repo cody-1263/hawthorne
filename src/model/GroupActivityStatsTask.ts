@@ -2,7 +2,7 @@ import type { ActivityItem } from "@/domain/ActivityDataItems";
 import { DestinyUserProfile, type DestinyClanProfile } from "@/domain/ProfileDataItems";
 import type { Domain } from "@/domain/_Domain";
 import { HtActivityType, HtPeriodMode } from "@/services/HtAppService";
-import { ActivityDensityTimeline } from "./ActivityDensityTimeline";
+import ActivityDensityTimeline from "./ActivityDensityTimeline";
 import type { BungieNetProvider } from "./BungieNetProvider";
 
 

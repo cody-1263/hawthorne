@@ -6,7 +6,7 @@ import { htKeys } from '@/services/HtKeys';
 import SectionSelector from '@/components/Common/SectionSelector.vue';
 import LoadingIndicator from '@/components/Common/LoadingIndicator.vue';
 import HtHistogram from '../Common/HtHistogram.vue';
-import type { ActivityDensityTimeline } from '@/model/ActivityDensityTimeline';
+import type ActivityDensityTimeline from '@/model/ActivityDensityTimeline';
 import { ActivityCalculatorNew } from '@/model/ActivityCalculatorNew';
 
 // app services

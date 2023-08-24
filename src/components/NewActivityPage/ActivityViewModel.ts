@@ -5,6 +5,9 @@ import ActivityPlayerViewModel from "./ActivityPlayerViewModel";
 
 export default class ActivityViewModel {
   
+  startDate = new Date(0);
+  endDate = new Date(0);
+  
   startDateText = '1999-09-08 22:15';
   durationText = '-24 hours';
   

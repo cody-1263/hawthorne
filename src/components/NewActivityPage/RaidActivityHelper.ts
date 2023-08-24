@@ -62,7 +62,7 @@ export default class RaidActivityHelper {
     var usersPromises = new Array<Promise<ActivityItem[]>>();
     
     for (let mem of members) {
-      var activityDownloadPromise = bnetProvider.getActivities(mem, new Date('2023-06-01T03:24:00'), 4);
+      var activityDownloadPromise = bnetProvider.getActivities(mem, new Date('2023-01-01T03:24:00'), 4);
       usersPromises.push(activityDownloadPromise);
     }
     
@@ -118,6 +118,8 @@ export default class RaidActivityHelper {
       actVm.reportHyperlink = 'https://raid.report/pgcr/' + act.instanceId;
       actVm.durationText = this.getDurationDisplayText(act.durationSeconds);
       actVm.startDateText = this.getDateDisplayText(act.startDate);
+      actVm.startDate = act.startDate;
+      actVm.endDate = new Date(act.startDate.getTime() + act.durationSeconds * 1000);
       
       for (let i = 0; i < act.playerProfiles.length; i++) {
         let p = act.playerProfiles[i];
